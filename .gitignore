@@ -1,0 +1,6 @@
+# local tooling and working captures
+.claude/settings.local.json
+.impeccable/review/
+.impeccable/hook.cache.json
+.DS_Store
+__pycache__/

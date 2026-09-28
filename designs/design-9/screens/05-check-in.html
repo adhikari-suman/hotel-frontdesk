@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check in: Chidi Okafor · Alder House front desk</title>
+<meta name="description" content="Check-in for Chidi Okafor: identity, room 704 from the Deluxe floors, payment guarantee and keys.">
+<link rel="stylesheet" href="../assets/bedside.css">
+<style>
+.idok { display: flex; align-items: center; gap: 10px; padding: 12px 16px; font-size: 14px; border-top: 1px solid var(--lcd-rule); }
+.idok .ann { margin-left: auto; }
+.house { padding: 14px 16px 16px; }
+.floor--ci { grid-template-columns: 90px repeat(8, minmax(0, 1fr)); }
+button.rc { font: inherit; text-align: left; border: 0; background: transparent; cursor: pointer; color: var(--seg); }
+button.rc.rc--vac, button.rc.rc--pickable { background: var(--lcd-off); }
+button.rc.rc--arr { background: var(--lilac); }
+button.rc.rc--due { background: var(--seg); color: var(--lcd); }
+button.rc.rc--ooo { background: var(--lcd-off) var(--hatch); }
+button.rc.rc--pick { background: var(--lime-soft); }
+button.rc:disabled { cursor: not-allowed; }
+.rc--pickable { outline: 1.5px solid var(--seg); outline-offset: -1.5px; }
+.rc--pickable:hover { background: var(--lime-soft); }
+.sg--rc { font-size: 12.5px; letter-spacing: .02em; }
+.softlist__keys .key.key--icon { width: 36px; }
+.twin { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+.xr { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 12px; height: var(--rh); padding: 6px 16px; border-bottom: 1px solid var(--lcd-rule); }
+.xr:last-child { border-bottom: 0; }
+.xr .tsub { margin-top: 2px; }
+.outc { display: grid; gap: 14px; }
+.flip { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; }
+.flip .rc { min-height: 80px; }
+.rc--lit { background: var(--lcd); outline: 2px solid var(--seg); outline-offset: -2px; }
+.stamp { display: grid; gap: 8px; padding: 12px 14px; border: 2px dashed var(--seg); border-radius: 8px; justify-items: start; }
+.stamp__who { font: 800 15px/1 var(--mono); letter-spacing: .08em; }
+@media (max-width: 1320px) { .twin { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .matrix { min-width: 760px; } .twin .softlist__keys { width: 84px; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-bed-double" viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" /> <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" /> <path d="M12 4v6" /> <path d="M2 18h20" /></symbol><symbol id="i-calendar-range" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M16 2v4" /> <path d="M3 10h18" /> <path d="M8 2v4" /> <path d="M17 14h-6" /> <path d="M13 18H7" /> <path d="M7 14h.01" /> <path d="M17 18h.01" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></symbol><symbol id="i-credit-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></symbol><symbol id="i-id-card" viewBox="0 0 24 24"><path d="M16 10h2" /> <path d="M16 14h2" /> <path d="M6.17 15a3 3 0 0 1 5.66 0" /> <circle cx="9" cy="11" r="2" /> <rect x="2" y="5" width="20" height="14" rx="2" /></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol><symbol id="i-key-round" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol><symbol id="i-layout-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /> <polyline points="16 17 21 12 16 7" /> <line x1="21" x2="9" y1="12" y2="12" /></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol><symbol id="i-notebook-tabs" viewBox="0 0 24 24"><path d="M2 6h4" /> <path d="M2 10h4" /> <path d="M2 14h4" /> <path d="M2 18h4" /> <rect width="16" height="20" x="4" y="2" rx="2" /> <path d="M15 2v20" /> <path d="M15 7h5" /> <path d="M15 12h5" /> <path d="M15 17h5" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></symbol><symbol id="i-ticket-percent" viewBox="0 0 24 24"><path d="M2 9a3 3 0 1 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 1 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /> <path d="M9 9h.01" /> <path d="m15 9-6 6" /> <path d="M15 15h.01" /></symbol><symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></symbol></defs></svg>
+
+<header class="face">
+  <div class="brand">
+    <span class="brand__name">Alder House</span>
+    <span class="brand__sub">Front desk · 64 rooms · 8 floors</span>
+  </div>
+  <div class="lcd clock" role="group" aria-label="Sunday 27 September 2026, 10:46">
+    <span class="sg clock__time" data-g="88:88">10:46</span>
+    <div class="clock__side">
+      <div class="days" aria-hidden="true"><span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span class="on">SU</span></div>
+      <div class="clock__date"><span class="sg sg--m" data-g="88">27</span><span class="lbl" style="color:var(--seg)">Sep</span><span class="sg sg--xs" data-g="8888">2026</span></div>
+    </div>
+    <div class="clock__tally">
+      <span class="lbl" style="color:var(--seg)">Sold tonight</span>
+      <div class="row"><span class="sg sg--m" data-g="88">53</span><span class="of">of</span><span class="sg sg--s" data-g="88">64</span><span class="of">·</span><span class="sg sg--s" data-g="88">83</span><span class="of">%</span></div>
+    </div>
+  </div>
+  <label class="lcd find"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg><span class="sr">Find</span><input type="search" placeholder="Find guest, ref or room"><kbd>/</kbd></label>
+  <div class="user">
+    <div class="user__who"><span class="user__name">Nadia Rahimi</span><span class="user__role">Receptionist · Morning 07–15</span></div>
+    <button type="button" class="key key--icon" aria-label="Sign out"><svg class="i" aria-hidden="true"><use href="#i-log-out"/></svg></button>
+  </div>
+</header>
+<main class="main">
+  <a class="crumb" href="01-today.html"><svg class="i i--sm" aria-hidden="true"><use href="#i-chevron-left"/></svg>Today · Arriving</a>
+  <div class="pagehead" style="margin-top:6px">
+    <div class="pagehead__title">
+      <h1>Check in: Chidi Okafor <span class="ref">PLW-7731</span> <span class="ann ann--solid">Arr</span> <span class="ann ann--dash">Early</span></h1>
+      <p class="meta"><span>Deluxe</span><span class="dot"></span><span>Sun 27 <svg class="i i--arw" role="img" aria-label="to"><use href="#i-arrow-right"/></svg> Tue 29 Sep</span><span class="dot"></span><span>2 nights, 2 adults</span><span class="dot"></span><span>Arrived early: ETA was <b>14:00</b></span></p>
+    </div>
+  </div>
+
+  <div class="cols" style="--side: 420px">
+    <div class="stack">
+      <section aria-labelledby="h-id">
+        <div class="wtitle"><h2 id="h-id">Identity</h2><span class="sub">Checked against the booking</span></div>
+        <div class="lcd">
+          <div class="dgrid" style="--c: 4">
+            <div class="nb"><span class="lbl">Name on ID</span><span class="val">Chidi E. Okafor</span></div>
+            <div class="nb"><span class="lbl">Document</span><span class="val"><svg class="i i--sm" aria-hidden="true"><use href="#i-id-card"/></svg> Passport · Nigeria</span></div>
+            <div class="nb"><span class="lbl">Number</span><span class="val">•••• 4821</span></div>
+            <div class="nb nr"><span class="lbl">Expires</span><span class="val">Mar 2031</span></div>
+          </div>
+          <div class="idok"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span><b>The name matches the booking.</b> Chidi Okafor, booked for 2 adults.</span><span class="ann ann--solid">Match</span></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-room">
+        <div class="wtitle"><h2 id="h-room">Room</h2><span class="sub">Deluxe, floors 6–7 · only ready rooms can be picked</span>
+          <div class="end legend">
+            <span class="legend__it"><span class="sw" style="background:var(--lime-soft);outline:2px solid var(--seg);outline-offset:-2px"></span>Picked</span>
+            <span class="legend__it"><span class="sw sw--vac"></span>Ready</span>
+            <span class="legend__it"><span class="sw" style="opacity:.5;background:var(--lcd)"></span>Not available</span>
+          </div>
+        </div>
+        <div class="lcd house"><div class="scrollx"><div class="matrix"><div class="floor floor--ci"><div class="floor__id"><span class="sg " data-g="8">7</span><span class="floor__type">Deluxe</span><span class="floor__price">floor 7</span></div><button class="rc rc--occ rc--dim" type="button" disabled aria-label="701, in house, Weber, Out Thu 1"><span class="rc__top"><span class="sg rc__no" data-g="888">701</span><span class="ann ">OCC</span></span><span class="rc__who">Weber</span><span class="rc__when">Out Thu 1</span></button><button class="rc rc--ooo rc--dim" type="button" disabled aria-label="702, out of order, Repaint, Back 2 Oct"><span class="rc__top"><span class="sg rc__no" data-g="888">702</span><span class="ann ann--solid">OOO</span></span><span class="rc__who">Repaint</span><span class="rc__when">Back 2 Oct</span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="703, in house, Nguyen, Out Mon 28"><span class="rc__top"><span class="sg rc__no" data-g="888">703</span><span class="ann ">OCC</span></span><span class="rc__who">Nguyen</span><span class="rc__when">Out Mon 28</span></button><button class="rc rc--arr rc--pick rc--sel" type="button" aria-pressed="true" aria-label="704, arriving, Okafor, ETA 14:00"><span class="rc__top"><span class="sg rc__no" data-g="888">704</span><span class="ann ann--solid">ARR</span></span><span class="rc__who">Okafor</span><span class="rc__when"><b>Assigned</b></span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="705, in house, Holm, Out Mon 28"><span class="rc__top"><span class="sg rc__no" data-g="888">705</span><span class="ann ">OCC</span></span><span class="rc__who">Holm</span><span class="rc__when">Out Mon 28</span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="706, in house, Laurent, Out Wed 30"><span class="rc__top"><span class="sg rc__no" data-g="888">706</span><span class="ann ">OCC</span></span><span class="rc__who">Laurent</span><span class="rc__when">Out Wed 30</span></button><button class="rc rc--vac rc--pickable" type="button" aria-pressed="false" aria-label="707, vacant, ready, Vacant, Ready"><span class="rc__top"><span class="sg rc__no" data-g="888">707</span><span class="ann ">VAC</span></span><span class="rc__who">Vacant</span><span class="rc__when">Ready</span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="708, in house, Mensah, Out Sat 3"><span class="rc__top"><span class="sg rc__no" data-g="888">708</span><span class="ann ">OCC</span></span><span class="rc__who">Mensah</span><span class="rc__when">Out Sat 3</span></button></div><div class="floor floor--ci"><div class="floor__id"><span class="sg " data-g="8">6</span><span class="floor__type">Deluxe</span><span class="floor__price">floor 6</span></div><button class="rc rc--occ rc--dim" type="button" disabled aria-label="601, in house, Alvarez, Out Wed 30"><span class="rc__top"><span class="sg rc__no" data-g="888">601</span><span class="ann ">OCC</span></span><span class="rc__who">Alvarez</span><span class="rc__when">Out Wed 30</span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="602, in house, Bakker, Out Tue 29"><span class="rc__top"><span class="sg rc__no" data-g="888">602</span><span class="ann ">OCC</span></span><span class="rc__who">Bakker</span><span class="rc__when">Out Tue 29</span></button><button class="rc rc--arr rc--dim" type="button" disabled aria-label="603, arriving, Fischer, ETA 16:30"><span class="rc__top"><span class="sg rc__no" data-g="888">603</span><span class="ann ann--solid">ARR</span></span><span class="rc__who">Fischer</span><span class="rc__when">ETA <span class="sg sg--rc" data-g="88:88">16:30</span></span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="604, in house, Kowalski, Out Wed 30"><span class="rc__top"><span class="sg rc__no" data-g="888">604</span><span class="ann ">OCC</span></span><span class="rc__who">Kowalski</span><span class="rc__when">Out Wed 30</span></button><button class="rc rc--due rc--dim" type="button" disabled aria-label="605, due out, Rossi, Out 11:00"><span class="rc__top"><span class="sg rc__no" data-g="888">605</span><span class="ann ">DUE</span></span><span class="rc__who">Rossi</span><span class="rc__when">Out <span class="sg sg--rc" data-g="88:88">11:00</span></span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="606, in house, Tremblay, Out Tue 29"><span class="rc__top"><span class="sg rc__no" data-g="888">606</span><span class="ann ">OCC</span></span><span class="rc__who">Tremblay</span><span class="rc__when">Out Tue 29</span></button><button class="rc rc--occ rc--dim" type="button" disabled aria-label="607, in house, Shah, Out Thu 1"><span class="rc__top"><span class="sg rc__no" data-g="888">607</span><span class="ann ">OCC</span></span><span class="rc__who">Shah</span><span class="rc__when">Out Thu 1</span></button><button class="rc rc--vac rc--pickable" type="button" aria-pressed="false" aria-label="608, vacant, ready, Vacant, Ready"><span class="rc__top"><span class="sg rc__no" data-g="888">608</span><span class="ann ">VAC</span></span><span class="rc__who">Vacant</span><span class="rc__when">Ready</span></button></div></div></div>
+          <p class="note" style="margin-top:12px"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span><b>704</b> was assigned with the booking. <b>707</b> and <b>608</b> are also vacant and ready. Rooms in use, due out or out of order can't be picked.</span></p>
+        </div>
+      </section>
+
+      <div class="twin">
+        <section aria-labelledby="h-pay">
+          <div class="wtitle"><h2 id="h-pay">Payment guarantee</h2></div>
+          <div class="lcd lcd--pad">
+            <div class="row" style="gap:10px;padding-bottom:10px;border-bottom:1px solid var(--lcd-rule)"><svg class="i" aria-hidden="true"><use href="#i-credit-card"/></svg><span class="tname">Visa •••• 4417</span><span class="tsub">on file</span></div>
+            <div class="lines">
+              <div class="line"><span class="line__k">Stay <small>room $476 + breakfast $72 + tax</small></span><span class="money sg--s "><span class="cur">$</span><span class="sg " data-g="888.88">613.76</span></span></div>
+              <div class="line"><span class="line__k">Incidentals hold</span><span class="money sg--s "><span class="cur">$</span><span class="sg " data-g="888.88">100.00</span></span></div>
+              <div class="line line--total"><span class="line__k">Pre-authorise</span><span class="money sg--m "><span class="cur">$</span><span class="sg " data-g="888.88">713.76</span></span></div>
+            </div>
+          </div>
+        </section>
+        <section aria-labelledby="h-keys">
+          <div class="wtitle"><h2 id="h-keys">Keys and extras</h2></div>
+          <div class="softlist" style="--rh:62px">
+            <div class="lcd softlist__glass">
+              <div class="xr"><span><svg class="i" aria-hidden="true"><use href="#i-key-round"/></svg></span><div><div class="tname">Key cards</div><div class="tsub">for 704</div></div><span class="sg sg--m" data-g="8">2</span></div>
+              <div class="xr"><span><svg class="i" aria-hidden="true"><use href="#i-coffee"/></svg></span><div><div class="tname">Breakfast</div><div class="tsub">included · 2 guests × 2 nights</div></div><svg class="i" role="img" aria-label="Included"><use href="#i-circle-check"/></svg></div>
+              <div class="xr"><span><svg class="i" aria-hidden="true"><use href="#i-utensils"/></svg></span><div><div class="tname">Dinner tonight</div><div class="tsub">offer · $42 per guest</div></div><span class="money sg--s "><span class="cur">$</span><span class="sg " data-g="88.88">84.00</span></span></div>
+            </div>
+            <div class="softlist__keys">
+              <div class="skey"><div class="row" style="gap:6px"><button type="button" class="key key--icon key--sm" aria-label="One key fewer"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button><button type="button" class="key key--icon key--sm" aria-label="One key more"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button></div></div>
+              <div class="skey"><span class="keyhint" style="padding-left:6px">Included</span></div>
+              <div class="skey"><button type="button" class="key key--sm" ><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg><span>Add for 2</span></button></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <aside class="stack" aria-labelledby="h-out">
+      <div>
+        <div class="wtitle"><h2 id="h-out">On completion</h2></div>
+        <div class="lcd lcd--padl outc">
+          <div class="flip">
+            <div class="rc rc--arr"><span class="rc__top"><span class="sg rc__no" data-g="888">704</span><span class="ann ann--solid">Arr</span></span><span class="rc__who">Okafor</span><span class="rc__when">Reserved</span></div>
+            <svg class="i i--lg" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            <div class="rc rc--occ rc--lit"><span class="rc__top"><span class="sg rc__no" data-g="888">704</span><span class="ann ">Occ</span></span><span class="rc__who">Okafor</span><span class="rc__when">Out Tue 29</span></div>
+          </div>
+          <p class="val" style="font-size:14px">704 moves to in-house.</p>
+          <hr class="lcd-rule">
+          <ul class="checks">
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span>ID checked, name matches</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span>Room 704, Deluxe</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span>Pre-authorise $713.76 on Visa •••• 4417</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg><span>2 key cards</span></li>
+          </ul>
+          <hr class="lcd-rule">
+          <div class="stamp" aria-label="Stamp: 27 Sep 2026 10:46 NR">
+            <span class="lbl">Stamp</span>
+            <div class="row" style="gap:8px;align-items:baseline"><span class="sg sg--s" data-g="88">27</span><span class="lbl" style="color:var(--seg)">Sep</span><span class="sg sg--s" data-g="8888">2026</span><span style="width:6px"></span><span class="sg sg--s" data-g="88:88">10:46</span><span class="stamp__who">NR</span></div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="key key--primary key--xl" ><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Complete check-in</span></button>
+      <p class="fhint"><svg class="i" aria-hidden="true"><use href="#i-info"/></svg>Checked in by Nadia Rahimi. The room matrix on Today updates straight away.</p>
+    </aside>
+  </div>
+</main>
+<nav class="keyrow" aria-label="Main">
+  <div class="keygroup"><span class="keygroup__label">Front desk</span><div class="keygroup__keys"><a class="nkey" href="01-today.html" aria-current="page"><span class="led led--on"></span><svg class="i" aria-hidden="true"><use href="#i-layout-grid"/></svg><span>Today</span></a><a class="nkey" href="02-availability.html"><span class="led"></span><svg class="i" aria-hidden="true"><use href="#i-calendar-range"/></svg><span>Availability</span></a><a class="nkey" href="04-booking-rebook.html"><span class="led"></span><svg class="i" aria-hidden="true"><use href="#i-notebook-tabs"/></svg><span>Bookings</span></a></div></div>
+  <span class="keydiv" aria-hidden="true"></span>
+  <div class="keygroup"><span class="keygroup__label"><svg class="i i--sm" aria-hidden="true"><use href="#i-lock"/></svg>Admin · admins only</span><div class="keygroup__keys"><a class="nkey" aria-disabled="true" role="link" title="Admins only"><span class="led"></span><svg class="i" aria-hidden="true"><use href="#i-bed-double"/></svg><span>Rooms</span><svg class="i lock" aria-hidden="true"><use href="#i-lock"/></svg></a><a class="nkey" aria-disabled="true" role="link" title="Admins only"><span class="led"></span><svg class="i" aria-hidden="true"><use href="#i-ticket-percent"/></svg><span>Promo codes</span><svg class="i lock" aria-hidden="true"><use href="#i-lock"/></svg></a><a class="nkey" aria-disabled="true" role="link" title="Admins only"><span class="led"></span><svg class="i" aria-hidden="true"><use href="#i-users"/></svg><span>Users</span><svg class="i lock" aria-hidden="true"><use href="#i-lock"/></svg></a></div></div>
+</nav>
+</body>
+</html>

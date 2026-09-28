@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rooms · B-201 · Alder House front desk</title>
+<link rel="stylesheet" href="../assets/whiteprint.css">
+<style>
+.roomsch{min-width:800px}
+.roomsch td{height:46px}
+.roomsch .big{font:650 18px/1 var(--f-letter)}
+.roomsch td.act{width:84px}
+.roomsch td.act .delta{display:inline-block;vertical-align:middle}
+.roomsch .tag{margin-left:6px;font-size:11px}
+.roomsch tr.blocked td{padding:0 8px 10px;height:auto;border-bottom:1px solid var(--rule)}
+.roomsch tr.blocked:hover,.roomsch tr.editrow:hover{background:inherit}
+.roomsch tr.blocked .redline{padding:8px 12px;font-size:12.5px}
+.roomsch tr.editing td{border-bottom:0}
+.roomsch tr.editrow td{padding:4px 12px 14px;border-bottom:1.5px solid var(--line)}
+.was{text-decoration:line-through;color:var(--ink-2);font-size:12.5px;margin-right:4px}
+.stack2{display:inline-flex;gap:10px;align-items:center;flex-wrap:wrap}
+.oo .sym{width:18px;height:13px}
+.ed{display:grid;grid-template-columns:160px 170px 90px 90px 1fr;gap:14px;align-items:start}
+.ed .lbl{display:flex;align-items:center;gap:6px}
+.ed .lbl .delta{width:20px;height:18px}
+.ed__foot{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:14px}
+.ed__foot .note{flex:1;max-width:560px;background:var(--paper)}
+.roomsch tfoot td{font-size:13px;color:var(--ink);height:44px;border-top:2px solid var(--line)}
+.two{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px;margin-top:32px;align-items:start}
+.sec{border-left:0;padding:4px 0 0}
+.sec__lv,.sec__gr{display:grid;grid-template-columns:62px 1fr 128px;align-items:center;gap:10px}
+.sec__lv{border-top:1.5px solid var(--line);padding:5px 0}
+.sec__lv.is-ed .sec__bays{outline:2.5px solid var(--line);outline-offset:2px;background:var(--wash)}
+.sec__gr{height:3px;background:var(--line)}
+.sec__gr b{grid-column:2/-1;font:500 11px/1.2 var(--f-letter);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.sec__dat{display:flex;align-items:center;gap:5px}
+.sec__dat b,.sec__gr>.datum+b{font:650 12px/1 var(--f-letter);letter-spacing:.06em;color:var(--line)}
+.datum{width:22px;height:12px;fill:none;stroke:var(--line);stroke-width:1.2}
+.sec__bays{display:grid;grid-template-columns:repeat(8,1fr);gap:3px}
+.bay{height:26px;border:1.2px solid var(--line);display:grid;place-items:center;font:600 11px/1 var(--f-letter);letter-spacing:.03em;background:var(--paper)}
+.bay--ooo{background-image:var(--pat-x),var(--pat-xhatch)}
+.bay--ooo span{background:var(--paper);padding:0 2px}
+.sec__t{font:600 12.5px/1.2 var(--f-body)}
+.sec__t small{display:block;font-weight:400;font-size:12px;color:var(--ink-2);white-space:nowrap}
+.sec__lv.is-ed .sec__t small{color:var(--line);font-weight:600}
+.arr{vertical-align:-2px;color:var(--line)}
+@media (max-width:1279px){.two{grid-template-columns:1fr}.ed{grid-template-columns:1fr 1fr 1fr}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol><symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /> <polyline points="16 17 21 12 16 7" /> <line x1="21" x2="9" y1="12" y2="12" /></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /> <path d="m15 5 4 4" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M3 6h18" /> <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /> <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /> <line x1="10" x2="10" y1="11" y2="17" /> <line x1="14" x2="14" y1="11" y2="17" /></symbol></defs></svg>
+<a class="skip" href="#main">Skip to the drawing</a>
+<div class="sheet">
+<div class="zone zone--t" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div><div class="zone zone--b" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div><div class="zone zone--l" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span></div><div class="zone zone--r" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span></div>
+<div class="drawing">
+<main class="main" id="main">
+<header class="sh"><div class="sh__t"><h1>Rooms</h1><p class="sh__m"><span>64 rooms in 4 types</span><span>Price and count changes apply to new bookings only</span></p></div><div class="sh__a"><button class="btn" type="button"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg>Add room</button></div></header><section aria-labelledby="m1">
+<div class="dt"><span class="bub" aria-hidden="true"><b>1</b><i>B-201</i></span><div class="dt__t"><h2 id="m1">Room schedule</h2><p class="dt__s">Type, price and count. Only admins change these.</p></div></div>
+<div class="scrollx"><table class="sch roomsch">
+<thead><tr><th>Room type</th><th class="num">Count</th><th>Rooms</th><th class="num">Price / night</th><th class="num">Sleeps</th><th>Tonight</th><th class="num">Upcoming bookings</th><th><span class="vh">Actions</span></th></tr></thead>
+<tbody>
+<tr><td class="g">Family Suite</td><td class="num big">8</td><td>801–808</td><td class="num">$366.00</td><td class="num">4</td><td>7 of 8 sold</td><td class="num">14</td><td class="act"><button class="ibtn" type="button" aria-label="Edit Family Suite"><svg class="i" aria-hidden="true"><use href="#i-pencil"/></svg></button><button class="ibtn" type="button" disabled aria-label="Delete Family Suite: blocked, it has bookings"><svg class="i" aria-hidden="true"><use href="#i-trash-2"/></svg></button></td></tr>
+<tr class="blocked"><td colspan="8"><p class="redline"><svg class="i i--s" aria-hidden="true"><use href="#i-ban"/></svg><span><b>Can't delete Family Suite.</b> It has 14 upcoming bookings and 7 rooms occupied tonight. Move or cancel those bookings first.</span></p></td></tr>
+<tr class="is-sel editing"><td class="g">Deluxe <span class="tag tag--dash">Editing</span></td><td class="num big">16</td><td>601–608, 701–708</td>
+<td class="num"><span class="was">$238.00</span> <b>$248.00</b></td><td class="num">2</td><td><span class="stack2">12 of 16 sold <span class="stat oo"><span class="sym sym--ooo" aria-hidden="true"></span><span class="cd">OOO</span>702</span></span></td><td class="num">23</td><td class="act"><svg class="delta delta--draft" viewBox="0 0 24 21" role="img" aria-label="Revision 5"><path d="M12 1.5 L22.5 19.5 H1.5 Z"/><text x="12" y="16.5">5</text></svg></td></tr>
+<tr class="is-sel editrow"><td colspan="8">
+<div class="ed">
+  <label class="fld"><span class="lbl">Type<span class="req">*</span></span><select class="in"><option>Deluxe</option></select></label>
+  <label class="fld"><span class="lbl">Price per night<span class="req">*</span> <svg class="delta delta--draft" viewBox="0 0 24 21" role="img" aria-label="Revision 5"><path d="M12 1.5 L22.5 19.5 H1.5 Z"/><text x="12" y="16.5">5</text></svg></span><span class="inw"><svg class="i" aria-hidden="true"><use href="#i-pencil"/></svg><input class="in is-changed" value="$248.00"></span><span class="hint">Was $238.00</span></label>
+  <label class="fld"><span class="lbl">Count<span class="req">*</span></span><input class="in" value="16"></label>
+  <label class="fld"><span class="lbl">Sleeps</span><input class="in" value="2"></label>
+  <label class="fld"><span class="lbl">Room numbers</span><input class="in" value="601–608, 701–708"><span class="hint">Must match the count</span></label>
+</div>
+<div class="ed__foot">
+  <p class="note"><svg class="i i--s" aria-hidden="true"><use href="#i-info"/></svg><span><b>The 23 upcoming Deluxe bookings keep $238.</b> Bookings made after you save use $248.</span></p>
+  <div class="actions"><button class="btn btn--quiet" type="button">Cancel</button><button class="btn btn--primary" type="button"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Save changes</button></div>
+</div>
+</td></tr>
+<tr><td class="g">Twin Double</td><td class="num big">16</td><td>401–408, 501–508</td><td class="num">$166.00</td><td class="num">2</td><td><span class="stack2">14 of 16 sold <span class="stat oo"><span class="sym sym--ooo" aria-hidden="true"></span><span class="cd">OOO</span>406</span></span></td><td class="num">31</td><td class="act"><button class="ibtn" type="button" aria-label="Edit Twin Double"><svg class="i" aria-hidden="true"><use href="#i-pencil"/></svg></button><button class="ibtn" type="button" disabled aria-label="Delete Twin Double: blocked, it has bookings"><svg class="i" aria-hidden="true"><use href="#i-trash-2"/></svg></button></td></tr>
+<tr><td class="g">Queen</td><td class="num big">24</td><td>101–108, 201–208, 301–308</td><td class="num">$136.00</td><td class="num">2</td><td>20 of 24 sold</td><td class="num">40</td><td class="act"><button class="ibtn" type="button" aria-label="Edit Queen"><svg class="i" aria-hidden="true"><use href="#i-pencil"/></svg></button><button class="ibtn" type="button" disabled aria-label="Delete Queen: blocked, it has bookings"><svg class="i" aria-hidden="true"><use href="#i-trash-2"/></svg></button></td></tr>
+</tbody>
+<tfoot><tr class="all"><td>All rooms</td><td class="num big">64</td><td>8 levels</td><td></td><td></td><td><b>53 of 64 · 83%</b></td><td class="num"><b>108</b></td><td></td></tr></tfoot>
+</table></div>
+</section><div class="two"><section aria-labelledby="m2">
+<div class="dt"><span class="bub" aria-hidden="true"><b>2</b><i>B-201</i></span><div class="dt__t"><h2 id="m2">Section A–A · types by level</h2><p class="dt__s">Levels 6 and 7 are the Deluxe rooms you are editing.</p></div></div>
+<div class="sec"><div class="sec__lv"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L8</b></span><span class="sec__bays"><span class="bay"><span>801</span></span><span class="bay"><span>802</span></span><span class="bay"><span>803</span></span><span class="bay"><span>804</span></span><span class="bay"><span>805</span></span><span class="bay"><span>806</span></span><span class="bay"><span>807</span></span><span class="bay"><span>808</span></span></span><span class="sec__t">Family Suite<small>$366</small></span></div><div class="sec__lv is-ed"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L7</b></span><span class="sec__bays"><span class="bay"><span>701</span></span><span class="bay bay--ooo" role="img" aria-label="702, out of order"><span>702</span></span><span class="bay"><span>703</span></span><span class="bay"><span>704</span></span><span class="bay"><span>705</span></span><span class="bay"><span>706</span></span><span class="bay"><span>707</span></span><span class="bay"><span>708</span></span></span><span class="sec__t">Deluxe<small>$238 <svg class="i i--s arr" role="img" aria-label="to"><use href="#i-arrow-right"/></svg> $248</small></span></div><div class="sec__lv is-ed"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L6</b></span><span class="sec__bays"><span class="bay"><span>601</span></span><span class="bay"><span>602</span></span><span class="bay"><span>603</span></span><span class="bay"><span>604</span></span><span class="bay"><span>605</span></span><span class="bay"><span>606</span></span><span class="bay"><span>607</span></span><span class="bay"><span>608</span></span></span><span class="sec__t">Deluxe<small>$238 <svg class="i i--s arr" role="img" aria-label="to"><use href="#i-arrow-right"/></svg> $248</small></span></div><div class="sec__lv"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L5</b></span><span class="sec__bays"><span class="bay"><span>501</span></span><span class="bay"><span>502</span></span><span class="bay"><span>503</span></span><span class="bay"><span>504</span></span><span class="bay"><span>505</span></span><span class="bay"><span>506</span></span><span class="bay"><span>507</span></span><span class="bay"><span>508</span></span></span><span class="sec__t">Twin Double<small>$166</small></span></div><div class="sec__lv"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L4</b></span><span class="sec__bays"><span class="bay"><span>401</span></span><span class="bay"><span>402</span></span><span class="bay"><span>403</span></span><span class="bay"><span>404</span></span><span class="bay"><span>405</span></span><span class="bay bay--ooo" role="img" aria-label="406, out of order"><span>406</span></span><span class="bay"><span>407</span></span><span class="bay"><span>408</span></span></span><span class="sec__t">Twin Double<small>$166</small></span></div><div class="sec__lv"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L3</b></span><span class="sec__bays"><span class="bay"><span>301</span></span><span class="bay"><span>302</span></span><span class="bay"><span>303</span></span><span class="bay"><span>304</span></span><span class="bay"><span>305</span></span><span class="bay"><span>306</span></span><span class="bay"><span>307</span></span><span class="bay"><span>308</span></span></span><span class="sec__t">Queen<small>$136</small></span></div><div class="sec__lv"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L2</b></span><span class="sec__bays"><span class="bay"><span>201</span></span><span class="bay"><span>202</span></span><span class="bay"><span>203</span></span><span class="bay"><span>204</span></span><span class="bay"><span>205</span></span><span class="bay"><span>206</span></span><span class="bay"><span>207</span></span><span class="bay"><span>208</span></span></span><span class="sec__t">Queen<small>$136</small></span></div><div class="sec__lv"><span class="sec__dat"><svg class="datum" viewBox="0 0 22 12" aria-hidden="true"><path d="M1 11.5H21"/><path d="M6 1.5H16L11 11Z"/></svg><b>L1</b></span><span class="sec__bays"><span class="bay"><span>101</span></span><span class="bay"><span>102</span></span><span class="bay"><span>103</span></span><span class="bay"><span>104</span></span><span class="bay"><span>105</span></span><span class="bay"><span>106</span></span><span class="bay"><span>107</span></span><span class="bay"><span>108</span></span></span><span class="sec__t">Queen<small>$136</small></span></div><div class="sec__gr" aria-hidden="true"></div></div>
+<p class="key"><span><span class="sym sym--vc" aria-hidden="true"></span>Room</span><span><span class="sym sym--sel" aria-hidden="true"></span>Being edited</span><span><span class="sym sym--ooo" aria-hidden="true"></span>OOO out of order</span></p>
+</section><section aria-labelledby="m3">
+<div class="dt"><span class="bub" aria-hidden="true"><b>3</b><i>B-201</i></span><div class="dt__t"><h2 id="m3">Revision log</h2><p class="dt__s">Recent changes to rooms</p></div></div>
+<table class="sch rev"><thead><tr><th>Rev</th><th>Date</th><th>Description</th></tr></thead><tbody><tr><td><svg class="delta delta--draft" viewBox="0 0 24 21" role="img" aria-label="Revision 5"><path d="M12 1.5 L22.5 19.5 H1.5 Z"/><text x="12" y="16.5">5</text></svg></td><td class="when">Now</td><td>Deluxe price $238 <svg class="i i--s arr" role="img" aria-label="to"><use href="#i-arrow-right"/></svg> $248 · not saved yet · A. Mori</td></tr><tr><td><svg class="delta" viewBox="0 0 24 21" role="img" aria-label="Revision 4"><path d="M12 1.5 L22.5 19.5 H1.5 Z"/><text x="12" y="16.5">4</text></svg></td><td class="when">26 Sep</td><td>702 out of order: repaint, back 2 Oct</td></tr><tr><td><svg class="delta" viewBox="0 0 24 21" role="img" aria-label="Revision 3"><path d="M12 1.5 L22.5 19.5 H1.5 Z"/><text x="12" y="16.5">3</text></svg></td><td class="when">25 Sep</td><td>406 out of order: leak, back 29 Sep</td></tr><tr><td><svg class="delta" viewBox="0 0 24 21" role="img" aria-label="Revision 2"><path d="M12 1.5 L22.5 19.5 H1.5 Z"/><text x="12" y="16.5">2</text></svg></td><td class="when">1 Sep</td><td>Queen price $128 <svg class="i i--s arr" role="img" aria-label="to"><use href="#i-arrow-right"/></svg> $136 · Samuel Otieno</td></tr><tr><td><svg class="delta" viewBox="0 0 24 21" role="img" aria-label="Revision 1"><path d="M12 1.5 L22.5 19.5 H1.5 Z"/><text x="12" y="16.5">1</text></svg></td><td class="when">12 Aug</td><td>Family Suite count 6 <svg class="i i--s arr" role="img" aria-label="to"><use href="#i-arrow-right"/></svg> 8</td></tr></tbody></table>
+</section></div>
+</main>
+<div class="strip-top">
+  <div class="proj"><svg class="proj__mark" viewBox="0 0 34 34" aria-hidden="true" fill="none" stroke="currentColor"><rect x="1.5" y="1.5" width="31" height="31" stroke-width="2"/><path d="M1.5 22.5H32.5M11.5 1.5V22.5M22 1.5V22.5" stroke-width="1.3"/><path d="M8 22.5A5 5 0 0 0 3 17.5V22.5" stroke-width="1"/><rect x="13.5" y="3.5" width="6.5" height="17" fill="currentColor" fill-opacity=".18" stroke="none"/></svg><div><p class="proj__name">Alder House</p><p class="proj__sub">Front desk · 64 rooms</p></div></div>
+  <nav class="idx" aria-label="Sheet index"><h2 class="idx__h">Sheet index</h2><p class="idx__grp"><span>A · Front desk</span></p><ul><li><a href="01-today.html"><span class="idx__no">A-101</span><span class="idx__t">Today</span></a></li><li><a href="02-availability.html"><span class="idx__no">A-102</span><span class="idx__t">Availability</span></a></li><li><a href="03-new-booking.html"><span class="idx__no">A-103</span><span class="idx__t">Bookings</span></a></li></ul><p class="idx__grp"><span>B · Setup</span><span>Admin</span></p><ul><li><a href="07-rooms.html" aria-current="page"><span class="idx__no">B-201</span><span class="idx__t">Rooms</span></a></li><li><a href="08-promo-codes.html"><span class="idx__no">B-202</span><span class="idx__t">Promo codes</span></a></li><li><a href="09-users.html"><span class="idx__no">B-203</span><span class="idx__t">Users</span></a></li></ul></nav>
+</div>
+<div class="strip-mid"><section class="snotes"><h2>General notes</h2><ol><li><span>Price and count changes apply to new bookings. Existing bookings keep their price.</span></li><li><span>A room type can't be deleted while it has upcoming bookings or occupied rooms.</span></li><li><span>Receptionists see rooms and prices but can't change them.</span></li></ol></section></div>
+<div class="tb" role="contentinfo">
+  <dl>
+    <div class="tb__c tb__c--full tb__title"><dt>Sheet title</dt><dd>Rooms</dd></div>
+    <div class="tb__c"><dt>Date</dt><dd>Sun 27 Sep 2026</dd></div>
+    <div class="tb__c"><dt>Time</dt><dd>11:05</dd></div>
+    <div class="tb__c tb__c--full"><dt>Drawn by</dt><dd><span class="tb__by"><span>A. Mori</span><a class="tb__out" href="#"><svg class="i i--s" aria-hidden="true"><use href="#i-log-out"/></svg>Sign out</a></span><small>Admin · front office manager</small></dd></div>
+    <div class="tb__c tb__c--full tb__no"><dt>Sheet</dt><dd>B-201</dd></div>
+  </dl>
+</div>
+</div>
+</div>
+</body>
+</html>

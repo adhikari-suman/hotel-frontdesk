@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>users · alder house front desk</title>
+<link rel="stylesheet" href="../assets/lanes.css">
+<style>
+.users .lane--sage { flex: .82 1 0; }
+.users .lane--sage-pale { flex: 1 1 0; }
+.users .form-lane { flex: 1.3 1 0; }
+.uc { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding: 12px 14px; background: var(--white); border-radius: var(--r-card); box-shadow: var(--shadow-card); }
+.uc .avatar { grid-row: span 2; }
+.un { font-weight: 600; font-size: var(--t-16); line-height: 1.2; }
+.ue { font-size: var(--t-13); color: var(--ink-2); overflow-wrap: anywhere; }
+.um { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--t-13); margin-top: 4px; }
+.um .i { vertical-align: -2px; }
+.ul { grid-column: 2; font-size: var(--t-12); color: var(--ink-2); }
+.uc.is-you { box-shadow: 0 0 0 2px var(--ink), var(--shadow-card); }
+.uc.is-inv { border: 1.5px dashed var(--ink-2); box-shadow: none; }
+.uc.is-off { background: transparent; box-shadow: none; border: 1.5px dashed var(--line-strong); color: var(--ink-off); }
+.uc.is-off .ue, .uc.is-off .ul { color: var(--ink-off); }
+.uc.is-off .avatar { background: var(--deck); border-style: dashed; border-color: var(--ink-off); color: var(--ink-off); }
+.uc.ghost { background: rgba(255, 255, 255, .55); box-shadow: none; border: 2px dashed var(--ink); }
+.roles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.role { border-radius: var(--r-card); border: 1.5px solid var(--line); padding: 14px; display: grid; gap: 10px; align-content: start; background: var(--white); }
+.role.is-on { border: 2px solid var(--ink); background: var(--water-pale); padding: 13.5px; }
+.role:not(.is-on) { background: var(--sage-pale); }
+.role-h { display: flex; align-items: center; gap: 8px; }
+.role-h h3 { font-size: var(--t-19); margin-right: auto; }
+.role .radio { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; background: var(--white); flex: none; }
+.role.is-on .radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+.can, .cant { display: grid; gap: 6px; font-size: var(--t-14); }
+.can li, .cant li { display: flex; gap: 8px; align-items: flex-start; line-height: 1.3; }
+.can .i, .cant .i { margin-top: 1px; }
+.cant-h { font-size: var(--t-13); font-weight: 600; margin-top: 2px; }
+.cant li { color: var(--ink-2); }
+@media (max-width: 1180px) { .roles { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="is-admin">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-square-pen" viewBox="0 0 24 24"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /> <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" /></symbol><symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <line x1="19" x2="19" y1="8" y2="14" /> <line x1="22" x2="16" y1="11" y2="11" /></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol></defs></svg>
+<header class="topbar"><a class="wordmark" href="01-today.html"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="7" width="6.5" height="21" rx="3.25" fill="#77EEBB"/><rect x="11.75" y="7" width="6.5" height="21" rx="3.25" fill="#2FB38A"/><rect x="21.5" y="13" width="6.5" height="15" rx="3.25" fill="#0B3F3A"/><circle cx="24.75" cy="6" r="4.25" fill="#EEBB33"/></svg><span>alder house</span></a><nav class="nav nav-admin" aria-label="Main"><a href="01-today.html">today</a><a href="02-availability.html">availability</a><span class="nav-sep" aria-hidden="true"></span><span class="nav-group">admin</span><a href="07-rooms.html">rooms</a><a href="08-promo-codes.html">promo codes</a><a href="09-users.html" aria-current="page">users</a></nav><div class="topbar-end"><span class="clock">sun 27 sep<b>11:05</b></span><div class="who"><span class="avatar is-admin">AM</span><span><b>Aiko Mori</b><small>admin · front office manager</small></span></div></div><div class="rope-h" aria-hidden="true"></div></header>
+<main class="page">
+<div class="pagehead">
+  <div class="titles"><h1>users</h1>
+    <p class="sub"><span><b class="num">8</b> users</span><span class="dot-sep">2 admins · 6 receptionists</span><span class="dot-sep">2 on shift now</span></p></div>
+</div>
+<div class="lanes users"><section class="lane lane--sage" aria-labelledby="u-a">
+  <header class="lane-head"><h2 id="u-a">admins <span class="n">2</span></h2><p class="meta"><span class="code adm">ADMIN</span> office 09–17</p></header>
+  <div class="lane-body"><article class="uc is-you">
+  <span class="avatar is-admin">AM</span>
+  <div class="ub"><p class="un">Aiko Mori</p><p class="ue">aiko.mori@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Office 09–17</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
+  <p class="ul">now (you)</p>
+</article><article class="uc">
+  <span class="avatar is-admin">SO</span>
+  <div class="ub"><p class="un">Samuel Otieno</p><p class="ue">samuel.otieno@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Office 09–17</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
+  <p class="ul">today 08:30</p>
+</article></div>
+</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage-pale" aria-labelledby="u-r">
+  <header class="lane-head"><h2 id="u-r">receptionists <span class="n">6</span></h2><p class="meta"><span class="code rec">RECEPTION</span> 4 active · 1 invited · 1 deactivated</p></header>
+  <div class="lane-body"><article class="uc">
+  <span class="avatar">NR</span>
+  <div class="ub"><p class="un">Nadia Rahimi</p><p class="ue">nadia.rahimi@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Morning 07–15</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
+  <p class="ul">on shift</p>
+</article><article class="uc">
+  <span class="avatar">TF</span>
+  <div class="ub"><p class="un">Tomás Ferreira</p><p class="ue">tomas.ferreira@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Morning 07–15</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
+  <p class="ul">on shift</p>
+</article><article class="uc">
+  <span class="avatar">PM</span>
+  <div class="ub"><p class="un">Priya Menon</p><p class="ue">priya.menon@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Night 23–07</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
+  <p class="ul">today 06:59</p>
+</article><article class="uc">
+  <span class="avatar">JW</span>
+  <div class="ub"><p class="un">Jonah Weiss</p><p class="ue">jonah.weiss@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Evening 15–23</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
+  <p class="ul">yesterday 22:58</p>
+</article><article class="uc is-inv">
+  <span class="avatar">GA</span>
+  <div class="ub"><p class="un">Grace Achterberg</p><p class="ue">grace.achterberg@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Evening 15–23</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-mail"/></svg>Invited</span></p></div>
+  <p class="ul">invite sent 25 Sep</p>
+</article><article class="uc is-off">
+  <span class="avatar">LB</span>
+  <div class="ub"><p class="un">Luca Bianchi</p><p class="ue">luca.bianchi@alderhouse.example</p>
+    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> no shift</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-ban"/></svg>Deactivated</span></p></div>
+  <p class="ul">3 Aug</p>
+</article>
+    <article class="uc ghost"><span class="avatar">ML</span><div class="ub"><p class="un">Mei Lin Tan</p><p class="ue">meilin.tan@alderhouse.example</p>
+      <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Evening 15–23</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-square-pen"/></svg>Drafting</span></p></div><p class="ul">joins this lane</p></article>
+  </div>
+</section><div class="rope" aria-hidden="true"></div><section class="lane lane--white form-lane" aria-labelledby="u-n">
+  <header class="lane-head"><h2 id="u-n">new user</h2><p class="meta">Admins create users. Everyone signs in with their own email.</p></header>
+  <div class="lane-body">
+    <div class="fields">
+      <div class="fields two">
+        <div class="field"><label>Full name <span class="req">*</span></label><span class="input"><span class="v">Mei Lin Tan</span></span></div>
+        <div class="field"><label>Shift</label><span class="input"><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg><span class="v">Evening 15:00–23:00</span><svg class="i i-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></span></div>
+      </div>
+      <div class="field"><label>Work email <span class="req">*</span></label><span class="input is-focus"><svg class="i i-sm" aria-hidden="true"><use href="#i-mail"/></svg><span class="v">meilin.tan@alderhouse.example</span></span><span class="hint">first.last@alderhouse.example</span></div>
+      <div class="field"><span class="label">Role <span class="req">*</span></span>
+        <div class="roles">
+          <div class="role is-on" role="radio" aria-checked="true">
+            <div class="role-h"><span class="radio"></span><h3>receptionist</h3><span class="code rec">RECEPTION</span></div>
+            <ul class="can"><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Make, rebook and cancel bookings</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Check guests in and out</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Add dinner, breakfast and pickup</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Apply promo codes</span></li></ul>
+            <p class="cant-h">Can’t</p>
+            <ul class="cant"><li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg><span>Change rooms</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg><span>Create promo codes</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg><span>Manage users</span></li></ul>
+          </div>
+          <div class="role" role="radio" aria-checked="false">
+            <div class="role-h"><span class="radio"></span><h3>admin</h3><span class="code adm">ADMIN</span></div>
+            <ul class="can"><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Create users</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Add, update and delete rooms</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Create promo codes</span></li></ul>
+            <p class="cant-h small muted">Also sees the front-desk views: today and availability.</p>
+          </div>
+        </div>
+      </div>
+      <label class="check"><span class="box on"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span>Email a sign-in link now <span class="muted">(expires in 72 hours)</span></span></label>
+    </div>
+  </div>
+  <div class="lane-foot"><a class="btn btn-sun btn-block" href="#">create user and send invite<span class="disc"><svg class="i" aria-hidden="true"><use href="#i-user-plus"/></svg></span></a></div>
+</section></div>
+</main>
+</body>
+</html>

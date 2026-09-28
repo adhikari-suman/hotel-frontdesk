@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bedside Clock · design 9</title>
+<meta name="description" content="Design 9 of the Alder House front-desk set: a bedside alarm clock of LCD windows in a light plastic housing.">
+<link rel="stylesheet" href="assets/bedside.css">
+<style>
+body { padding-bottom: 40px; }
+.ix-face { grid-template-columns: auto auto; justify-content: space-between; }
+.ix { max-width: 1392px; }
+.ix-intro { display: grid; gap: 12px; max-width: 820px; margin: 8px 0 30px; }
+.ix-intro h1 { font: 800 40px/1.05 var(--ui); letter-spacing: -.02em; }
+.lede { font-size: 18px; line-height: 1.5; color: var(--ink); }
+.ix-intro .muted { font-size: 15px; line-height: 1.55; }
+.ix-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 28px; align-items: start; margin-bottom: 26px; }
+.sw-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; }
+.swi { display: grid; grid-template-columns: 44px 1fr auto; grid-template-rows: auto auto; column-gap: 12px; align-items: center; }
+.swi__chip { grid-row: span 2; width: 44px; height: 44px; border-radius: 9px; outline: 1px solid rgba(14,42,51,.3); outline-offset: -1px; }
+.swi__n { font-weight: 700; font-size: 14px; }
+.swi__h { font-size: 12.5px; color: var(--ink-2); grid-row: 1; grid-column: 3; }
+.swi__r { font-size: 12.5px; color: var(--ink-2); grid-column: 2 / span 2; }
+.spec { display: grid; gap: 14px; }
+.spec__row { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+.spec__lab { font-size: 12.5px; color: var(--seg-2); margin-left: auto; }
+.ix-note { margin-bottom: 30px; max-width: 980px; }
+.ix-note__h { font: 800 13px/1.2 var(--ui); letter-spacing: .12em; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
+.ix-note p { font-size: 14px; line-height: 1.55; }
+.figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 22px; }
+.fig { margin: 0; display: grid; gap: 10px; align-content: start; }
+.fig--big { grid-column: span 2; grid-row: span 2; }
+.fig__img { display: block; overflow: hidden; padding: 6px; border-radius: 12px; }
+.fig__img img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; border-radius: 7px; }
+.fig--big .fig__img img { aspect-ratio: 16 / 11.2; }
+.fig__img:hover { outline: 2px solid var(--seg); outline-offset: 2px; }
+figcaption { display: grid; gap: 5px; }
+.fig__t { display: flex; align-items: baseline; gap: 10px; font-size: 15px; }
+.fig__s { font-size: 13px; line-height: 1.45; color: var(--ink-2); }
+.fig__l { display: flex; gap: 14px; font-size: 13px; font-weight: 700; }
+@media (max-width: 1100px) { .ix-grid { grid-template-columns: 1fr; } .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .figs { grid-template-columns: 1fr; } .fig--big { grid-column: auto; grid-row: auto; } .sw-list { grid-template-columns: 1fr; } .ix-intro h1 { font-size: 32px; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol></defs></svg>
+
+<header class="face ix-face">
+  <div class="brand"><span class="brand__name">Alder House</span><span class="brand__sub">Front desk design set · direction 9 of 10</span></div>
+  <div class="lcd clock" aria-hidden="true">
+    <span class="sg clock__time" data-g="88:88">10:42</span>
+    <div class="clock__side"><div class="days"><span>MO</span><span>TU</span><span>WE</span><span>TH</span><span>FR</span><span>SA</span><span class="on">SU</span></div>
+      <div class="clock__date"><span class="sg sg--m" data-g="88">27</span><span class="lbl" style="color:var(--seg)">Sep</span><span class="sg sg--xs" data-g="8888">2026</span></div></div>
+  </div>
+</header>
+<main class="main ix">
+  <section class="ix-intro">
+    <h1>Bedside Clock</h1>
+    <p class="lede">The front desk as a bedside alarm clock. Every number is a seven-segment readout with faint ghost 8s behind it, set in backlit LCD windows in a light matte plastic housing. An acid-lime LED marks what's active, and a row of rubber keys along the bottom edge is the navigation.</p>
+    <p class="muted">Nine screens, one committed world: the same housing, windows, segment numerals, annunciator status codes and key row on the receptionist and admin screens alike. Fonts are self-hosted DSEG7 Classic, Chivo and Chivo Mono (all OFL).</p>
+  </section>
+
+  <div class="ix-grid">
+    <section aria-labelledby="h-pal">
+      <div class="wtitle"><h2 id="h-pal">Palette</h2><span class="sub">Colours and their roles</span></div>
+      <ul class="sw-list"><li class="swi"><span class="swi__chip" style="background:#E3E5E4"></span><span class="swi__n">Housing</span><span class="swi__h mono">#E3E5E4</span><span class="swi__r">Matte plastic ground</span></li><li class="swi"><span class="swi__chip" style="background:#C9CCCB"></span><span class="swi__n">Housing shade</span><span class="swi__h mono">#C9CCCB</span><span class="swi__r">Key row, seams</span></li><li class="swi"><span class="swi__chip" style="background:#BDE8F1"></span><span class="swi__n">LCD window</span><span class="swi__h mono">#BDE8F1</span><span class="swi__r">Backlit glass for data</span></li><li class="swi"><span class="swi__chip" style="background:#0E2A33"></span><span class="swi__n">Lit segment</span><span class="swi__h mono">#0E2A33</span><span class="swi__r">Numerals and text on glass</span></li><li class="swi"><span class="swi__chip" style="background:#CFD6D4"></span><span class="swi__n">Unlit glass</span><span class="swi__h mono">#CFD6D4</span><span class="swi__r">Vacant, full</span></li><li class="swi"><span class="swi__chip" style="background:#DDEE22"></span><span class="swi__n">LED lime</span><span class="swi__h mono">#DDEE22</span><span class="swi__r">Active, selected, primary</span></li><li class="swi"><span class="swi__chip" style="background:#CCEE88"></span><span class="swi__n">Lime glass</span><span class="swi__h mono">#CCEE88</span><span class="swi__r">Selected rows and cells</span></li><li class="swi"><span class="swi__chip" style="background:#BB88DD"></span><span class="swi__n">Lilac</span><span class="swi__h mono">#BB88DD</span><span class="swi__r">Reserved, scheduled</span></li></ul>
+    </section>
+    <section aria-labelledby="h-type">
+      <div class="wtitle"><h2 id="h-type">Type</h2><span class="sub">Segments for numbers, Chivo for words</span></div>
+      <div class="lcd lcd--padl spec">
+        <div class="spec__row"><span class="sg sg--xl" data-g="88:88">10:42</span><span class="money sg--l "><span class="cur">$</span><span class="sg " data-g="888.88">919.74</span></span><span class="spec__lab">DSEG7 Classic Bold · times, rooms, counts, money · ghost 8s at 9.5%</span></div>
+        <hr class="lcd-rule">
+        <div class="spec__row"><span style="font:800 26px/1.1 var(--ui)">Check in Chidi Okafor</span><span class="spec__lab">Chivo 800 · headings, 28 px page titles</span></div>
+        <div class="spec__row"><span style="font:400 15px/1.45 var(--ui)">Deluxe · Sun 27 to Tue 29 Sep · 2 nights, 2 adults</span><span class="spec__lab">Chivo 400–700 · UI text, 14–15 px</span></div>
+        <div class="spec__row"><span class="row" style="gap:8px"><span class="ann ann--solid">Arr</span><span class="ann ">Due</span><span class="ann ">Occ</span><span class="ann ">Vac</span><span class="ann ann--solid">Ooo</span></span><span class="spec__lab">Chivo 800 caps · LCD annunciators</span></div>
+        <div class="spec__row"><span class="row" style="gap:8px"><span class="code">autumn26</span><span class="ref">HVK-2094</span></span><span class="spec__lab">Chivo Mono · codes and refs</span></div>
+      </div>
+    </section>
+  </div>
+
+  <aside class="plate ix-note" aria-labelledby="h-ph"><svg class="i" aria-hidden="true"><use href="#i-triangle-alert"/></svg><div><h2 id="h-ph" class="ix-note__h">Placeholders, not spec</h2>
+    <p>These values are demo figures and need the client's real numbers: the <b>12% tax</b>; the <b>extras prices</b> (breakfast $18 per guest per night, dinner $42 per guest per night, arrival pickup $55 per trip); the promo <b>Offer</b> field, which the brief doesn't define; and the <b>room prices</b> ($136, $166, $238, $366).</p></div></aside>
+
+  <section aria-labelledby="h-scr">
+    <div class="wtitle"><h2 id="h-scr">Screens</h2><span class="sub">1440 px wide at 2×, full page · click for the PNG, or open the HTML</span></div>
+    <div class="figs"><figure class="fig fig--big"><a class="fig__img lcd" href="png/01-today.png"><img src="png/01-today.png" alt="Today screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">01</span><b>Today</b></span><span class="fig__s">The house as an 8×8 LCD matrix with a status code in every cell, and soft-key queues for arriving and leaving.</span><span class="fig__l"><a href="screens/01-today.html">HTML</a><a href="png/01-today.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/02-availability.png"><img src="png/02-availability.png" alt="Availability screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">02</span><b>Availability</b></span><span class="fig__s">Sixteen nights of free rooms in segment digits. Tonight is LED-lit and the Family Suite pair is outlined.</span><span class="fig__l"><a href="screens/02-availability.html">HTML</a><a href="png/02-availability.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/03-new-booking.png"><img src="png/03-new-booking.png" alt="New booking screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">03</span><b>New booking</b></span><span class="fig__s">Entry windows set into the housing, room types as a lit radio list, and a receipt readout totalling $919.74.</span><span class="fig__l"><a href="screens/03-new-booking.html">HTML</a><a href="png/03-new-booking.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/04-booking-rebook.png"><img src="png/04-booking-rebook.png" alt="Booking · rebook screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">04</span><b>Booking · rebook</b></span><span class="fig__s">The rebook panel lights the new Deluxe nights and shows the +$266.90 difference in large segments.</span><span class="fig__l"><a href="screens/04-booking-rebook.html">HTML</a><a href="png/04-booking-rebook.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/05-check-in.png"><img src="png/05-check-in.png" alt="Check-in screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">05</span><b>Check-in</b></span><span class="fig__s">Pick a room from the Deluxe floors. The preview flips 704 from ARR to OCC, stamped 27 Sep 2026 10:46 NR.</span><span class="fig__l"><a href="screens/05-check-in.html">HTML</a><a href="png/05-check-in.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/06-check-out.png"><img src="png/06-check-out.png" alt="Check-out screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">06</span><b>Check-out</b></span><span class="fig__s">The folio as an LCD receipt, a $489.14 balance, and 505 flipping from DUE to VAC.</span><span class="fig__l"><a href="screens/06-check-out.html">HTML</a><a href="png/06-check-out.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/07-rooms.png"><img src="png/07-rooms.png" alt="Rooms screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">07</span><b>Rooms</b></span><span class="fig__s">The room types table with soft keys beside it, the Deluxe price edit lit lime, and the Family Suite delete locked.</span><span class="fig__l"><a href="screens/07-rooms.html">HTML</a><a href="png/07-rooms.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/08-promo-codes.png"><img src="png/08-promo-codes.png" alt="Promo codes screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">08</span><b>Promo codes</b></span><span class="fig__s">The code list with LED status, and a new-code form with an overlap warning and a receptionist preview.</span><span class="fig__l"><a href="screens/08-promo-codes.html">HTML</a><a href="png/08-promo-codes.png">PNG</a></span></figcaption></figure><figure class="fig"><a class="fig__img lcd" href="png/09-users.png"><img src="png/09-users.png" alt="Users screen, 1440 px wide" loading="lazy"></a><figcaption><span class="fig__t"><span class="sg sg--s" data-g="88">09</span><b>Users</b></span><span class="fig__s">The staff list, with role cards that spell out what each role can and can't do.</span><span class="fig__l"><a href="screens/09-users.html">HTML</a><a href="png/09-users.png">PNG</a></span></figcaption></figure></div>
+  </section>
+</main>
+</body>
+</html>

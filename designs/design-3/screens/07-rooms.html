@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rooms · alder house front desk</title>
+<link rel="stylesheet" href="../assets/lanes.css">
+<style>
+.rooms .lane { flex: 1 1 0; }
+.rooms .recent { flex: .9 1 0; }
+.lane.is-editing { outline: 2.5px solid var(--ink); outline-offset: 0; }
+.was { font-size: var(--t-13); color: var(--ink-2); text-decoration: line-through; white-space: nowrap; }
+.input.is-changed .v b { font-weight: 600; }
+.hint .i { vertical-align: -3px; }
+.stats { display: grid; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.stats div { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.stats dt { font-size: var(--t-13); color: var(--ink-2); }
+.stats dd { margin: 0; font-weight: 600; text-align: right; }
+.floors { display: grid; gap: 5px; padding: 4px 2px; }
+.fr { display: grid; grid-template-columns: 16px 1fr; gap: 6px; align-items: center; }
+.fr .fl { font-weight: 600; font-size: var(--t-14); text-align: center; }
+.ft { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+.ft .tile { height: 36px; padding: 0 3px; font-size: var(--t-13); flex-direction: column; justify-content: center; gap: 2px; }
+.ft .tile .c { font-size: var(--t-11); letter-spacing: .08em; font-weight: 600; }
+.ft .tile.due { padding: 0 2px; }
+.blocked { display: grid; gap: 8px; justify-items: start; }
+.editing { display: flex; gap: 8px; align-items: center; font-size: var(--t-13); padding: 8px 12px; border-radius: 10px; background: var(--marigold-pale); border: 1.5px solid var(--marigold); }
+.recent .history li { grid-template-columns: 56px 1fr; }
+.allbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; margin-top: 16px; padding: 14px 18px; border-radius: var(--r-lane); background: var(--white); box-shadow: inset 0 0 0 1px var(--line); font-size: var(--t-15); }
+.allbar b { font-weight: 600; }
+.allbar .keys { margin-left: auto; display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: var(--t-13); color: var(--ink-2); }
+.allbar .keys .code { margin-left: 8px; }
+@media (max-width: 1180px) { .rooms { flex-wrap: wrap; } .rooms .lane { flex: 1 1 40%; } .rooms > .rope { display: none; } }
+</style>
+</head>
+<body class="is-admin">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /> <path d="m15 5 4 4" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-square-pen" viewBox="0 0 24 24"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /> <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" /></symbol><symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M3 6h18" /> <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /> <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /> <line x1="10" x2="10" y1="11" y2="17" /> <line x1="14" x2="14" y1="11" y2="17" /></symbol></defs></svg>
+<header class="topbar"><a class="wordmark" href="01-today.html"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="7" width="6.5" height="21" rx="3.25" fill="#77EEBB"/><rect x="11.75" y="7" width="6.5" height="21" rx="3.25" fill="#2FB38A"/><rect x="21.5" y="13" width="6.5" height="15" rx="3.25" fill="#0B3F3A"/><circle cx="24.75" cy="6" r="4.25" fill="#EEBB33"/></svg><span>alder house</span></a><nav class="nav nav-admin" aria-label="Main"><a href="01-today.html">today</a><a href="02-availability.html">availability</a><span class="nav-sep" aria-hidden="true"></span><span class="nav-group">admin</span><a href="07-rooms.html" aria-current="page">rooms</a><a href="08-promo-codes.html">promo codes</a><a href="09-users.html">users</a></nav><div class="topbar-end"><span class="clock">sun 27 sep<b>11:05</b></span><div class="who"><span class="avatar is-admin">AM</span><span><b>Aiko Mori</b><small>admin · front office manager</small></span></div></div><div class="rope-h" aria-hidden="true"></div></header>
+<main class="page">
+<div class="pagehead">
+  <div class="titles"><h1>rooms</h1>
+    <p class="sub"><span><b class="num">64</b> rooms on 8 floors</span><span class="dot-sep">Tonight <b class="num">53 of 64</b> sold · 83%</span><span class="dot-sep"><b class="num">108</b> upcoming bookings</span></p></div>
+  <div class="end">
+    <a class="btn" href="#"><svg class="i i-sm" aria-hidden="true"><use href="#i-plus"/></svg>add room</a>
+    <a class="btn btn-quiet" href="#">discard</a>
+    <a class="btn btn-sun" href="#">save changes<span class="disc"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span></a>
+  </div>
+</div>
+<div class="lanes rooms"><section class="lane lane--sage" aria-labelledby="t-fam">
+  <header class="lane-head"><h2 id="t-fam">family suite <span class="n">8</span></h2><p class="meta">Rooms 801–808</p></header>
+  <div class="lane-body">
+    <div class="well">
+      <div class="fields">
+        <div class="field"><label>Price a night</label><span class="input"><span class="v num">$366</span><svg class="i i-sm" aria-hidden="true"><use href="#i-pencil"/></svg></span></div>
+        <div class="fields two">
+          <div class="field"><label>Count <span class="opt">rooms</span></label><span class="input is-readonly"><span class="v num">8</span></span></div>
+          <div class="field"><label>Sleeps</label><span class="input"><span class="v num">4</span></span></div>
+        </div>
+      </div>
+      <dl class="stats">
+        <div><dt>Tonight</dt><dd class="num">7 of 8 sold</dd></div>
+        <div><dt>Upcoming bookings</dt><dd class="num">14</dd></div>
+      </dl>
+    </div>
+    <div class="floors"><div class="fr"><span class="fl">8</span><div class="ft"><span class="tile due" title="801 Esposito · due out · out 11:00">801<span class="c">DUE</span></span><span class="tile occ" title="802 Ibarra · in house · out Tue 29">802<span class="c">OCC</span></span><span class="tile occ" title="803 Chen · in house · out Tue 29">803<span class="c">OCC</span></span><span class="tile occ" title="804 Gallo · in house · out Tue 29">804<span class="c">OCC</span></span><span class="tile occ" title="805 Aziz · in house · out Mon 28">805<span class="c">OCC</span></span><span class="tile arr" title="806 Abara · arriving · ETA 13:00">806<span class="c">ARR</span></span><span class="tile occ" title="807 Silva · in house · out Tue 29">807<span class="c">OCC</span></span><span class="tile occ" title="808 Jansen · in house · out Tue 29">808<span class="c">OCC</span></span></div></div></div>
+    <div class="blocked"><button class="btn btn-sm" type="button" disabled><svg class="i i-sm" aria-hidden="true"><use href="#i-trash-2"/></svg>delete type</button>
+          <p class="note lock"><svg class="i i-sm" aria-hidden="true"><use href="#i-lock"/></svg><span><b>Can’t delete.</b> 14 upcoming bookings and 7 rooms occupied tonight.</span></p></div>
+  </div>
+</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage is-editing" aria-labelledby="t-del">
+  <header class="lane-head"><h2 id="t-del">deluxe <span class="n">16</span></h2><p class="meta">Rooms 601–608, 701–708</p></header>
+  <div class="lane-body">
+    <div class="well">
+      <div class="fields">
+        <div class="field"><label>Price a night</label>
+        <span class="input is-changed"><span class="v num"><b>$248</b></span><span class="was num">was $238</span></span>
+        <span class="hint"><svg class="i i-sm" aria-hidden="true"><use href="#i-info"/></svg> The 23 upcoming bookings keep $238. New bookings get $248.</span></div>
+        <div class="fields two">
+          <div class="field"><label>Count <span class="opt">rooms</span></label><span class="input is-readonly"><span class="v num">16</span></span></div>
+          <div class="field"><label>Sleeps</label><span class="input"><span class="v num">2</span></span></div>
+        </div>
+      </div>
+      <dl class="stats">
+        <div><dt>Tonight</dt><dd class="num">12 of 16 sold · <span class="nowrap"><span class="code ooo">OOO</span> 702</span></dd></div>
+        <div><dt>Upcoming bookings</dt><dd class="num">23</dd></div>
+      </dl>
+    </div>
+    <div class="floors"><div class="fr"><span class="fl">7</span><div class="ft"><span class="tile occ" title="701 Popescu · in house · out Mon 28">701<span class="c">OCC</span></span><span class="tile ooo" title="702 Repaint · out of order · back 2 Oct">702<span class="c">OOO</span></span><span class="tile occ" title="703 Sandoval · in house · out Wed 30">703<span class="c">OCC</span></span><span class="tile arr" title="704 Okafor · arriving · ETA 14:00">704<span class="c">ARR</span></span><span class="tile occ" title="705 Holm · in house · out Tue 29">705<span class="c">OCC</span></span><span class="tile occ" title="706 Karimi · in house · out Mon 28">706<span class="c">OCC</span></span><span class="tile vc" title="707 Vacant · vacant, ready · ready">707<span class="c">VC</span></span><span class="tile occ" title="708 Laine · in house · out Sat 3">708<span class="c">OCC</span></span></div></div><div class="fr"><span class="fl">6</span><div class="ft"><span class="tile occ" title="601 Hoffmann · in house · out Mon 28">601<span class="c">OCC</span></span><span class="tile occ" title="602 Yilmaz · in house · out Tue 29">602<span class="c">OCC</span></span><span class="tile arr" title="603 Fischer · arriving · ETA 16:30">603<span class="c">ARR</span></span><span class="tile occ" title="604 Kowalski · in house · out Wed 30">604<span class="c">OCC</span></span><span class="tile due" title="605 Rossi · due out · out 11:00">605<span class="c">DUE</span></span><span class="tile occ" title="606 Ochieng · in house · out Tue 29">606<span class="c">OCC</span></span><span class="tile occ" title="607 Leclerc · in house · out Thu 1">607<span class="c">OCC</span></span><span class="tile vc" title="608 Vacant · vacant, ready · ready">608<span class="c">VC</span></span></div></div></div>
+    <p class="editing"><svg class="i i-sm" aria-hidden="true"><use href="#i-square-pen"/></svg><span><b>Editing</b> · 1 change, not saved yet</span></p>
+  </div>
+</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage" aria-labelledby="t-twi">
+  <header class="lane-head"><h2 id="t-twi">twin double <span class="n">16</span></h2><p class="meta">Rooms 401–408, 501–508</p></header>
+  <div class="lane-body">
+    <div class="well">
+      <div class="fields">
+        <div class="field"><label>Price a night</label><span class="input"><span class="v num">$166</span><svg class="i i-sm" aria-hidden="true"><use href="#i-pencil"/></svg></span></div>
+        <div class="fields two">
+          <div class="field"><label>Count <span class="opt">rooms</span></label><span class="input is-readonly"><span class="v num">16</span></span></div>
+          <div class="field"><label>Sleeps</label><span class="input"><span class="v num">2</span></span></div>
+        </div>
+      </div>
+      <dl class="stats">
+        <div><dt>Tonight</dt><dd class="num">14 of 16 sold · <span class="nowrap"><span class="code ooo">OOO</span> 406</span></dd></div>
+        <div><dt>Upcoming bookings</dt><dd class="num">31</dd></div>
+      </dl>
+    </div>
+    <div class="floors"><div class="fr"><span class="fl">5</span><div class="ft"><span class="tile occ" title="501 Rasmussen · in house · out Tue 29">501<span class="c">OCC</span></span><span class="tile occ" title="502 Salazar · in house · out Wed 30">502<span class="c">OCC</span></span><span class="tile occ" title="503 Ito · in house · out Mon 28">503<span class="c">OCC</span></span><span class="tile occ" title="504 Eriksen · in house · out Fri 2">504<span class="c">OCC</span></span><span class="tile due" title="505 Lindqvist · due out · late 12:00">505<span class="c">DUE</span></span><span class="tile occ" title="506 Banerjee · in house · out Tue 29">506<span class="c">OCC</span></span><span class="tile arr" title="507 Park · arriving · ETA 15:00">507<span class="c">ARR</span></span><span class="tile occ" title="508 Walsh · in house · out Wed 30">508<span class="c">OCC</span></span></div></div><div class="fr"><span class="fl">4</span><div class="ft"><span class="tile occ" title="401 Varga · in house · in 09:05">401<span class="c">OCC</span></span><span class="tile arr" title="402 Novak · arriving · ETA 17:15">402<span class="c">ARR</span></span><span class="tile occ" title="403 Brandt · in house · out Mon 28">403<span class="c">OCC</span></span><span class="tile occ" title="404 Suzuki · in house · out Tue 29">404<span class="c">OCC</span></span><span class="tile occ" title="405 Farouk · in house · out Thu 1">405<span class="c">OCC</span></span><span class="tile ooo" title="406 Leak · out of order · back 29 Sep">406<span class="c">OOO</span></span><span class="tile occ" title="407 Mendes · in house · out Mon 28">407<span class="c">OCC</span></span><span class="tile arr" title="408 Ansah · arriving · ETA 19:40">408<span class="c">ARR</span></span></div></div></div>
+    <div class="blocked"><button class="btn btn-sm" type="button" disabled><svg class="i i-sm" aria-hidden="true"><use href="#i-trash-2"/></svg>delete type</button>
+          <span class="why"><svg class="i i-sm" aria-hidden="true"><use href="#i-lock"/></svg>31 upcoming bookings</span></div>
+  </div>
+</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage" aria-labelledby="t-que">
+  <header class="lane-head"><h2 id="t-que">queen <span class="n">24</span></h2><p class="meta">Rooms 101–308</p></header>
+  <div class="lane-body">
+    <div class="well">
+      <div class="fields">
+        <div class="field"><label>Price a night</label><span class="input"><span class="v num">$136</span><svg class="i i-sm" aria-hidden="true"><use href="#i-pencil"/></svg></span></div>
+        <div class="fields two">
+          <div class="field"><label>Count <span class="opt">rooms</span></label><span class="input is-readonly"><span class="v num">24</span></span></div>
+          <div class="field"><label>Sleeps</label><span class="input"><span class="v num">2</span></span></div>
+        </div>
+      </div>
+      <dl class="stats">
+        <div><dt>Tonight</dt><dd class="num">20 of 24 sold</dd></div>
+        <div><dt>Upcoming bookings</dt><dd class="num">40</dd></div>
+      </dl>
+    </div>
+    <div class="floors"><div class="fr"><span class="fl">3</span><div class="ft"><span class="tile occ" title="301 Tanaka · in house · out Tue 29">301<span class="c">OCC</span></span><span class="tile occ" title="302 Castro · in house · out Thu 1">302<span class="c">OCC</span></span><span class="tile vc" title="303 Vacant · vacant, ready · ready">303<span class="c">VC</span></span><span class="tile occ" title="304 Nguyen · in house · out Mon 28">304<span class="c">OCC</span></span><span class="tile arr" title="305 Mehta · arriving · ETA 18:00">305<span class="c">ARR</span></span><span class="tile occ" title="306 Dimitriou · in house · out Tue 29">306<span class="c">OCC</span></span><span class="tile due" title="307 Dubois · due out · out 11:00">307<span class="c">DUE</span></span><span class="tile occ" title="308 Akhtar · in house · out Wed 30">308<span class="c">OCC</span></span></div></div><div class="fr"><span class="fl">2</span><div class="ft"><span class="tile occ" title="201 Abdi · in house · out Mon 28">201<span class="c">OCC</span></span><span class="tile occ" title="202 Lindgren · in house · out Wed 30">202<span class="c">OCC</span></span><span class="tile arr" title="203 Castillo · arriving · ETA 14:30">203<span class="c">ARR</span></span><span class="tile occ" title="204 Valdés · in house · out Sat 3">204<span class="c">OCC</span></span><span class="tile occ" title="205 Petrov · in house · out Tue 29">205<span class="c">OCC</span></span><span class="tile occ" title="206 Mwangi · in house · out Mon 28">206<span class="c">OCC</span></span><span class="tile occ" title="207 O’Brien · in house · out Wed 30">207<span class="c">OCC</span></span><span class="tile due" title="208 Hughes · due out · out 11:00">208<span class="c">DUE</span></span></div></div><div class="fr"><span class="fl">1</span><div class="ft"><span class="tile occ" title="101 Nakamura · in house · out Mon 28">101<span class="c">OCC</span></span><span class="tile arr" title="102 Brennan · arriving · ETA 15:30">102<span class="c">ARR</span></span><span class="tile occ" title="103 Baptiste · in house · out Wed 30">103<span class="c">OCC</span></span><span class="tile vc" title="104 Vacant · vacant, ready · ready">104<span class="c">VC</span></span><span class="tile occ" title="105 Sørensen · in house · out Mon 28">105<span class="c">OCC</span></span><span class="tile occ" title="106 Delacroix · in house · out Thu 1">106<span class="c">OCC</span></span><span class="tile arr" title="107 Sato · arriving · ETA 16:00">107<span class="c">ARR</span></span><span class="tile occ" title="108 Horvat · in house · out Tue 29">108<span class="c">OCC</span></span></div></div></div>
+    <div class="blocked"><button class="btn btn-sm" type="button" disabled><svg class="i i-sm" aria-hidden="true"><use href="#i-trash-2"/></svg>delete type</button>
+          <span class="why"><svg class="i i-sm" aria-hidden="true"><use href="#i-lock"/></svg>40 upcoming bookings</span></div>
+  </div>
+</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage-pale recent" aria-labelledby="t-rc">
+  <header class="lane-head"><h2 id="t-rc">recent changes</h2><p class="meta">Room setup only</p></header>
+  <div class="lane-body">
+    <ol class="history">
+      <li><time>1 Sep</time><span>Queen price $128 → $136 <span class="muted">· Samuel Otieno</span></span></li>
+      <li><time>26 Sep</time><span>702 out of order</span></li>
+      <li><time>25 Sep</time><span>406 out of order</span></li>
+      <li><time>12 Aug</time><span>Family Suite count 6 → 8</span></li>
+    </ol>
+    <p class="note lock"><svg class="i i-sm" aria-hidden="true"><use href="#i-shield-check"/></svg><span><b>Admins only.</b> Receptionists see rooms and prices but can’t add, change or delete them.</span></p>
+  </div>
+</section></div>
+<div class="allbar num" role="group" aria-label="All rooms">
+  <span><b>all</b></span><span><b>64</b> rooms</span><span>tonight <b>53 of 64</b> · 83%</span><span><b>108</b> upcoming bookings</span>
+  <span class="keys"><span class="code arr">ARR</span> arriving <span class="code occ">OCC</span> in house <span class="code due">DUE</span> due out <span class="code vc">VC</span> vacant <span class="code ooo">OOO</span> out of order</span>
+</div>
+</main>
+</body>
+</html>

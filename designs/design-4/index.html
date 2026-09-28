@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noughts &amp; Crosses · design 4</title>
+<link rel="stylesheet" href="assets/noughts.css">
+<style>
+.ix-band { border-bottom: 1px solid var(--ink); }
+.ix-band .grid { padding-top: 20px; padding-bottom: 20px; }
+.ix-band p { font-size: 14px; }
+.swatches { display: grid; gap: 0; border-top: 1px solid var(--ink); }
+.swatch { display: grid; grid-template-columns: 56px 110px 90px minmax(0,1fr); gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
+.chip { width: 56px; height: 36px; border: 1px solid var(--ink); }
+.spec-d { font-size: 88px; line-height: .92; font-weight: 700; letter-spacing: -0.03em; }
+.spec p + p { margin-top: 10px; }
+.marks-row { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); border-top: 1px solid var(--ink); }
+.marks-row div { display: grid; gap: 6px; justify-items: start; padding: 16px 12px 16px 14px; border-left: 1px solid var(--ink); }
+.states { display: grid; gap: 16px; }
+.states .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.fake-hover { background: var(--lav); }
+.fake-focus { outline: 2px solid var(--ink); outline-offset: 3px; background: var(--lav); }
+.gal { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); column-gap: var(--gut); row-gap: var(--s7); }
+.shot { display: grid; gap: 12px; align-content: start; }
+.shot img { width: 100%; aspect-ratio: 16 / 11; object-fit: cover; object-position: top; border: 1px solid var(--ink); }
+.shot a:hover img { outline: 3px solid var(--lav); }
+.shot figcaption { display: grid; gap: 4px; font-size: 14px; }
+.shot-l { display: flex; gap: 16px; margin-top: 4px; }
+.ph li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
+.ph li:first-child { border-top: 1px solid var(--ink); }
+.ph .mk { width: 16px; height: 16px; margin-top: 2px; }
+@media (max-width: 999px) { .gal { grid-template-columns: 1fr; } .marks-row { grid-template-columns: repeat(2, 1fr); }  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /> <path d="m15 5 4 4" /></symbol><symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M3 6h18" /> <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /> <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /> <line x1="10" x2="10" y1="11" y2="17" /> <line x1="14" x2="14" y1="11" y2="17" /></symbol><symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /> <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" /> <rect x="6" y="14" width="12" height="8" rx="1" /></symbol><symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /> <polyline points="16 17 21 12 16 7" /> <line x1="21" x2="9" y1="12" y2="12" /></symbol><symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></symbol><symbol id="i-car-front" viewBox="0 0 24 24"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" /> <path d="M7 14h.01" /> <path d="M17 14h.01" /> <rect width="18" height="8" x="3" y="10" rx="2" /> <path d="M5 18v2" /> <path d="M19 18v2" /></symbol><symbol id="i-credit-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></symbol><symbol id="i-banknote" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2" /> <circle cx="12" cy="12" r="2" /> <path d="M6 12h.01M18 12h.01" /></symbol><symbol id="i-key-round" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol><symbol id="i-id-card" viewBox="0 0 24 24"><path d="M16 10h2" /> <path d="M16 14h2" /> <path d="M6.17 15a3 3 0 0 1 5.66 0" /> <circle cx="9" cy="11" r="2" /> <rect x="2" y="5" width="20" height="14" rx="2" /></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol><symbol id="i-undo-2" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5" /> <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol><symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <line x1="19" x2="19" y1="8" y2="14" /> <line x1="22" x2="16" y1="11" y2="11" /></symbol><symbol id="i-plane-landing" viewBox="0 0 24 24"><path d="M2 22h20" /> <path d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z" /></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /> <path d="M12 7v5l4 2" /></symbol><symbol id="i-calendar-range" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M16 2v4" /> <path d="M3 10h18" /> <path d="M8 2v4" /> <path d="M17 14h-6" /> <path d="M13 18H7" /> <path d="M7 14h.01" /> <path d="M17 18h.01" /></symbol><symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="m-o" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/></symbol><symbol id="m-x" viewBox="0 0 24 24"><path d="M4.6 4.6l14.8 14.8M19.4 4.6L4.6 19.4"/></symbol><symbol id="m-arr" viewBox="0 0 24 24"><circle cx="14.6" cy="12" r="7.4"/><path d="M0.8 12h10.4M8 8.8l3.2 3.2L8 15.2"/></symbol><symbol id="m-due" viewBox="0 0 24 24"><path d="M1.6 5.6l11.6 12.8M13.2 5.6L1.6 18.4M15.6 12h6.6M19.2 9l3 3-3 3"/></symbol><symbol id="m-ooo" viewBox="0 0 24 24"><path d="M4.2 4.2h15.6v15.6H4.2zM4.2 19.8L19.8 4.2"/></symbol></defs></svg>
+<header class="ix-band"><div class="wrap grid">
+  <div class="bm brand" style="min-height:0"><span class="wordmark"><svg viewBox="0 0 30 30" aria-hidden="true" fill="none" stroke="currentColor"><path d="M10 0v30M20 0v30M0 10h30M0 20h30" stroke-width="1.2"/><circle cx="5" cy="5" r="2.9" stroke-width="1.8"/><path d="M12.6 12.6l4.8 4.8M17.4 12.6l-4.8 4.8" stroke-width="1.8"/><circle cx="25" cy="25" r="2.9" stroke-width="1.8"/></svg>Alder House</span></div>
+  <div class="bm"><p><b>Front desk design set</b><br>Design 4 of 10. Nine desktop screens at 1440 px.</p></div>
+  <div class="bm"><p>Static HTML and CSS, self-hosted fonts, no scripts.<br><a class="link" href="README.md">README</a></p></div>
+</div></header>
+<main>
+<section class="head wrap grid">
+  <div class="m12"><h1 class="display">Noughts &amp; Crosses</h1>
+    <p class="lede">International Typographic Style on a strict three-module grid: a white field, big flush-left black grotesk and 1 px black rules. The only colour is a lavender field for selection and focus, with taupe as the second neutral for disabled, danger and the admin area.</p>
+    <p class="lede">Room status is drawn as the marks of the game, so the house reads at a glance without colour: O is free, X is taken, and small arrows say who is arriving or leaving.</p></div>
+  <div class="m3 head-aside"><p class="note"><svg class="i " aria-hidden="true"><use href="#i-info"/></svg><span><b>Placeholders, not spec.</b> The 12% tax, the extras prices (breakfast $18 and dinner $42 per guest per night, pickup $55 per trip), the promo <b>Offer</b> field and the room prices are placeholders to confirm.</span></p></div>
+</section>
+<section class="wrap grid body">
+  <section class="m123 sec">
+    <div class="sec-h"><h2>Status marks</h2><p class="meta">Drawn as SVG strokes, always with the code and words</p></div>
+    <div class="marks-row"><div><svg class="mk mk-lg" aria-hidden="true"><use href="#m-o"/></svg><span class="sc">VC</span><span>Vacant, ready</span></div><div><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span class="sc">OCC</span><span>In house</span></div><div><svg class="mk mk-lg" aria-hidden="true"><use href="#m-arr"/></svg><span class="sc">ARR</span><span>Arriving today</span></div><div><svg class="mk mk-lg" aria-hidden="true"><use href="#m-due"/></svg><span class="sc">DUE</span><span>Due out today</span></div><div><svg class="mk mk-lg" aria-hidden="true"><use href="#m-ooo"/></svg><span class="sc">OOO</span><span>Out of order</span></div></div>
+  </section>
+  <section class="m1 sec">
+    <div class="sec-h"><h2>Palette</h2></div>
+    <ul class="swatches">
+      <li class="swatch"><span class="chip" style="background:#FFFFFF"></span><b>Paper</b><span class="code">#FFFFFF</span><span class="meta">Page ground</span></li>
+      <li class="swatch"><span class="chip" style="background:#0B0B0C"></span><b>Ink</b><span class="code">#0B0B0C</span><span class="meta">Text, rules, marks, the primary action</span></li>
+      <li class="swatch"><span class="chip" style="background:#CCBBFF"></span><b>Lavender</b><span class="code">#CCBBFF</span><span class="meta">Selection field, current item, focus</span></li>
+      <li class="swatch"><span class="chip" style="background:#CCBBAA"></span><b>Taupe</b><span class="code">#CCBBAA</span><span class="meta">Disabled, danger, admin band</span></li>
+      <li class="swatch"><span class="chip" style="background:#4A453F"></span><b>Ink 2</b><span class="code">#4A453F</span><span class="meta">Secondary text, 5:1 or better on every ground</span></li>
+      <li class="swatch"><span class="chip" style="background:#EEE8E1"></span><b>Taupe tint</b><span class="code">#EEE8E1</span><span class="meta">Tonight column, read-only fields</span></li>
+      <li class="swatch"><span class="chip" style="background:#CFC6BB"></span><b>Hairline</b><span class="code">#CFC6BB</span><span class="meta">Row rules inside a module</span></li>
+    </ul>
+  </section>
+  <section class="m2 sec spec">
+    <div class="sec-h"><h2>Type</h2></div>
+    <p class="spec-d">Today</p>
+    <p class="meta">Schibsted Grotesk 700, 88 px, −0.03em. Page names only.</p>
+    <p class="h2">Arriving, 10 of 11 to come</p>
+    <p class="meta">Schibsted Grotesk 650, 24 px. Section heads.</p>
+    <p>Body and labels in Schibsted Grotesk 400 at 15 and 13 px. Tabular figures only in data columns: <span class="tn">$1,106.20</span>.</p>
+    <p><span class="code">autumn26 · HVK-2094 · PRM-0014</span></p>
+    <p class="meta">Fragment Mono, only for codes and references.</p>
+  </section>
+  <section class="m3 sec">
+    <div class="sec-h"><h2>States</h2></div>
+    <div class="states">
+      <div class="row"><button class="btn btn-primary">Confirm booking</button></div>
+      <div class="row"><button class="btn">Default</button><button class="btn fake-hover">Hover</button><button class="btn fake-focus">Focus</button><button class="btn" disabled>Disabled</button></div>
+      <div class="field"><span class="lbl">Field, focused</span><div class="input is-focus">New Year 2027</div></div>
+      <div class="field"><span class="lbl">Valid to, error <span class="req">Required</span></span><div class="input is-error"><span class="muted">Day Month Year</span></div>
+        <p class="err"><svg class="mk " aria-hidden="true"><use href="#m-x"/></svg><span>Add an end date. Both dates are required.</span></p></div>
+      <p class="note is-danger"><svg class="mk " aria-hidden="true"><use href="#m-x"/></svg><span><b>Danger:</b> black on taupe, a drawn X and words.</span></p>
+    </div>
+  </section>
+  <section class="m123 sec">
+    <div class="sec-h"><h2>Nine screens</h2><p class="meta">PNG at 1440 px, 2x, full page. Click a screen for the PNG.</p></div>
+    <div class="gal"><figure class="shot"><a href="png/01-today.png"><img src="png/01-today.png" alt="Today screen" loading="lazy"></a>
+<figcaption><span class="h3">Today</span><span class="meta">Receptionist, 10:42</span><span>The house as an 8 × 8 board of noughts and crosses, arrivals and departures set as a typographic list.</span><span class="shot-l"><a class="link" href="screens/01-today.html">Open HTML</a><a class="link" href="png/01-today.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/02-availability.png"><img src="png/02-availability.png" alt="Availability screen" loading="lazy"></a>
+<figcaption><span class="h3">Availability</span><span class="meta">Receptionist</span><span>16 nights × 4 types, tonight shaded, the Family Suite selection in lavender, and the room chart with free nights drawn as O.</span><span class="shot-l"><a class="link" href="screens/02-availability.html">Open HTML</a><a class="link" href="png/02-availability.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/03-new-booking.png"><img src="png/03-new-booking.png" alt="New booking screen" loading="lazy"></a>
+<figcaption><span class="h3">New booking</span><span class="meta">Receptionist, 10:44</span><span>Stay, room type with O/X per type, floor 8 as a strip, extras, promo with the admin-only note, and a ruled summary.</span><span class="shot-l"><a class="link" href="screens/03-new-booking.html">Open HTML</a><a class="link" href="png/03-new-booking.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/04-booking-rebook.png"><img src="png/04-booking-rebook.png" alt="Booking and rebook screen" loading="lazy"></a>
+<figcaption><span class="h3">Booking and rebook</span><span class="meta">Receptionist, 10:50</span><span>The booking record with a vertical action list; the Rebook panel runs under its pressed button.</span><span class="shot-l"><a class="link" href="screens/04-booking-rebook.html">Open HTML</a><a class="link" href="png/04-booking-rebook.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/05-check-in.png"><img src="png/05-check-in.png" alt="Check in screen" loading="lazy"></a>
+<figcaption><span class="h3">Check in</span><span class="meta">Receptionist, 10:46</span><span>Floors 6 and 7 as a board where only ready rooms can be picked; the outcome drawn as one mark turning into another.</span><span class="shot-l"><a class="link" href="screens/05-check-in.html">Open HTML</a><a class="link" href="png/05-check-in.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/06-check-out.png"><img src="png/06-check-out.png" alt="Check out screen" loading="lazy"></a>
+<figcaption><span class="h3">Check out</span><span class="meta">Receptionist, 10:58</span><span>The folio as a ruled table ending on the balance; X-out turns into O when the guest settles.</span><span class="shot-l"><a class="link" href="screens/06-check-out.html">Open HTML</a><a class="link" href="png/06-check-out.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/07-rooms.png"><img src="png/07-rooms.png" alt="Rooms screen" loading="lazy"></a>
+<figcaption><span class="h3">Rooms</span><span class="meta">Admin, 11:05</span><span>Room types with tonight drawn as rows of marks, an inline price edit and a blocked delete in the danger style.</span><span class="shot-l"><a class="link" href="screens/07-rooms.html">Open HTML</a><a class="link" href="png/07-rooms.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/08-promo-codes.png"><img src="png/08-promo-codes.png" alt="Promo codes screen" loading="lazy"></a>
+<figcaption><span class="h3">Promo codes</span><span class="meta">Admin, 11:05</span><span>Codes with status marks, a validity timeline showing the overlap, and the new-code form with a receptionist preview.</span><span class="shot-l"><a class="link" href="screens/08-promo-codes.html">Open HTML</a><a class="link" href="png/08-promo-codes.png">PNG @2x</a></span></figcaption></figure><figure class="shot"><a href="png/09-users.png"><img src="png/09-users.png" alt="Users screen" loading="lazy"></a>
+<figcaption><span class="h3">Users</span><span class="meta">Admin, 11:05</span><span>Staff table, then the create form across three modules; role cards list what each role can (O) and can't (X) do.</span><span class="shot-l"><a class="link" href="screens/09-users.html">Open HTML</a><a class="link" href="png/09-users.png">PNG @2x</a></span></figcaption></figure></div>
+  </section>
+</section>
+</main>
+</body>
+</html>

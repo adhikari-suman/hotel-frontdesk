@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New booking · Alder House front desk</title>
+<link rel="stylesheet" href="../assets/mirror.css">
+<style>
+.nb { align-items: start; }
+.side { padding-bottom: 6px; }
+.side .ph { padding-top: 20px; }
+.nb .side .ph h2 { font: 600 20px/1.2 var(--serif); }
+.side .sec { border-top: 0; padding: 14px 22px 18px; }
+.mt { margin-top: 14px; }
+.mt-s { margin-top: 10px; }
+.serif-n { font: 600 18px/1 var(--serif); }
+.types { padding-top: 10px; }
+.opt-row { grid-template-columns: 20px minmax(0, 1fr) auto; }
+.opt-row .r { display: grid; justify-items: end; gap: 4px; text-align: right; }
+.opt-row .rn { font-size: 12.5px; color: var(--ink-2); display: inline-flex; gap: 4px; align-items: center; }
+.opt-row.on .rn { color: var(--ink); font-weight: 600; font-family: var(--serif); font-size: 15px; }
+.opt-row .rn.warn .i { color: var(--alert); }
+.seg.wide { display: flex; }
+.seg.wide > * { flex: 1; justify-content: center; }
+.folio { text-align: center; padding: 30px 26px 26px; display: grid; justify-items: center; gap: 0; }
+.medal-lg { width: 112px; height: 112px; border-radius: 50%; border: 3px double var(--ink); display: grid; place-items: center; background: var(--green); }
+.medal-lg b { font: 500 44px/1 var(--serif); font-variant-numeric: tabular-nums lining-nums; }
+.fo-h { margin-top: 14px; font: 500 30px/1.1 var(--serif); }
+.fo-s { margin-top: 4px; color: var(--ink-2); }
+.dates { width: 100%; margin-top: 18px; padding: 14px 0; border-top: 3px double var(--rule-2); border-bottom: 3px double var(--rule-2); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; }
+.dates > div { display: grid; gap: 3px; justify-items: center; }
+.dates b { font: 600 19px/1.1 var(--serif); }
+.dates .mute { font-size: 12.5px; }
+.dates .nights { width: 62px; height: 62px; padding: 8px; border-radius: 50%; border: 1px solid var(--ink); align-content: center; gap: 0; }
+.dates .nights b { font-size: 24px; }
+.dates .nights span { font-size: 11.5px; color: var(--ink-2); }
+.folio .tot { margin-top: 12px; text-align: left; }
+.guar { width: 100%; margin-top: 18px; display: grid; justify-items: center; gap: 8px; }
+.fo-note { margin: 14px 0 20px; text-align: left; color: var(--ink); }
+.xs { display: grid; gap: 8px; }
+.xrow { display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 12px 14px; border: 1px solid var(--rule-2); border-radius: var(--r); cursor: pointer; }
+.xrow.on { background: var(--pink-2); border-color: var(--ink); }
+.xrow .t b { font-weight: 650; font-size: 15px; display: inline-flex; align-items: center; gap: 6px; }
+.xrow .t small { display: block; font-size: 12.5px; color: var(--ink-2); margin-top: 3px; }
+.xrow .amt { font: 600 16px/1.2 var(--serif); font-variant-numeric: tabular-nums lining-nums; }
+.xrow .amt.mute { font: 500 13px/1.4 var(--sans); }
+.promo-in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+.promo-in .inp { border: 1.5px solid var(--ink); }
+.promo-in .v { font-size: 15px; letter-spacing: .06em; font-weight: 600; }
+.promo-in .ok { font-size: 13px; }
+.promo-res { margin-top: 10px; padding: 12px 14px; background: var(--pink); border: 1px solid var(--ink); border-radius: var(--r); display: grid; gap: 3px; }
+.promo-res .mute { color: var(--ink); }
+@media (max-width: 1240px) { .tri > .mid { width: min(520px, 100%); } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol><symbol id="i-calendar-range" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M16 2v4" /> <path d="M3 10h18" /> <path d="M8 2v4" /> <path d="M17 14h-6" /> <path d="M13 18H7" /> <path d="M7 14h.01" /> <path d="M17 18h.01" /></symbol><symbol id="i-car-front" viewBox="0 0 24 24"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" /> <path d="M7 14h.01" /> <path d="M17 14h.01" /> <rect width="18" height="8" x="3" y="10" rx="2" /> <path d="M5 18v2" /> <path d="M19 18v2" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol><symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></symbol><symbol id="i-credit-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol><symbol id="i-layout-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /> <rect width="7" height="7" x="3" y="14" rx="1" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol><symbol id="i-notebook-tabs" viewBox="0 0 24 24"><path d="M2 6h4" /> <path d="M2 10h4" /> <path d="M2 14h4" /> <path d="M2 18h4" /> <rect width="16" height="20" x="4" y="2" rx="2" /> <path d="M15 2v20" /> <path d="M15 7h5" /> <path d="M15 12h5" /> <path d="M15 17h5" /></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-ticket-percent" viewBox="0 0 24 24"><path d="M2 9a3 3 0 1 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 1 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /> <path d="M9 9h.01" /> <path d="m15 9-6 6" /> <path d="M15 15h.01" /></symbol><symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></symbol></defs></svg>
+<header class="top">
+<div class="top-l"><div class="who"><span class="medal" aria-hidden="true">NR</span><div><b>Nadia Rahimi</b><span>Receptionist · morning 07–15</span></div></div><nav class="nav nav-fd" aria-label="Front desk"><a href="01-today.html"><svg class="i" aria-hidden="true"><use href="#i-layout-grid"/></svg><span class="lb">Today</span><span class="ct" aria-label="15 to handle">15</span></a><a href="02-availability.html"><svg class="i" aria-hidden="true"><use href="#i-calendar-range"/></svg><span class="lb">Availability</span></a><a href="04-booking-rebook.html" aria-current="page"><svg class="i" aria-hidden="true"><use href="#i-notebook-tabs"/></svg><span class="lb">Bookings</span></a></nav></div>
+<a class="mark" href="01-today.html" aria-label="Alder House front desk, Today"><b>Alder House</b><small>Front desk</small></a>
+<div class="top-r"><nav class="nav nav-ad" aria-label="Admin"><span class="locked" aria-disabled="true" title="Admins only">Rooms<svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span class="sr"> (admins only)</span></span><span class="locked" aria-disabled="true" title="Admins only">Promo codes<svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span class="sr"> (admins only)</span></span><span class="locked" aria-disabled="true" title="Admins only">Users<svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><span class="sr"> (admins only)</span></span></nav><div class="clock"><div><span>Sunday 27 Sep 2026</span><b>10:44</b></div><span class="medal" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span></div></div>
+</header>
+<main class="page">
+
+<header class="ttl"><h1>New booking</h1><p class="sub">Draft for Leila Haddad<span class='dot'></span>from a phone call at 10:38</p></header>
+<div class="tri nb">
+  <section class="leaf side" aria-label="Stay and room">
+    <div class="ph "><h2>Stay</h2></div>
+    <div class="sec">
+      <div class="frow c2">
+        <label class="f"><span class="lbl">Check-in <span class="req" aria-hidden="true">*</span></span><span class="inp"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><span class="v">Fri 2 Oct 2026</span></span></label>
+        <label class="f"><span class="lbl">Check-out <span class="req" aria-hidden="true">*</span></span><span class="inp"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><span class="v">Sun 4 Oct 2026</span></span></label>
+      </div>
+      <div class="frow c3 mt">
+        <div class="f"><span class="lbl">Nights</span><span class="inp ro"><span class="v serif-n">2</span></span></div>
+        <div class="f"><span class="lbl">Adults</span><span class="step"><button aria-label="Fewer adults"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button><output>2</output><button aria-label="More adults"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button></span></div>
+        <div class="f"><span class="lbl">Children</span><span class="step"><button aria-label="Fewer children"><svg class="i" aria-hidden="true"><use href="#i-minus"/></svg></button><output>2</output><button aria-label="More children"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></button></span></div>
+      </div>
+    </div>
+    <div class="ph "><h2>Room type</h2><p class="pm">Free both nights, Fri 2 and Sat 3</p></div>
+    <div class="sec types" role="radiogroup" aria-label="Room type">
+      <div class="opt-row on" role="radio" aria-checked="true" tabindex="0"><span class="rd on"></span><span class="t"><b>Family Suite</b><span>Sleeps 4 · $366 a night</span></span><span class="r"><span class="tag"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>2 free</span><span class="rn">803, 807</span></span></div>
+      <div class="opt-row" role="radio" aria-checked="false" tabindex="-1"><span class="rd"></span><span class="t"><b>Deluxe</b><span>Sleeps 2 · $238 a night</span></span><span class="r"><span class="tag dash">1 free</span><span class="rn warn"><svg class="i sm" aria-hidden="true"><use href="#i-triangle-alert"/></svg>Sleeps 2, party of 4</span></span></div>
+      <div class="opt-row dis" role="radio" aria-checked="false" aria-disabled="true"><span class="rd dis"></span><span class="t"><b>Twin Double</b><span>Sleeps 2 · $166 a night</span></span><span class="r"><span class="tag hatch"><span>Full Sat 3</span></span></span></div>
+      <div class="opt-row dis" role="radio" aria-checked="false" aria-disabled="true"><span class="rd dis"></span><span class="t"><b>Queen</b><span>Sleeps 2 · $136 a night</span></span><span class="r"><span class="tag hatch"><span>Full Sat 3</span></span></span></div>
+    </div>
+    <div class="ph "><h2>Room</h2></div>
+    <div class="sec">
+      <div class="seg wide" role="radiogroup" aria-label="Room number"><span role="radio" aria-checked="false">Assign at check-in</span><span role="radio" aria-checked="false">803</span><span class="on" role="radio" aria-checked="true"><svg class="i sm" aria-hidden="true"><use href="#i-check"/></svg>807</span></div>
+      <p class="help mt-s">807 is free Fri 2 and Sat 3 on floor 8</p>
+    </div>
+  </section>
+  <section class="arch mid folio" aria-labelledby="h-folio">
+    <div class="medal-lg" aria-hidden="true"><b>807</b></div>
+    <h2 id="h-folio" class="fo-h">Family Suite</h2>
+    <p class="fo-s">Leila Haddad · 2 adults, 2 children</p>
+    <div class="dates">
+      <div><span class="lbl">Arrive</span><b>Fri 2 Oct</b><span class="mute">from 14:00</span></div>
+      <div class="nights"><b>2</b><span>nights</span></div>
+      <div><span class="lbl">Depart</span><b>Sun 4 Oct</b><span class="mute">by 11:00</span></div>
+    </div>
+    <table class="tot">
+      <tr><td>Room <span class="d">2 × $366</span></td><td>$732.00</td></tr>
+      <tr><td><span class="promo">AUTUMN26</span> <span class="d">15% off room</span></td><td>−$109.80</td></tr>
+      <tr><td>Breakfast <span class="d">4 × 2 × $18</span></td><td>$144.00</td></tr>
+      <tr><td>Arrival pickup <span class="d">Fri 13:20</span></td><td>$55.00</td></tr>
+      <tr class="sub"><td>Subtotal</td><td>$821.20</td></tr>
+      <tr><td>Tax 12%</td><td>$98.54</td></tr>
+      <tr class="grand"><td>Total</td><td>$919.74</td></tr>
+    </table>
+    <div class="guar">
+      <span class="lbl">Guarantee</span>
+      <div class="seg" role="radiogroup" aria-label="Guarantee"><span role="radio" aria-checked="false"><svg class="i sm" aria-hidden="true"><use href="#i-credit-card"/></svg>Card now</span><span class="on" role="radio" aria-checked="true"><svg class="i sm" aria-hidden="true"><use href="#i-check"/></svg>Pay at check-in</span></div>
+    </div>
+    <p class="note fo-note"><svg class="i sm" aria-hidden="true"><use href="#i-info"/></svg><span>Free cancellation until <b>Thu 1 Oct, 14:00</b>. After that the first night is charged.</span></p>
+    <div class="primary-wrap"><button class="btn btn-primary"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Confirm booking</button><button class="btn btn-quiet btn-sm">Discard draft</button></div>
+  </section>
+  <section class="leaf side" aria-label="Guest, extras and promo code">
+    <div class="ph "><h2>Guest</h2></div>
+    <div class="sec">
+      <label class="f"><span class="lbl">Full name <span class="req" aria-hidden="true">*</span></span><span class="inp"><span class="v">Leila Haddad</span></span></label>
+      <div class="frow c2 mt">
+        <label class="f"><span class="lbl">Phone</span><span class="inp"><span class="v">+1 617 555 0186</span></span></label>
+        <label class="f"><span class="lbl">Booked via</span><span class="inp ro"><svg class="i sm" aria-hidden="true"><use href="#i-phone"/></svg><span class="v">Phone call, 10:38</span></span></label>
+      </div>
+      <label class="f mt"><span class="lbl">Email</span><span class="inp"><span class="v">leila.haddad@example.com</span></span></label>
+      <label class="f mt"><span class="lbl">Requests</span><span class="inp ta"><span class="v">Children aged 6 and 9.</span></span></label>
+    </div>
+    <div class="ph "><h2>Extras</h2></div>
+    <div class="sec xs">
+      <label class="xrow on"><span class="cb on"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="t"><b><svg class="i sm" aria-hidden="true"><use href="#i-coffee"/></svg> Breakfast</b><small>$18 per guest per night · 4 guests × 2 nights</small></span><span class="amt">$144.00</span></label>
+      <label class="xrow"><span class="cb"></span><span class="t"><b><svg class="i sm" aria-hidden="true"><use href="#i-utensils"/></svg> Dinner</b><small>$42 per guest per night · not added</small></span><span class="amt mute">None</span></label>
+      <label class="xrow on"><span class="cb on"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="t"><b><svg class="i sm" aria-hidden="true"><use href="#i-car-front"/></svg> Arrival pickup</b><small>$55 per trip · flight lands Fri 2 Oct, 13:20, Terminal B</small></span><span class="amt">$55.00</span></label>
+    </div>
+    <div class="ph "><h2>Promo code</h2></div>
+    <div class="sec">
+      <div class="promo-in">
+        <span class="inp"><svg class="i" aria-hidden="true"><use href="#i-ticket-percent"/></svg><span class="v mono">AUTUMN26</span><span class="ok"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>Valid</span></span>
+        <button class="btn btn-sm">Remove</button>
+      </div>
+      <div class="promo-res">
+        <p class="h4">Autumn Weekends 2026</p>
+        <p>15% off room nights · 1 Sep–30 Nov 2026</p>
+        <p class="mute">82 of 120 uses left</p>
+      </div>
+      <p class="note mt-s"><svg class="i sm" aria-hidden="true"><use href="#i-lock"/></svg><span>Codes are created by admins. You can apply a code, not create one.</span></p>
+    </div>
+  </section></div>
+
+</main>
+</body>
+</html>
