@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lit Windows — design 9</title><link rel="stylesheet" href="assets/lit-windows.css">
+<style>
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px 60px}
+.hero{background:var(--ink);color:#E9E5FF;border-radius:0 0 22px 22px;padding:48px 28px 0;margin-bottom:36px}
+.hero .in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.hero h1{font-size:54px;line-height:1.02;color:#fff;font-weight:600}
+.hero p{max-width:60ch;font-size:16px;line-height:1.55;color:#CFCBE6;margin:18px 0 32px}
+.bldg{background:var(--stone);border:2px solid #fff;border-bottom:0;border-radius:10px 10px 0 0;padding:12px 14px 0}
+.bldg .r{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;padding:8px 0;border-bottom:3px solid var(--stone-2)}
+.bldg .pane{height:34px}
+.sw{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.sw div{border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:#fff;font-size:12px}
+.sw i{display:block;height:64px}
+.sw span{display:block;padding:8px 10px}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.shots a{text-decoration:none;color:var(--ink);display:block}
+.shots img{width:100%;aspect-ratio:1440/1000;object-fit:cover;object-position:left top;border-radius:12px;border:1px solid var(--rule);background:#fff}
+.shots b{display:block;margin-top:8px;font:600 13px "Unbounded"}
+.sec{margin:40px 0 14px}
+@media (max-width:800px){.hero .in,.spec{grid-template-columns:1fr}.shots,.sw{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}}
+</style></head><body>
+<header class="hero"><div class="in"><div><div class="small" style="color:#E9C9A8">Design 9 of 15 · Alder House front desk</div><h1>Lit Windows</h1>
+<p>Stand across the street from a hotel at dusk and you can read it: lit windows are guests in, dark glass is free, a blind half down is someone about to arrive. This direction draws Alder House as an architectural elevation, 4 floors × 16 windows, and uses that façade as the room board everywhere a room appears. Navigation is a lift panel down the right edge; admin floors sit behind a key switch, which is how permissions show up for receptionists.</p></div>
+<div class="bldg"><div class="r">
+<div class="pane lit"><span>MO</span></div><div class="pane vac"></div><div class="pane arr"><span>HM</span></div><div class="pane lit"><span>KM</span></div><div class="pane dep"><span>EP</span></div><div class="pane lit"><span>LF</span></div><div class="pane ooo"><span>×</span></div><div class="pane vac"></div></div>
+<div class="r"><div class="pane vac"></div><div class="pane lit"><span>OB</span></div><div class="pane lit"><span>MC</span></div><div class="pane dep"><span>RC</span></div><div class="pane vac"></div><div class="pane arr"><span>AN</span></div><div class="pane lit"><span>JW</span></div><div class="pane lit"><span>SR</span></div></div></div></div></header>
+<main class="wrap">
+<h2 class="sec">Palette</h2>
+<div class="sw">
+<div><i style="background:#1D1B3A"></i><span><b>Dusk ink</b> #1D1B3A<br>Text, lift panel, sky</span></div>
+<div><i style="background:#3355DD"></i><span><b>Enamel blue</b> #3355DD<br>The one primary action</span></div>
+<div><i style="background:#EE8833"></i><span><b>Lamplight</b> #EE8833<br>Occupied, active nav</span></div>
+<div><i style="background:#7755FF"></i><span><b>Dusk violet</b> #7755FF<br>Departures, selected range</span></div>
+<div><i style="background:repeating-linear-gradient(45deg,#664488 0 5px,#8A6AAA 5px 10px)"></i><span><b>Plum hatch</b> #664488<br>Out of order</span></div>
+<div><i style="background:#DCE3F5"></i><span><b>Glass</b> #DCE3F5<br>Vacant</span></div>
+<div><i style="background:#E6DAD6"></i><span><b>Stone</b> #E6DAD6<br>Façade</span></div>
+<div><i style="background:#EDE4EC"></i><span><b>Dusk haze</b> #EDE4EC<br>Page</span></div>
+<div><i style="background:#B82A43"></i><span><b>Crimson</b> #B82A43<br>Destructive only</span></div>
+<div><i style="background:#237A57"></i><span><b>Green</b> #237A57<br>Discounts, done</span></div></div>
+<h2 class="sec">Type</h2>
+<div class="spec"><div class="plate"><div class="disp" style="font-size:40px;font-weight:600">312 · Deluxe</div><p class="small sub" style="margin-top:8px">Unbounded 500/600. Wide geometric capitals, like lettering on a building. Headings, room numbers, totals.</p></div>
+<div class="plate"><p style="font-size:18px">Hannah Moreau · 14 → 17 Oct · $862.29</p><p class="small sub" style="margin-top:8px">Instrument Sans 400–700 with tabular figures. All UI, tables, forms and money.</p></div></div>
+<h2 class="sec">Screens</h2>
+<div class="shots">
+<a href="screens/01-today.html"><img src="png/01-today.png" alt="Today board"><b>Today</b><span class="small muted">Façade board, arrivals and departures</span></a>
+<a href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability"><b>Availability</b><span class="small muted">Types × 14 nights, range picked</span></a>
+<a href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking"><b>New booking</b><span class="small muted">Extras, promo, live total</span></a>
+<a href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking and rebook"><b>Booking · rebook</b><span class="small muted">Extras, charges, history, cancel terms</span></a>
+<a href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check in"><b>Check in</b><span class="small muted">ID, room, guarantee, keys, upsell</span></a>
+<a href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check out"><b>Check out</b><span class="small muted">Folio by night, settle</span></a>
+<a href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms admin"><b>Rooms</b><span class="small muted">Admin · types, prices, blocked delete</span></a>
+<a href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes admin"><b>Promo codes</b><span class="small muted">Admin · list and create</span></a>
+<a href="screens/09-users.html"><img src="png/09-users.png" alt="Users admin"><b>Users</b><span class="small muted">Admin · staff, roles, permissions</span></a></div>
+</main></body></html>

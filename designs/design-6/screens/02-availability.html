@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Availability — Alder House front desk</title><link rel="stylesheet" href="../assets/fold.css"></head>
+<body><header class="topline">
+  <div class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2h20v20H2z" fill="#FFFFFF" stroke="#14212B" stroke-width="1.5"/><path d="M2 2L22 22H2z" fill="#B4486F"/><path d="M2 2L22 22" stroke="#14212B" stroke-width="1.5" stroke-dasharray="2 2"/></svg>Alder House</div><div class="sep"></div>
+  <div class="ctx">Front desk · <b>Wed 14 Oct 2026</b></div>
+  <div class="grow"></div>
+  <div class="search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM15 15l6 6"/></svg>Find guest, booking or room<kbd>/</kbd></div>
+  <div class="who"><div class="avatar">MO</div><div><div class="nm">Maya Okafor</div><div class="rl">Receptionist</div></div></div>
+</header>
+<style>
+table.av{width:100%;border-collapse:separate;border-spacing:4px}
+table.av thead th{font:500 11.5px var(--ui);color:var(--muted);padding:4px 0 8px;text-align:center}
+table.av thead th b{display:block;font:700 17px var(--ui);color:var(--ink)}
+table.av thead th.we b{color:var(--rose-dk)}
+table.av thead th.today{background:var(--ink);color:#C8D2D8;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%)}
+table.av thead th.today b{color:#fff}
+th.rt{text-align:left;padding-right:12px;width:170px;font-weight:400}
+td.av{height:64px;text-align:center;border:1px solid var(--line);position:relative;background:var(--sheet)}
+td.av b{display:block;font:700 20px var(--ui)}
+td.av small{display:block;font:600 11px var(--ui)}
+td.av.hi{background:var(--crease-lt);border-color:var(--crease)}
+td.av.mid{background:#F4F8F6}
+td.av.low{background:#FFF;border-color:#EFB59E;color:var(--persimmon-dk)}
+td.av.full{background:repeating-linear-gradient(135deg,var(--persimmon-lt) 0 5px,#fff 5px 9px);border-color:#EFB59E;color:var(--persimmon-dk)}
+td.av.sel{background:var(--rose-lt);border-color:var(--rose);border-width:2px 0;color:var(--rose-dk)}
+td.av.sel.s0{border-left-width:2px}
+td.av.sel.s2{border-right-width:2px;background:linear-gradient(225deg,var(--rose) 0 12px,var(--rose-lt) 12px)}
+tr.tot td{text-align:center;border-top:2px solid var(--ink);padding-top:8px}
+tr.tot td b{font:700 15px var(--ui);display:block} tr.tot td small{font-size:11px;color:var(--muted)}
+tr.tot th{border-top:2px solid var(--ink);padding-top:8px}
+.range{display:flex;align-items:stretch;border:1px solid var(--line)}
+.range div{flex:1;padding:10px 12px}.range div+div{border-left:1px dashed var(--crease-dk)}
+.range small{display:block;font-size:12px;color:var(--muted)} .range b{font:700 17px var(--display)}
+</style>
+<section class="head">
+  <div><h1>Availability</h1><p class="sub">Rooms free to sell per night, after holds and out-of-order rooms. Drag across a row to pick nights, then start the booking.</p></div>
+  <div class="actions"><span class="btn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v16H3zM3 10h18M8 2v5M16 2v5M7 14h3v3H7z"/></svg>14 Oct – 27 Oct</span><span class="btn">2 weeks</span><span class="btn ghost">4 weeks</span></div>
+</section>
+<nav class="dock" aria-label="Main"><div class="gl">Desk</div><div class="grp"><a class="" href="01-today.html"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13l8 8M13 13h8v8"/></svg>Today</span><small>64 rooms</small></a><a class="on" href="02-availability.html"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v16H3zM3 10h18M8 2v5M16 2v5M7 14h3v3H7z"/></svg>Availability</span><small>14 nights</small></a><a class="" href="03-new-booking.html"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>New booking</span><small>Walk-in or call</small></a><a class="" href="04-booking-rebook.html"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h10l4 4v16H5zM15 2v4h4M8 11h8M8 15h8M8 19h5"/></svg>Bookings</span><small>Rebook, cancel</small></a><a class="" href="05-check-in.html"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10a4 4 0 1 0 0 .01zM12 10h10M18 10v4M21 10v3"/></svg>Check-in</span><small>9 due</small></a><a class="" href="06-check-out.html"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3H4v18h9M9 12h12M17 8l4 4-4 4"/></svg>Check-out</span><small>7 due</small></a></div><div class="foldline" aria-hidden="true"></div><div class="gl">Admin<br>office</div><div class="grp"><a class="locked" href="07-rooms.html" aria-disabled="true"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20V6M2 16h20v4M2 12h20v4M6 12V9h6v3"/></svg>Rooms</span><small><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4M12 15v2"/></svg> Admins only</small></a><a class="locked" href="08-promo-codes.html" aria-disabled="true"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4zM14 6v12" stroke-dasharray="0"/></svg>Promo codes</span><small><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4M12 15v2"/></svg> Admins only</small></a><a class="locked" href="09-users.html" aria-disabled="true"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3.5 3.5 0 1 0 0-.01zM2 21v-2l3-3h8l3 3v2M16 4a3.5 3.5 0 0 1 0 7M18 15l4 3v3"/></svg>Users</span><small><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4M12 15v2"/></svg> Admins only</small></a></div></nav><div class="fold" style="grid-template-columns:1fr 380px">
+  <div class="panel mountain">
+    <div class="ph"><h2>Free rooms by night</h2><span class="meta">Tonight counts include 7 rooms freed by today’s departures</span></div>
+    <table class="av"><thead><tr><th class="rt"></th><th class=" today">Wed<b>14</b></th><th class="">Thu<b>15</b></th><th class="we">Fri<b>16</b></th><th class="we">Sat<b>17</b></th><th class="">Sun<b>18</b></th><th class="">Mon<b>19</b></th><th class="">Tue<b>20</b></th><th class="">Wed<b>21</b></th><th class="">Thu<b>22</b></th><th class="we">Fri<b>23</b></th><th class="we">Sat<b>24</b></th><th class="">Sun<b>25</b></th><th class="">Mon<b>26</b></th><th class="">Tue<b>27</b></th></tr></thead><tbody><tr><th class="rt"><div class="b">Queen</div><div class="small muted">24 rooms · $136/night</div></th><td class="av mid"><b>7</b></td><td class="av mid"><b>6</b></td><td class="av low"><b>3</b><small>Last few</small></td><td class="av low"><b>2</b><small>Last few</small></td><td class="av hi"><b>9</b></td><td class="av hi"><b>11</b></td><td class="av hi"><b>10</b></td><td class="av mid"><b>8</b></td><td class="av mid"><b>7</b></td><td class="av low"><b>2</b><small>Last few</small></td><td class="av full"><b>0</b><small>Full</small></td><td class="av mid"><b>8</b></td><td class="av hi"><b>12</b></td><td class="av hi"><b>13</b></td></tr><tr><th class="rt"><div class="b">Twin Double</div><div class="small muted">16 rooms · $166/night</div></th><td class="av hi"><b>6</b></td><td class="av mid"><b>5</b></td><td class="av low"><b>2</b><small>Last few</small></td><td class="av low"><b>1</b><small>Last few</small></td><td class="av hi"><b>7</b></td><td class="av hi"><b>8</b></td><td class="av hi"><b>8</b></td><td class="av hi"><b>6</b></td><td class="av mid"><b>5</b></td><td class="av low"><b>1</b><small>Last few</small></td><td class="av full"><b>0</b><small>Full</small></td><td class="av hi"><b>6</b></td><td class="av hi"><b>9</b></td><td class="av hi"><b>10</b></td></tr><tr><th class="rt"><div class="b">Deluxe</div><div class="small muted">16 rooms · $238/night</div></th><td class="av mid sel s0"><b>5</b></td><td class="av mid sel"><b>4</b></td><td class="av mid sel s2"><b>3</b></td><td class="av low"><b>1</b><small>Last few</small></td><td class="av hi"><b>6</b></td><td class="av hi"><b>7</b></td><td class="av hi"><b>6</b></td><td class="av mid"><b>5</b></td><td class="av mid"><b>4</b></td><td class="av low"><b>2</b><small>Last few</small></td><td class="av low"><b>1</b><small>Last few</small></td><td class="av mid"><b>5</b></td><td class="av hi"><b>8</b></td><td class="av hi"><b>9</b></td></tr><tr><th class="rt"><div class="b">Family Suite</div><div class="small muted">8 rooms · $366/night</div></th><td class="av hi"><b>3</b></td><td class="av hi"><b>3</b></td><td class="av low"><b>1</b><small>Last few</small></td><td class="av full"><b>0</b><small>Full</small></td><td class="av mid"><b>2</b></td><td class="av hi"><b>4</b></td><td class="av hi"><b>4</b></td><td class="av hi"><b>3</b></td><td class="av hi"><b>3</b></td><td class="av full"><b>0</b><small>Full</small></td><td class="av full"><b>0</b><small>Full</small></td><td class="av mid"><b>2</b></td><td class="av hi"><b>4</b></td><td class="av hi"><b>5</b></td></tr><tr class="tot"><th class="rt"><div class="b">All types</div><div class="small muted">64 rooms</div></th><td><b>21</b><small>67% full</small></td><td><b>18</b><small>72% full</small></td><td><b>9</b><small>86% full</small></td><td><b>4</b><small>94% full</small></td><td><b>24</b><small>62% full</small></td><td><b>30</b><small>53% full</small></td><td><b>28</b><small>56% full</small></td><td><b>22</b><small>66% full</small></td><td><b>19</b><small>70% full</small></td><td><b>5</b><small>92% full</small></td><td><b>1</b><small>98% full</small></td><td><b>21</b><small>67% full</small></td><td><b>33</b><small>48% full</small></td><td><b>37</b><small>42% full</small></td></tr></tbody></table>
+    <div class="crease-h"></div>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--crease-lt);border-color:var(--crease)"></span>Plenty (over a third free)</span>
+      <span><span class="sw" style="background:#F4F8F6"></span>Filling</span>
+      <span><span class="sw" style="border-color:#EFB59E"></span>Last few: number shown in red with a label</span>
+      <span><span class="sw" style="background:repeating-linear-gradient(135deg,var(--persimmon-lt) 0 4px,#fff 4px 7px);border-color:#EFB59E"></span>Full, no rooms to sell</span>
+      <span><span class="sw" style="background:var(--rose-lt);border:2px solid var(--rose)"></span>Your selection</span>
+    </div>
+    <div class="grid3 mt18">
+      <div class="note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 11v6M12 7v1"/></svg><div><b>Sat 24 Oct is nearly sold out.</b> Only 1 Deluxe left. Offer Family Suite guests the 23rd or the 25th.</div></div>
+      <div class="note warn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2zM12 10v5M12 17v1"/></svg><div><b>2 rooms out of order tonight</b> (208 Queen, 407 Deluxe) are already taken off these numbers.</div></div>
+      <div class="note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4zM14 6v12" stroke-dasharray="0"/></svg><div>Active codes for these dates: <b>autumn26</b> and <b>longstay7</b>. Codes are applied on the booking, not here.</div></div>
+    </div>
+  </div>
+  <div class="panel valley">
+    <div class="ph"><h2>Your selection</h2></div>
+    <div class="range"><div><small>Check-in</small><b>Wed 14 Oct</b></div><div><small>Check-out</small><b>Sat 17 Oct</b></div></div>
+    <div class="lines mt14">
+      <div class="line"><span class="d">Room type</span><span class="a">Deluxe</span></div>
+      <div class="line"><span class="d">Nights</span><span class="a">3</span></div>
+      <div class="line"><span class="d">Free every night<small>Lowest count in the range</small></span><span class="a">3 rooms</span></div>
+      <div class="line"><span class="d">Rate</span><span class="a">$238 / night</span></div>
+      <div class="line sum"><span class="d b">Room nights before extras</span><span class="a">$714.00</span></div>
+    </div>
+    <div class="field mt18"><label>Guests</label><div class="flex"><span class="stepper"><i>–</i><b>2</b><i>+</i></span><span class="muted small">adults</span><span class="stepper" style="margin-left:10px"><i>–</i><b>0</b><i>+</i></span><span class="muted small">children</span></div></div>
+    <a class="btn primary lg full mt24" href="03-new-booking.html">Start booking for these nights</a>
+    <div class="crease-h"></div>
+    <h3>Same nights, other types</h3>
+    <div class="list mt10">
+      <div class="row" style="grid-template-columns:1fr auto auto"><span>Queen</span><span class="muted small">3 free · $136</span><span class="btn sm">Switch</span></div>
+      <div class="row" style="grid-template-columns:1fr auto auto"><span>Twin Double</span><span class="muted small">2 free · $166</span><span class="btn sm">Switch</span></div>
+      <div class="row" style="grid-template-columns:1fr auto auto"><span>Family Suite</span><span class="small" style="color:var(--persimmon-dk)">1 free · $366</span><span class="btn sm">Switch</span></div>
+    </div>
+  </div>
+</div>
+</body></html>

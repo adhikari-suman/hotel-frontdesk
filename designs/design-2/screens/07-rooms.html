@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rooms — Alder House front desk</title>
+<link rel="stylesheet" href="../assets/splitflap.css"></head>
+<body><div class="app">
+  <aside class="route" aria-label="Main navigation">
+    <div class="brand"><div class="name">Alder House</div><div class="sub">Front desk</div></div>
+    <nav><ul class="line"><li class="stn"><span class="code">D1</span><a href="01-today.html">Today</a></li><li class="stn"><span class="code">D2</span><a href="02-availability.html">Availability</a></li><li class="stn"><span class="code">D3</span><a href="03-new-booking.html">New booking</a></li><li class="stn"><span class="code">D4</span><a href="04-booking-rebook.html">Bookings</a></li><li class="stn"><span class="code">D5</span><a href="05-check-in.html">Check in</a></li><li class="stn"><span class="code">D6</span><a href="06-check-out.html">Check out</a></li></ul><div class="zone"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Admin zone — you have access</div><ul class="line"><li class="stn admin on"><span class="code">A1</span><a href="07-rooms.html">Rooms</a></li><li class="stn admin"><span class="code">A2</span><a href="08-promo-codes.html">Promo codes</a></li><li class="stn admin last"><span class="code">A3</span><a href="09-users.html">Users</a></li></ul></nav>
+    <div class="route-foot"><div class="me"><div class="avatar">DR</div><div><div class="who">Daniel Reyes</div><div class="role">Admin · full access</div></div></div><div class="shift"><span>Office</span><span>Signed in 08:02</span></div></div>
+  </aside>
+  <main>
+    <header class="strip">
+      <div class="grp"><span class="flap f22 y" aria-label="WED 14 OCT"><b>W</b><b>E</b><b>D</b><b class="gap"></b><b>1</b><b>4</b><b class="gap"></b><b>O</b><b>C</b><b>T</b></span><span class="flap f22" aria-label="14:32"><b>1</b><b>4</b><b>:</b><b>3</b><b>2</b></span></div>
+      <div class="sep"></div>
+      <div class="grp"><span class="lbl">In house<br>tonight</span><span class="flap f22" aria-label="41"><b>4</b><b>1</b></span></div>
+      <div class="grp"><span class="lbl">Arrivals</span><span class="flap f22" aria-label="9"><b>9</b></span><span class="lbl">left 6</span></div>
+      <div class="grp"><span class="lbl">Departures</span><span class="flap f22" aria-label="7"><b>7</b></span><span class="lbl">left 2</span></div>
+      <div class="grp"><span class="lbl">Out of<br>order</span><span class="flap f22" aria-label="2"><b>2</b></span></div>
+      <div class="search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Guest, booking ref or room <kbd>/</kbd></div>
+    </header>
+    
+<div class="page">
+  <div class="head">
+    <div><h1>Rooms</h1><p class="lede">Room types, their nightly price and how many rooms each has. Receptionists see these prices; only admins change them.</p></div>
+    <div class="acts"><span class="btn board"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add room type</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start">
+    <div class="col" style="gap:14px">
+      <section class="panel">
+        <div class="ph"><h2>Room types</h2><div class="aside small muted">64 rooms, 2 out of order</div></div>
+        <table class="dtable">
+          <thead><tr><th style="width:52px">Code</th><th>Type</th><th class="right">Price / night</th><th class="right">Rooms</th><th class="right">Upcoming bookings</th><th class="right">Actions</th></tr></thead>
+          <tbody><tr class="">
+      <td><span class="tcode">Q</span></td>
+      <td><b>Queen</b><div class="xs" style="color:var(--stop)">1 out of order</div></td>
+      <td class="right"><span class="flap f18 lite" aria-label="$136"><b>$</b><b>1</b><b>3</b><b>6</b></span></td>
+      <td class="right"><span class="flap f18" aria-label="24"><b>2</b><b>4</b></span></td>
+      <td class="right num">41</td>
+      <td class="right"><span class="row" style="justify-content:flex-end;gap:6px">
+        <span class="btn sm"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Edit</span>
+        <span class="btn sm disabled" title="Has upcoming bookings"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Delete</span></span></td></tr><tr class="selrow">
+      <td><span class="tcode">TD</span></td>
+      <td><b>Twin Double</b></td>
+      <td class="right"><span class="flap f18 lite" aria-label="$166"><b>$</b><b>1</b><b>6</b><b>6</b></span></td>
+      <td class="right"><span class="flap f18" aria-label="16"><b>1</b><b>6</b></span></td>
+      <td class="right num">23</td>
+      <td class="right"><span class="row" style="justify-content:flex-end;gap:6px">
+        <span class="btn sm board"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Editing</span>
+        <span class="btn sm disabled" title="Has upcoming bookings"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Delete</span></span></td></tr><tr class="">
+      <td><span class="tcode">DX</span></td>
+      <td><b>Deluxe</b></td>
+      <td class="right"><span class="flap f18 lite" aria-label="$238"><b>$</b><b>2</b><b>3</b><b>8</b></span></td>
+      <td class="right"><span class="flap f18" aria-label="16"><b>1</b><b>6</b></span></td>
+      <td class="right num">19</td>
+      <td class="right"><span class="row" style="justify-content:flex-end;gap:6px">
+        <span class="btn sm"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Edit</span>
+        <span class="btn sm disabled" title="Has upcoming bookings"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Delete</span></span></td></tr><tr class="">
+      <td><span class="tcode">FS</span></td>
+      <td><b>Family Suite</b><div class="xs" style="color:var(--stop)">1 out of order</div></td>
+      <td class="right"><span class="flap f18 lite" aria-label="$366"><b>$</b><b>3</b><b>6</b><b>6</b></span></td>
+      <td class="right"><span class="flap f18" aria-label="8"><b>8</b></span></td>
+      <td class="right num">9</td>
+      <td class="right"><span class="row" style="justify-content:flex-end;gap:6px">
+        <span class="btn sm"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Edit</span>
+        <span class="btn sm disabled" title="Has upcoming bookings"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Delete</span></span></td></tr><tr class="draft">
+      <td><span class="tcode" style="background:var(--rule-soft);color:var(--steel)">AQ</span></td>
+      <td><b>Accessible Queen</b><div class="xs muted">Draft, not on sale yet</div></td>
+      <td class="right"><span class="flap f18 lite" aria-label="$136"><b>$</b><b>1</b><b>3</b><b>6</b></span></td>
+      <td class="right"><span class="flap f18 lite" aria-label="0"><b>0</b></span></td>
+      <td class="right num muted">0</td>
+      <td class="right"><span class="row" style="justify-content:flex-end;gap:6px">
+        <span class="btn sm"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Edit</span>
+        <span class="btn sm danger"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>Delete</span></span></td></tr></tbody>
+        </table>
+        <div class="pb" style="border-top:1px solid var(--rule-soft)"><div class="note lock"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><div>A room type can only be deleted when it has <b>no rooms and no upcoming bookings</b>. Locked buttons show why on hover.</div></div></div>
+      </section>
+      <section class="panel">
+        <div class="ph"><h2>Room numbers</h2><div class="aside"><span class="btn sm"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9Z"/></svg>Mark out of order</span><span class="btn sm"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add room number</span></div></div>
+        <div class="pb">
+          <div class="rngrid"><div class="rnrow"><span class="fl2">F4</span><div class="rn"><b>401</b><span>DX</span></div><div class="rn"><b>402</b><span>DX</span></div><div class="rn"><b>403</b><span>DX</span></div><div class="rn"><b>404</b><span>DX</span></div><div class="rn"><b>405</b><span>DX</span></div><div class="rn"><b>406</b><span>DX</span></div><div class="rn"><b>407</b><span>DX</span></div><div class="rn"><b>408</b><span>DX</span></div><div class="rn"><b>409</b><span>FS</span></div><div class="rn"><b>410</b><span>FS</span></div><div class="rn"><b>411</b><span>FS</span></div><div class="rn"><b>412</b><span>FS</span></div><div class="rn"><b>413</b><span>FS</span></div><div class="rn off"><b>414</b><span>OFF</span></div><div class="rn"><b>415</b><span>FS</span></div><div class="rn"><b>416</b><span>FS</span></div></div><div class="rnrow"><span class="fl2">F3</span><div class="rn td"><b>301</b><span>TD</span></div><div class="rn td"><b>302</b><span>TD</span></div><div class="rn td"><b>303</b><span>TD</span></div><div class="rn td"><b>304</b><span>TD</span></div><div class="rn td"><b>305</b><span>TD</span></div><div class="rn td"><b>306</b><span>TD</span></div><div class="rn td"><b>307</b><span>TD</span></div><div class="rn td"><b>308</b><span>TD</span></div><div class="rn"><b>309</b><span>DX</span></div><div class="rn"><b>310</b><span>DX</span></div><div class="rn"><b>311</b><span>DX</span></div><div class="rn"><b>312</b><span>DX</span></div><div class="rn"><b>313</b><span>DX</span></div><div class="rn"><b>314</b><span>DX</span></div><div class="rn"><b>315</b><span>DX</span></div><div class="rn"><b>316</b><span>DX</span></div></div><div class="rnrow"><span class="fl2">F2</span><div class="rn"><b>201</b><span>Q</span></div><div class="rn"><b>202</b><span>Q</span></div><div class="rn"><b>203</b><span>Q</span></div><div class="rn"><b>204</b><span>Q</span></div><div class="rn"><b>205</b><span>Q</span></div><div class="rn"><b>206</b><span>Q</span></div><div class="rn off"><b>207</b><span>OFF</span></div><div class="rn"><b>208</b><span>Q</span></div><div class="rn td"><b>209</b><span>TD</span></div><div class="rn td"><b>210</b><span>TD</span></div><div class="rn td"><b>211</b><span>TD</span></div><div class="rn td"><b>212</b><span>TD</span></div><div class="rn td"><b>213</b><span>TD</span></div><div class="rn td"><b>214</b><span>TD</span></div><div class="rn td"><b>215</b><span>TD</span></div><div class="rn td"><b>216</b><span>TD</span></div></div><div class="rnrow"><span class="fl2">F1</span><div class="rn"><b>101</b><span>Q</span></div><div class="rn"><b>102</b><span>Q</span></div><div class="rn"><b>103</b><span>Q</span></div><div class="rn"><b>104</b><span>Q</span></div><div class="rn"><b>105</b><span>Q</span></div><div class="rn"><b>106</b><span>Q</span></div><div class="rn"><b>107</b><span>Q</span></div><div class="rn"><b>108</b><span>Q</span></div><div class="rn"><b>109</b><span>Q</span></div><div class="rn"><b>110</b><span>Q</span></div><div class="rn"><b>111</b><span>Q</span></div><div class="rn"><b>112</b><span>Q</span></div><div class="rn"><b>113</b><span>Q</span></div><div class="rn"><b>114</b><span>Q</span></div><div class="rn"><b>115</b><span>Q</span></div><div class="rn"><b>116</b><span>Q</span></div></div></div>
+          <div class="row small muted" style="margin-top:10px;gap:16px"><span><span class="tcode">TD</span> highlighted: the type being edited</span><span><span class="tcode" style="background:var(--stop)">OFF</span> out of order: 207 plumbing, 414 repaint</span></div>
+        </div>
+      </section>
+    </div>
+    
+<section class="rebook">
+  <div class="rh"><span class="row" style="gap:8px"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><h2>Edit Twin Double</h2></span><span class="btn sm" style="margin-left:auto;background:transparent;color:#DCE2F5;border-color:rgba(255,255,255,.3)"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Close</span></div>
+  <div class="pb col" style="gap:12px">
+    <div class="grid2" style="grid-template-columns:1fr 90px">
+      <div class="field"><label>Type name <span class="req">*</span></label><div class="input">Twin Double</div></div>
+      <div class="field"><label>Code</label><div class="input">TD</div></div>
+    </div>
+    <div class="grid2">
+      <div class="field"><label>Price per night <span class="req">*</span></label><div class="input focus">$<b>172.00</b><span class="end xs">was $166.00</span></div></div>
+      <div class="field"><label>Max guests</label><span class="stepper" style="height:36px"><span>−</span><b>2</b><span>+</span></span></div>
+    </div>
+    <div class="note warn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div>New price applies to bookings made from now on. <b>23 existing bookings keep $166.</b></div></div>
+    <div class="field"><label>Room count</label>
+      <div class="input" style="background:#F6F7FA"><span class="flap f14" aria-label="16"><b>1</b><b>6</b></span><span class="small">rooms assigned: 209–216, 301–308</span></div>
+      <span class="help">Count comes from room numbers. Change it in the room grid.</span></div>
+    <div class="field"><label>Description <span class="opt">(shown on confirmations)</span></label><div class="input" style="height:54px;align-items:flex-start;padding-top:8px;white-space:normal">Two double beds, garden or street side, 26 m².</div></div>
+    <div class="blocked">
+      <div class="row" style="gap:8px;color:var(--stop)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><b>Delete is blocked</b></div>
+      <div class="small">Twin Double has <b>23 upcoming bookings</b> (next: Oliver Brandt, today) and 16 rooms. Move the rooms to another type and let the bookings finish first.</div>
+      <span class="btn sm disabled" style="align-self:flex-start"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>Delete room type</span>
+    </div>
+    <span class="btn primary lg block">Save changes</span>
+  </div>
+</section>
+  </div>
+</div>
+  </main>
+</div></body></html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1440">
+<title>Design 1, Transit Map</title>
+<link rel="stylesheet" href="assets/transit.css">
+<style>
+.hero{background:var(--paper);border-bottom:1px solid var(--rule);padding:48px 32px 40px}
+.hero h1{font-weight:900;font-size:96px;line-height:.95;letter-spacing:-.035em}
+.hero p{max-width:68ch;font-size:17px;line-height:1.55;color:var(--ink-2);margin-top:18px}
+.bigroute{position:relative;height:90px;margin-top:34px;max-width:1100px}
+.bigroute .ln1{position:absolute;left:20px;right:330px;top:30px;height:8px;background:var(--ink);border-radius:4px}
+.bigroute .ln2{position:absolute;right:20px;width:320px;top:30px;border-top:8px dashed var(--twin)}
+.bigroute .st2{position:absolute;top:16px;width:36px;height:36px;border-radius:50%;background:#fff;border:7px solid var(--ink);transform:translateX(-18px)}
+.bigroute .st2.a{border-color:var(--twin)}
+.bigroute .st2.on{background:var(--yellow);width:48px;height:48px;top:10px;transform:translateX(-24px)}
+.bigroute span{position:absolute;top:62px;font-weight:700;font-size:13px;transform:translateX(-50%);white-space:nowrap}
+section.blk{padding:32px}
+section.blk h2{font-weight:900;font-size:28px;margin-bottom:14px;letter-spacing:-.01em}
+.swgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.swc{background:var(--paper);border:1px solid var(--rule);border-radius:2px;overflow:hidden;font-size:13px}
+.ggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gcard{background:var(--paper);border:1px solid var(--rule);border-radius:2px;overflow:hidden;display:block}
+.gcard img{display:block;width:100%;height:300px;object-fit:cover;object-position:top;border-bottom:2px solid var(--ink)}
+.spec{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.spec .board{padding:22px}
+</style></head><body style="min-width:1440px">
+<header class="hero">
+  <div class="small strong muted">Alder House front desk, design 1 of 15</div>
+  <h1>Transit Map</h1>
+  <p>The hotel drawn as a transit diagram. Each room type is a coloured line, and every stay is a journey on that line, from an arrival stop to a departure stop. Availability, rebooking, check-in and the folio all use the same picture: a stretch of line with stops at each end. The navigation is a route map too. Receptionists ride the desk line, and rooms, promo codes and users sit on a dashed admin branch that is locked for anyone without the role. Today's departures are the one loud surface, printed on line yellow.</p>
+  <div class="bigroute">
+    <div class="ln1"></div><div class="ln2"></div>
+    <i class="st2 on" style="left:20px"></i><span style="left:20px">Today</span><i class="st2" style="left:145px"></i><span style="left:145px">Availability</span><i class="st2" style="left:270px"></i><span style="left:270px">New booking</span><i class="st2" style="left:395px"></i><span style="left:395px">Bookings</span><i class="st2" style="left:520px"></i><span style="left:520px">Check-in</span><i class="st2" style="left:645px"></i><span style="left:645px">Check-out</span>
+    <i class="st2 a" style="left:800px"></i><span style="left:800px"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Rooms</span><i class="st2 a" style="left:940px"></i><span style="left:940px"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Promo codes</span><i class="st2 a" style="left:1080px"></i><span style="left:1080px"><svg class="i s" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Users</span>
+  </div>
+</header>
+<section class="blk"><h2>Screens</h2><div class="ggrid"><a class="gcard" href="screens/01-today.html"><img src="png/01-today.png" alt="Today board screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Today board</b><span class="role">Receptionist</span></div></a><a class="gcard" href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Availability</b><span class="role">Receptionist</span></div></a><a class="gcard" href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>New booking</b><span class="role">Receptionist</span></div></a><a class="gcard" href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking, rebook, cancel screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Booking, rebook, cancel</b><span class="role">Receptionist</span></div></a><a class="gcard" href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check-in screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Check-in</b><span class="role">Receptionist</span></div></a><a class="gcard" href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check-out screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Check-out</b><span class="role">Receptionist</span></div></a><a class="gcard" href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Rooms</b><span class="role admin">Admin</span></div></a><a class="gcard" href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Promo codes</b><span class="role admin">Admin</span></div></a><a class="gcard" href="screens/09-users.html"><img src="png/09-users.png" alt="Users screen" loading="lazy"><div class="between" style="padding:10px 12px"><b>Users</b><span class="role admin">Admin</span></div></a></div></section>
+<section class="blk" style="padding-top:0"><h2>Palette</h2><div class="swgrid"><div class="swc"><div style="background:#F6E94B;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Line yellow</b><div class="small">#F6E94B</div><div class="small muted">Departures board, primary label, totals</div></div></div><div class="swc"><div style="background:#202428;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Graphite ink</b><div class="small">#202428</div><div class="small muted">Text, occupied rooms, primary button</div></div></div><div class="swc"><div style="background:#ECEEEF;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Platform grey</b><div class="small">#ECEEEF</div><div class="small muted">Page ground</div></div></div><div class="swc"><div style="background:#FFFFFF;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Paper</b><div class="small">#FFFFFF</div><div class="small muted">Boards and sheets</div></div></div><div class="swc"><div style="background:#3F74C4;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Route blue</b><div class="small">#3F74C4</div><div class="small muted">Queen, arrivals</div></div></div><div class="swc"><div style="background:#4F7064;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Route sage</b><div class="small">#4F7064</div><div class="small muted">Twin Double, admin line</div></div></div><div class="swc"><div style="background:#6510DE;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Route violet</b><div class="small">#6510DE</div><div class="small muted">Deluxe, selection, focus</div></div></div><div class="swc"><div style="background:#C23F7C;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Route pink</b><div class="small">#C23F7C</div><div class="small muted">Family Suite</div></div></div><div class="swc"><div style="background:#D9262B;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Signal red</b><div class="small">#D9262B</div><div class="small muted">Destructive, out of order</div></div></div><div class="swc"><div style="background:#2F7A4E;height:64px;border-bottom:1px solid var(--rule)"></div><div style="padding:8px 10px"><b>Settled green</b><div class="small">#2F7A4E</div><div class="small muted">Done, discounts</div></div></div></div>
+<p class="small muted" style="margin-top:10px">Status is never colour alone: every status carries a word or glyph, and occupied, arriving, departing, free and out-of-order rooms also differ in fill, border style and hatching.</p></section>
+<section class="blk" style="padding-top:0"><h2>Type</h2>
+ <div class="spec">
+  <div class="board"><div style="font-weight:900;font-size:72px;line-height:1;letter-spacing:-.03em">13:10 312</div><div style="font-weight:900;font-size:34px;margin-top:12px">Departures, 7 due</div><div style="font-size:15px;margin-top:10px;max-width:60ch;color:var(--ink-2)">Jost throughout, a geometric sans in the tradition of transit-map lettering. Heavy 900 for times, room numbers and headings; 700 for labels; 400 to 500 for body. Tabular lining figures everywhere so money and times line up in columns.</div></div>
+  <div class="board"><div class="lines" style="padding:0">
+    <div class="ln"><span>Display, 34/900</span><b style="font-size:20px;font-weight:900">Wednesday 14 October</b></div>
+    <div class="ln"><span>Board title, 20/900</span><b style="font-weight:900">Arrivals</b></div>
+    <div class="ln"><span>Time and room, 18/900</span><b style="font-weight:900;font-size:18px">21:30, room 301</b></div>
+    <div class="ln"><span>Body, 14/400</span><b style="font-weight:400">Hannah Moreau, 2 adults</b></div>
+    <div class="ln"><span>Label, 12/700</span><b style="font-size:12px">Check-out by 12:00</b></div>
+    <div class="ln"><span>Smallest, 12/700</span><b style="font-size:12px">Out of order</b></div>
+  </div></div>
+ </div>
+</section>
+</body></html>

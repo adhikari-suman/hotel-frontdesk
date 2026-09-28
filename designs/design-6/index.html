@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mountain & Valley — design 6</title><link rel="stylesheet" href="assets/fold.css">
+<style>
+body{padding-bottom:0}
+.wrap{max-width:1280px;margin:0 auto;padding:48px 28px 80px}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;padding-bottom:36px;border-bottom:1px dashed var(--crease-dk)}
+.hero h1{font:800 76px/.95 var(--display);letter-spacing:-.015em}
+.hero p{font-size:16px;line-height:1.6;color:var(--ink-soft);max-width:62ch;margin-top:18px}
+.foldart{display:grid;grid-template-columns:repeat(8,1fr);gap:6px}
+.foldart .room{padding:0}
+h2.sec{font:700 24px var(--display);margin:44px 0 16px}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);background:#fff}
+.sw div{padding:14px 16px;border-right:1px dashed var(--crease-dk);border-top:1px dashed var(--crease-dk)}
+.sw div:nth-child(4n){border-right:0}.sw div:nth-child(-n+4){border-top:0}
+.sw i{display:block;height:64px;margin-bottom:10px;border:1px solid rgba(20,33,43,.12);clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%)}
+.sw b{display:block;font-weight:600}.sw small{font-size:12px;color:var(--muted)}
+.type{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);background:#fff}
+.type>div{padding:24px}.type>div+div{border-left:1px dashed var(--crease-dk)}
+.type .big{font:800 52px/1 var(--display)}
+.type .big2{font:600 40px/1.1 var(--ui)}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.shot{display:block;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-fold)}
+.shot img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;object-position:top;border-bottom:1px dashed var(--crease-dk)}
+.shot div{padding:12px 14px;display:flex;gap:10px;align-items:baseline}
+.shot b{font:700 15px var(--display)} .shot span{margin-left:auto}
+@media (max-width:800px){.hero,.type{grid-template-columns:1fr}.shots{grid-template-columns:1fr}.sw{grid-template-columns:1fr 1fr}.hero h1{font-size:48px}}
+</style></head><body>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="mark" style="margin-bottom:22px"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 2h20v20H2z" fill="#fff" stroke="#14212B" stroke-width="1.5"/><path d="M2 2L22 22H2z" fill="#B4486F"/></svg>Alder House front desk · design 6</div>
+      <h1>Mountain &amp; Valley</h1>
+      <p>The front desk as folded paper. Every room is a square sheet, and the fold says what is happening to it: flat means free, a corner folded down means someone arrives or leaves today, fully folded means someone sleeps there, a cut means out of order. Screens are tri-fold sheets split by dashed valley creases, a rebook or edit panel folds over from the right like a flap, and navigation is a row of dog-eared folder tabs folded out of the top edge of the sheet: desk work on the left, the admin office behind a fold line on the right.</p>
+    </div>
+    <div class="foldart" aria-hidden="true">
+      <div class="room occ"></div><div class="room vac"></div><div class="room arr"></div><div class="room occ"></div><div class="room occ"></div><div class="room dep"></div><div class="room vac"></div><div class="room occ"></div>
+      <div class="room occ"></div><div class="room ooo"></div><div class="room occ"></div><div class="room vac"></div><div class="room arr"></div><div class="room occ"></div><div class="room occ"></div><div class="room vac"></div>
+      <div class="room dep"></div><div class="room occ"></div><div class="room occ"></div><div class="room arr"></div><div class="room vac"></div><div class="room occ"></div><div class="room dep"></div><div class="room occ"></div>
+    </div>
+  </div>
+
+  <h2 class="sec">Palette</h2>
+  <div class="sw">
+    <div><i style="background:#F3F5F1"></i><b>Paper #F3F5F1</b><small>Page ground, cool not cream</small></div>
+    <div><i style="background:#FFFFFF"></i><b>Sheet #FFFFFF</b><small>Panels, inputs, free rooms</small></div>
+    <div><i style="background:#14212B"></i><b>Ink #14212B</b><small>Text, dock, occupied rooms (#243441)</small></div>
+    <div><i style="background:#AFCBC4"></i><b>Crease #AFCBC4</b><small>Fold lines, plenty available</small></div>
+    <div><i style="background:#B4486F"></i><b>Rose kami #B4486F</b><small>The one primary action, selection, admin marks</small></div>
+    <div><i style="background:#0B6E77"></i><b>Sea kami #0B6E77</b><small>Arrivals, done, verified, discounts</small></div>
+    <div><i style="background:#4F5E6B"></i><b>Slate #4F5E6B</b><small>Departures, settled, expired</small></div>
+    <div><i style="background:#D7400F"></i><b>Persimmon #D7400F</b><small>Destructive, out of order, full, exhausted</small></div>
+  </div>
+
+  <h2 class="sec">Type</h2>
+  <div class="type">
+    <div><div class="big">Mountain fold</div><p class="mt14 soft">Syne 700–800. Headings and panel titles only. Wide geometric capitals with sharp M and W: the mountain and valley folds. Never used for numbers.</p></div>
+    <div><div class="big2">Bricolage Grotesque<br>312 · $862.29</div><p class="mt14 soft">Everything else, 400–700, tabular figures for room numbers, money and dates. Body 13.5px, labels 12–12.5px, never below 11px.</p></div>
+  </div>
+
+  <h2 class="sec">Screens</h2>
+  <div class="shots">
+    <a class="shot" href="screens/01-today.html"><img src="png/01-today.png" alt="Today board"><div><b>Today</b><small class="muted">Receptionist</small><span class="small soft">01</span></div></a>
+    <a class="shot" href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability"><div><b>Availability</b><small class="muted">Receptionist</small><span class="small soft">02</span></div></a>
+    <a class="shot" href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking"><div><b>New booking</b><small class="muted">Receptionist</small><span class="small soft">03</span></div></a>
+    <a class="shot" href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking and rebook"><div><b>Booking &amp; rebook</b><small class="muted">Receptionist</small><span class="small soft">04</span></div></a>
+    <a class="shot" href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check-in"><div><b>Check-in</b><small class="muted">Receptionist</small><span class="small soft">05</span></div></a>
+    <a class="shot" href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check-out"><div><b>Check-out</b><small class="muted">Receptionist</small><span class="small soft">06</span></div></a>
+    <a class="shot" href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms"><div><b>Rooms</b><small class="lock">Admin</small><span class="small soft">07</span></div></a>
+    <a class="shot" href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes"><div><b>Promo codes</b><small class="lock">Admin</small><span class="small soft">08</span></div></a>
+    <a class="shot" href="screens/09-users.html"><img src="png/09-users.png" alt="Users"><div><b>Users</b><small class="lock">Admin</small><span class="small soft">09</span></div></a>
+  </div>
+</div>
+</body></html>

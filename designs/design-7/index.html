@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Counting Frame · Design 7</title>
+<link rel="stylesheet" href="assets/counting-frame.css">
+<style>
+  html,body{background:var(--frame)}
+  .wrap{max-width:1240px;margin:0 auto;padding:48px 32px 72px}
+  .wrap{background:var(--frame)}
+  .hero{background:var(--frame);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end;color:var(--frame-ink);padding-bottom:40px;border-bottom:1px solid #ffffff1c}
+  .hero .no{font:600 14px var(--cond);color:#C9D1DC;letter-spacing:.04em}
+  .hero h1{font:700 104px/.9 var(--cond);letter-spacing:-.01em;color:#fff;margin:10px 0 18px}
+  .hero p{font-size:17px;line-height:1.6;max-width:60ch;color:#D5DCE6}
+  .abacus{display:grid;gap:8px;padding:14px;background:#141A24;border-radius:10px}
+  .arow{display:grid;grid-template-columns:repeat(16,1fr);gap:3px}
+  .abacus .rod{background:#232C3B;border-color:#2F3A4C;padding:0}
+  .abacus .rod .wire{height:40px}
+  .abacus .rod .wire::after{top:9px;background:#8C97A8}
+  .abacus .rod .wire .bead{top:24px}
+  .abacus .rod.occ .wire .bead,.abacus .rod.dep .wire .bead{top:12px}
+  .abacus .rod.arr .wire .bead,.abacus .rod.ooo .wire .bead{top:18px}
+  .sheet{background:var(--face);border-radius:14px;margin-top:40px;padding:32px}
+  .sheet h2{font:650 26px var(--cond);margin-bottom:14px}
+  .sw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .sw div{border-radius:6px;border:1px solid var(--line);overflow:hidden;background:var(--plate)}
+  .sw i{display:block;height:64px}
+  .sw b{display:block;font:650 15px var(--cond);padding:8px 10px 0}
+  .sw small{display:block;font-size:12px;color:var(--ink-3);padding:0 10px 10px}
+  .spec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:30px}
+  .spec .plate{padding:20px}
+  .spec .big{font:700 64px/1 var(--cond)}
+  .spec .body{font-size:15px;line-height:1.6;color:var(--ink-2);max-width:56ch}
+  .thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:10px}
+  .thumbs a{display:block;background:var(--plate);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .thumbs img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-bottom:1px solid var(--line)}
+  .thumbs span{display:flex;gap:10px;align-items:center;padding:10px 12px;font-weight:600}
+  .thumbs span em{font-style:normal;margin-left:auto;font-size:12px;color:var(--ink-3);font-weight:500}
+  @media (max-width:800px){.hero,.spec{grid-template-columns:1fr}.hero h1{font-size:64px}.sw{grid-template-columns:repeat(2,1fr)}.thumbs{grid-template-columns:1fr}.wrap{padding:28px 16px}}
+</style></head>
+<body><div class="wrap">
+<header class="hero">
+  <div>
+    <div class="no">Design 7 of 15 · Alder House front desk</div>
+    <h1>Counting Frame</h1>
+    <p>The front desk read like a soroban. Every one of the 64 rooms is a rod with one bead: pushed up against the beam when a guest is in, half-way when someone arrives today, resting low when the room is free, and a broken red rod when it is out of order. Stays are short rods with a bead per night. The screens themselves sit as beads on one rod across the top, with admin pages past a locked post.</p>
+  </div>
+  <div class="abacus" aria-label="Sample of the room board"><div class="arow"><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod ooo"><div class="wire"><span class="bead r sm">X</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div></div><div class="arow"><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div></div><div class="arow"><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div></div><div class="arow"><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div></div></div>
+</header>
+<section class="sheet">
+  <h2>Palette</h2>
+  <div class="sw">
+    <div><i style="background:#1E2633"></i><b>Frame ink #1E2633</b><small>Top frame, beam, primary buttons, text-dark</small></div>
+    <div><i style="background:#E9EDF2"></i><b>Ground #E9EDF2</b><small>Work surface behind panels</small></div>
+    <div><i style="background:#FAFBFC"></i><b>Card #FAFBFC</b><small>Panels, rods, forms</small></div>
+    <div><i style="background:#A9CDD6"></i><b>Selection #A9CDD6</b><small>Picked nights, selected rows, codes</small></div>
+    <div><i style="background:#2F8F57"></i><b>Counted green #2F8F57</b><small>Occupied, active, done, discounts</small></div>
+    <div><i style="background:#D99A1E"></i><b>Arrival amber #D99A1E</b><small>Arriving, in progress, low stock</small></div>
+    <div><i style="background:#6C7BD0"></i><b>Departure #6C7BD0</b><small>Due out today</small></div>
+    <div><i style="background:#C23B32"></i><b>Peg red #C23B32</b><small>Out of order, full, destructive</small></div>
+    <div><i style="background:#7B4B8E"></i><b>Admin plum #7B4B8E</b><small>Admin-only beads, tags and the locked post</small></div>
+  </div>
+  <div class="spec">
+    <div class="plate"><div class="small muted">Sofia Sans Condensed · 650–800</div><div class="big">312 · $862.29</div><div style="font:650 26px var(--cond);margin-top:8px">Room numbers, totals, panel titles</div></div>
+    <div class="plate"><div class="small muted">Sofia Sans · 400–650</div><p class="body" style="margin-top:10px">Body and controls. Hannah Moreau arrives at 14:30 with breakfast for two and an airport pickup. Tabular figures are on everywhere so columns of money and room numbers line up.</p>
+      <div class="row" style="margin-top:14px"><span class="bead g">O</span><span class="bead a">A</span><span class="bead p">D</span><span class="bead o">V</span><span class="bead r">X</span><span class="tag">Admin only</span><span class="code">autumn26</span></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <h2>Screens</h2>
+  <div class="thumbs">
+    <a href="screens/01-today.html"><img src="png/01-today.png" alt="Today board"><span>Today board<em>Receptionist</em></span></a>
+    <a href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability"><span>Availability<em>Receptionist</em></span></a>
+    <a href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking"><span>New booking<em>Receptionist</em></span></a>
+    <a href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking and rebook"><span>Booking · rebook · cancel<em>Receptionist</em></span></a>
+    <a href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check-in"><span>Check-in<em>Receptionist</em></span></a>
+    <a href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check-out"><span>Check-out<em>Receptionist</em></span></a>
+    <a href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms"><span>Rooms<em><span class="tag">Admin</span></em></span></a>
+    <a href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes"><span>Promo codes<em><span class="tag">Admin</span></em></span></a>
+    <a href="screens/09-users.html"><img src="png/09-users.png" alt="Users and roles"><span>Users &amp; roles<em><span class="tag">Admin</span></em></span></a>
+  </div>
+</section>
+</div></body></html>

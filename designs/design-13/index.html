@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tide Table | Design 13</title>
+<link rel="stylesheet" href="assets/tide.css">
+<style>
+body { display:block; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 48px 24px 64px; }
+.hero { display:grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items:end; border-bottom: 2px solid var(--ink); padding-bottom: 28px; }
+.hero h1 { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 84px; line-height: .95; margin: 0 0 14px; letter-spacing: -.02em; }
+.hero p { font-size: 16px; line-height: 1.6; max-width: 62ch; margin: 0; }
+.hero .meta { color: var(--slate); font-size: 13px; margin-bottom: 10px; }
+h2.s { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 26px; margin: 40px 0 14px; }
+.sws { display:grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+.sw { background: var(--sheet); border:1px solid var(--rule); padding: 0 0 10px; display:flex; flex-direction:column; }
+.sw i { height: 64px; display:block; border-bottom:1px solid var(--rule); margin-bottom: 8px; }
+.sw b, .sw span, .sw small { padding: 0 12px; }
+.sw span { font-size: 12px; color: var(--slate); }
+.sw small { font-size: 12px; margin-top: 4px; }
+.type { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.spec { background: var(--sheet); border:1px solid var(--rule); padding: 18px 20px; }
+.spec .big { font-size: 54px; line-height: 1.05; margin: 8px 0; }
+.ths { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.th { text-decoration:none; background: var(--sheet); border:1px solid var(--rule); display:flex; flex-direction:column; }
+.th img { width:100%; height: 230px; object-fit: cover; object-position: top; border-bottom: 1px solid var(--rule); display:block; }
+.th div { padding: 10px 12px; display:flex; justify-content: space-between; align-items:center; gap: 8px; }
+.glyphs { display:flex; gap: 22px; flex-wrap: wrap; font-size: 13px; background: var(--sheet); border:1px solid var(--rule); padding: 14px 18px; }
+.glyphs span { display:flex; gap: 8px; align-items:center; }
+@media (max-width: 800px) { .hero, .type { grid-template-columns: 1fr; } .sws { grid-template-columns: 1fr 1fr; } .ths { grid-template-columns: 1fr; } .hero h1 { font-size: 56px; } }
+</style></head>
+<body><div class="wrap">
+<section class="hero">
+  <div><div class="meta">Design 13 of 15, Alder House front desk</div><h1>Tide Table</h1></div>
+  <p>The front desk read like a hydrographic chart. Occupancy rises and falls night by night as a tide curve; rooms are soundings on a four-floor chart; every status is a buoy with its own shape as well as its colour. Navigation sits along the bottom as a chart scale bar: desk stations on one side of a datum mark, admin stations on the other, hatched and locked for receptionists. Upright sans for the fixed things (rooms, numbers, controls), hydrographic italic serif for the things that flow (dates, nights, totals, headings).</p>
+</section>
+<h2 class="s">Palette</h2>
+<div class="sws"><div class="sw"><i style="background:#13294B"></i><b>Chart ink</b><span>#13294B</span><small>Text, primary action, occupied</small></div><div class="sw"><i style="background:#EEF3F4"></i><b>Survey paper</b><span>#EEF3F4</span><small>Page ground</small></div><div class="sw"><i style="background:#73CAD0"></i><b>Shoal aqua</b><span>#73CAD0</span><small>Fills, tide area, free rooms</small></div><div class="sw"><i style="background:#2E8F98"></i><b>Deep channel</b><span>#2E8F98</span><small>Tide line, most free</small></div><div class="sw"><i style="background:#2F8466"></i><b>Sea green</b><span>#2F8466</span><small>Vacant, ready, applied</small></div><div class="sw"><i style="background:#E8B530"></i><b>Channel yellow</b><span>#E8B530</span><small>Arrivals, current place, focus</small></div><div class="sw"><i style="background:#3C6FA8"></i><b>Depth blue</b><span>#3C6FA8</span><small>Departures</small></div><div class="sw"><i style="background:#C8321E"></i><b>Buoy red</b><span>#C8321E</span><small>Destructive, out of order</small></div></div>
+<h2 class="s">Type</h2>
+<div class="type">
+  <div class="spec"><span class="muted small">Source Serif 4 Italic, headings, dates and totals</span><div class="big serif" style="font-weight:500">14 to 17 Oct</div><div class="serif" style="font-size:22px;font-weight:600">Total for stay $862.29</div></div>
+  <div class="spec"><span class="muted small">Archivo, variable width, UI, tables and room numbers</span><div class="big" style="font-weight:750;font-stretch:78%">312 Deluxe</div><div style="font-size:15px">Check in, rebook, apply summer2026, add breakfast for 2 guests</div></div>
+</div>
+<h2 class="s">Buoys</h2>
+<div class="glyphs"><span><i class="buoy b-occ"></i>Occupied</span><span><i class="buoy b-arr"></i>Arriving</span><span><i class="buoy b-dep"></i>Due out</span><span><i class="buoy b-dirty"></i>To clean</span><span><i class="buoy b-vac"></i>Vacant, ready</span><span><i class="buoy b-ooo"></i>Out of order</span><span class="tag lock">Admin only</span></div>
+<h2 class="s">Screens</h2>
+<div class="ths"><a class="th" href="screens/01-today.html"><img src="png/01-today.png" alt="Today board screen"><div><b>1. Today board</b><span class="role desk">Receptionist</span></div></a><a class="th" href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability screen"><div><b>2. Availability</b><span class="role desk">Receptionist</span></div></a><a class="th" href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking screen"><div><b>3. New booking</b><span class="role desk">Receptionist</span></div></a><a class="th" href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking, rebook and cancel screen"><div><b>4. Booking, rebook and cancel</b><span class="role desk">Receptionist</span></div></a><a class="th" href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check in screen"><div><b>5. Check in</b><span class="role desk">Receptionist</span></div></a><a class="th" href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check out screen"><div><b>6. Check out</b><span class="role desk">Receptionist</span></div></a><a class="th" href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms and rates screen"><div><b>7. Rooms and rates</b><span class="role admin">Admin</span></div></a><a class="th" href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promotion codes screen"><div><b>8. Promotion codes</b><span class="role admin">Admin</span></div></a><a class="th" href="screens/09-users.html"><img src="png/09-users.png" alt="Staff and roles screen"><div><b>9. Staff and roles</b><span class="role admin">Admin</span></div></a></div>
+</div></body></html>

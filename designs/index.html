@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Front Desk Directions</title>
+<style>
+:root{--bg:#f4f4f2;--card:#fff;--ink:#1b1c1f;--muted:#55585f;--rule:#dcdcd8;--accent:#1b1c1f}
+@media (prefers-color-scheme:dark){:root{--bg:#141517;--card:#1d1f22;--ink:#ececea;--muted:#a5a8ad;--rule:#34373b;--accent:#ececea}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:40px 32px 20px;max-width:1600px;margin:0 auto}
+h1{font-size:28px;margin:0 0 6px;letter-spacing:-.01em}
+header p{margin:0;color:var(--muted);max-width:760px}
+.bar{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--rule)}
+.bar .in{max-width:1600px;margin:0 auto;padding:12px 32px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.bar span{color:var(--muted);font-size:13px;margin-right:6px}
+.bar button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--card);color:var(--ink);padding:6px 11px;border-radius:6px;cursor:pointer}
+.bar button[aria-pressed=true]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+main{max-width:1600px;margin:0 auto;padding:24px 32px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.card a.shot{display:block;aspect-ratio:1440/900;overflow:hidden;background:var(--rule)}
+.card img{width:100%;display:block}
+.card .txt{padding:14px 16px 16px}
+.card h2{font-size:17px;margin:0 0 4px}
+.card h2 small{font-weight:500;color:var(--muted);margin-right:6px}
+.card p{margin:0 0 10px;color:var(--muted);font-size:14px}
+.card .links a{color:var(--ink);font-size:13px;margin-right:14px}
+@media (max-width:520px){header,.bar .in,main{padding-left:16px;padding-right:16px}main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<h1>Hotel front desk: 15 directions</h1>
+<p>Each direction has the same 9 desktop screens with the same synthetic data, so you compare the design, not the content. Pick a screen to see all 15 side by side, or open a direction for its gallery, palette and type.</p>
+</header>
+<div class="bar"><div class="in" id="tabs"><span>Screen</span></div></div>
+<main id="grid"></main>
+<script>
+const SCREENS=[["01-today","Today"],["02-availability","Availability"],["03-new-booking","New booking"],["04-booking-rebook","Booking + rebook"],["05-check-in","Check in"],["06-check-out","Check out"],["07-rooms","Rooms"],["08-promo-codes","Promo codes"],["09-users","Users"]];
+const D=[
+[1,"Transit Map","Room types are coloured lines; every stay is a journey from an arrival stop to a departure stop. The nav is a route map with a locked admin branch."],
+[2,"Split-Flap","A station concourse: arrivals and departures on split-flap boards, every number on a hinged flap tile, screens as stops on one route line."],
+[3,"Switchboard","Rooms are jacks in a 16 × 4 field with lamps; a booking is a crimson patch cord; the folio is a toll ticket; lever keys along the bottom."],
+[4,"Fob Rack","The pigeonhole wall behind the counter: a hanging key fob means the key is at the desk. Nav hangs from a rail; a counter slip holds the task."],
+[5,"Drawing Set","Architect's sheets: Today is a floor plan with door swings, stays are dimension lines, warnings are revision clouds, nav is the title block."],
+[6,"Mountain & Valley","Folded paper: each room is a square sheet whose fold shows its state. Tri-fold screens, fold-over flaps, folder-tab navigation."],
+[7,"Counting Frame","A soroban: each room is a rod with one bead, raised when occupied, halfway when arriving. The nine screens are beads on one rod."],
+[8,"Elements","The hotel as its own periodic table: each room is an element tile with a two-letter status symbol; nav is a row of tiles with admin as a separate series."],
+[9,"Lit Windows","The hotel from the street at dusk: every room is a window, lit, blinded or dark. Navigation is a lift panel with a key switch for admin."],
+[10,"Stamp Sheet","A sheet of postage stamps: perforated rooms, engraved prices, overprints for out of order, a booking as a franked airmail cover."],
+[11,"Warp & Weft","Cloth on a loom: floors are warp, nights are weft, stays are woven in. Status is a weave pattern plus a glyph and a word."],
+[12,"House Lights","A small theatre after dark, the only dark UI: rooms are seats in a curved auditorium, stays are tickets, footlights for navigation."],
+[13,"Tide Table","A hydrographic chart: occupancy as a tide curve, rooms as soundings, statuses as buoys with their own shapes. Scale-bar navigation."],
+[14,"Lift Car","A 1930s hotel lift: the nav is a brass floor dial, the needle on the current screen; admin floors sit past a key switch."],
+[15,"Leadlight","An Arts & Crafts leaded window: rooms are glass panes whose texture shows state. The nav is a single 3 × 3 window."]
+];
+const tabs=document.getElementById("tabs"),grid=document.getElementById("grid");
+let cur=SCREENS[0][0];
+try{const s=localStorage.getItem("fd-screen");if(s&&SCREENS.some(x=>x[0]===s))cur=s}catch(e){}
+SCREENS.forEach(([id,label])=>{const b=document.createElement("button");b.textContent=label;b.dataset.id=id;b.onclick=()=>{cur=id;try{localStorage.setItem("fd-screen",id)}catch(e){}render()};tabs.appendChild(b)});
+function render(){
+ tabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.id===cur));
+ grid.innerHTML=D.map(([n,name,idea])=>`<article class="card">
+ <a class="shot" href="design-${n}/screens/${cur}.html"><img loading="lazy" src="design-${n}/png/${cur}.png" alt="Design ${n}, ${SCREENS.find(s=>s[0]===cur)[1]} screen"></a>
+ <div class="txt"><h2><small>${n}</small>${name}</h2><p>${idea}</p>
+ <div class="links"><a href="design-${n}/index.html">Gallery</a><a href="design-${n}/README.md">README</a><a href="design-${n}/screens/${cur}.html">Open screen</a></div></div></article>`).join("");
+}
+render();
+</script>
+</body>
+</html>
