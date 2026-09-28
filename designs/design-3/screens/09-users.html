@@ -1,129 +1,40 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>users · alder house front desk</title>
-<link rel="stylesheet" href="../assets/lanes.css">
-<style>
-.users .lane--sage { flex: .82 1 0; }
-.users .lane--sage-pale { flex: 1 1 0; }
-.users .form-lane { flex: 1.3 1 0; }
-.uc { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; padding: 12px 14px; background: var(--white); border-radius: var(--r-card); box-shadow: var(--shadow-card); }
-.uc .avatar { grid-row: span 2; }
-.un { font-weight: 600; font-size: var(--t-16); line-height: 1.2; }
-.ue { font-size: var(--t-13); color: var(--ink-2); overflow-wrap: anywhere; }
-.um { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: var(--t-13); margin-top: 4px; }
-.um .i { vertical-align: -2px; }
-.ul { grid-column: 2; font-size: var(--t-12); color: var(--ink-2); }
-.uc.is-you { box-shadow: 0 0 0 2px var(--ink), var(--shadow-card); }
-.uc.is-inv { border: 1.5px dashed var(--ink-2); box-shadow: none; }
-.uc.is-off { background: transparent; box-shadow: none; border: 1.5px dashed var(--line-strong); color: var(--ink-off); }
-.uc.is-off .ue, .uc.is-off .ul { color: var(--ink-off); }
-.uc.is-off .avatar { background: var(--deck); border-style: dashed; border-color: var(--ink-off); color: var(--ink-off); }
-.uc.ghost { background: rgba(255, 255, 255, .55); box-shadow: none; border: 2px dashed var(--ink); }
-.roles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.role { border-radius: var(--r-card); border: 1.5px solid var(--line); padding: 14px; display: grid; gap: 10px; align-content: start; background: var(--white); }
-.role.is-on { border: 2px solid var(--ink); background: var(--water-pale); padding: 13.5px; }
-.role:not(.is-on) { background: var(--sage-pale); }
-.role-h { display: flex; align-items: center; gap: 8px; }
-.role-h h3 { font-size: var(--t-19); margin-right: auto; }
-.role .radio { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center; background: var(--white); flex: none; }
-.role.is-on .radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
-.can, .cant { display: grid; gap: 6px; font-size: var(--t-14); }
-.can li, .cant li { display: flex; gap: 8px; align-items: flex-start; line-height: 1.3; }
-.can .i, .cant .i { margin-top: 1px; }
-.cant-h { font-size: var(--t-13); font-weight: 600; margin-top: 2px; }
-.cant li { color: var(--ink-2); }
-@media (max-width: 1180px) { .roles { grid-template-columns: 1fr; } }
-</style>
-</head>
-<body class="is-admin">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-square-pen" viewBox="0 0 24 24"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /> <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" /></symbol><symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <line x1="19" x2="19" y1="8" y2="14" /> <line x1="22" x2="16" y1="11" y2="11" /></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol></defs></svg>
-<header class="topbar"><a class="wordmark" href="01-today.html"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="7" width="6.5" height="21" rx="3.25" fill="#77EEBB"/><rect x="11.75" y="7" width="6.5" height="21" rx="3.25" fill="#2FB38A"/><rect x="21.5" y="13" width="6.5" height="15" rx="3.25" fill="#0B3F3A"/><circle cx="24.75" cy="6" r="4.25" fill="#EEBB33"/></svg><span>alder house</span></a><nav class="nav nav-admin" aria-label="Main"><a href="01-today.html">today</a><a href="02-availability.html">availability</a><span class="nav-sep" aria-hidden="true"></span><span class="nav-group">admin</span><a href="07-rooms.html">rooms</a><a href="08-promo-codes.html">promo codes</a><a href="09-users.html" aria-current="page">users</a></nav><div class="topbar-end"><span class="clock">sun 27 sep<b>11:05</b></span><div class="who"><span class="avatar is-admin">AM</span><span><b>Aiko Mori</b><small>admin · front office manager</small></span></div></div><div class="rope-h" aria-hidden="true"></div></header>
-<main class="page">
-<div class="pagehead">
-  <div class="titles"><h1>users</h1>
-    <p class="sub"><span><b class="num">8</b> users</span><span class="dot-sep">2 admins · 6 receptionists</span><span class="dot-sep">2 on shift now</span></p></div>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1440">
+<title>Users — Alder House front desk</title>
+<link rel="stylesheet" href="../assets/switchboard.css"></head>
+<body>
+<header class="strip">
+  <div class="mark"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" rx="3" fill="#22252B"/><circle cx="8" cy="9" r="2.6" fill="#74FDE0"/><circle cx="18" cy="9" r="2.6" fill="#F9FAF7"/><circle cx="8" cy="18" r="2.6" fill="#F9FAF7"/><circle cx="18" cy="18" r="2.6" fill="#A50D2A"/><path d="M8 9 C 8 14, 18 13, 18 18" stroke="#A50D2A" stroke-width="1.6" fill="none"/></svg><span>Alder House</span><span class="sub">Front desk</span></div>
+  <div class="when"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span><b>Wed 14 Oct 2026</b><span>09:40</span><span>Day shift 07:00–15:00</span></div>
+  <div class="op"><div class="search"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Guest, booking ref, room<kbd>/</kbd></div><div class="who"><span class="av">DR</span>Daniel Reyes</div><span class="roleplate admin">Admin</span></div>
+</header>
+<main class="board">
+<div class="head"><div><h1>Users</h1><div class="lede">Staff who can sign in to the front desk, and what their role lets them do.</div></div>
+<div class="actions"><span class="tag lock"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Admin area</span></div></div>
+<div class="cols c-main-side2"><div class="stack"><section class="panel "><div class="ds"><h2>Staff</h2><div class="meta">4 active, 1 invited</div></div><div class="tabs"><span class="on">All 6</span><span>Admins 2</span><span>Receptionists 4</span><span>Deactivated 1</span></div>
+<table class="t"><tr><th>Name</th><th>Role</th><th>Status</th><th>Last sign-in</th><th class="right">Actions</th></tr><tr class=""><td><div class="row"><span class="av" style="width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--graphite);color:#fff;font-size:12px;font-weight:700">DR</span><div><b>Daniel Reyes</b> <span class="small muted">(you)</span><div class="small muted">daniel.reyes@example.com</div></div></div></td>
+<td><span class="roleplate admin">Admin</span></td><td><span class="tag free"><span class="lamp free"></span>Active</span></td><td class="small">Now, this device</td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span></span></td></tr><tr class=""><td><div class="row"><span class="av" style="width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--graphite);color:#fff;font-size:12px;font-weight:700">AT</span><div><b>Aiko Tanaka</b><div class="small muted">aiko.tanaka@example.com</div></div></div></td>
+<td><span class="roleplate admin">Admin</span></td><td><span class="tag free"><span class="lamp free"></span>Active</span></td><td class="small">Yesterday 18:02</td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm danger">Deactivate</span></span></td></tr><tr class=""><td><div class="row"><span class="av" style="width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--graphite);color:#fff;font-size:12px;font-weight:700">MO</span><div><b>Maya Okafor</b><div class="small muted">maya.okafor@example.com</div></div></div></td>
+<td><span class="roleplate">Receptionist</span></td><td><span class="tag free"><span class="lamp free"></span>Active</span></td><td class="small">Today 07:01, desk 1</td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm danger">Deactivate</span></span></td></tr><tr class=""><td><div class="row"><span class="av" style="width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--graphite);color:#fff;font-size:12px;font-weight:700">TL</span><div><b>Tomás Lindqvist</b><div class="small muted">tomas.lindqvist@example.com</div></div></div></td>
+<td><span class="roleplate">Receptionist</span></td><td><span class="tag free"><span class="lamp free"></span>Active</span></td><td class="small">Today 06:58, night shift</td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm danger">Deactivate</span></span></td></tr><tr class=""><td><div class="row"><span class="av" style="width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--graphite);color:#fff;font-size:12px;font-weight:700">PR</span><div><b>Priya Raman</b><div class="small muted">priya.raman@example.com</div></div></div></td>
+<td><span class="roleplate">Receptionist</span></td><td><span class="tag arr"><span class="lamp arr"></span>Invited</span></td><td class="small">Invite sent 12 Oct, expires 19 Oct</td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg> Resend invite</span><span class="btn sm danger">Revoke</span></span></td></tr><tr class="dim"><td><div class="row"><span class="av" style="width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#6B7178;color:#fff;font-size:12px;font-weight:700">SW</span><div><b>Sam Whitfield</b><div class="small muted">sam.whitfield@example.com</div></div></div></td>
+<td><span class="roleplate">Receptionist</span></td><td><span class="tag off"><span class="lamp off"></span>Deactivated</span></td><td class="small">Deactivated 30 Sep by Aiko T.</td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></svg> Reactivate</span></span></td></tr></table></section><section class="panel "><div class="ds"><h2>What each role can do</h2><div class="meta">Fixed roles, set by the product</div></div><table class="t compact perm"><tr><th>Action</th><th style="text-align:center;width:150px">Receptionist</th><th style="text-align:center;width:150px">Admin</th></tr><tr><td>Make a booking</td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Rebook, change dates or room</td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Check in, check out</td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Cancel a booking</td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Add or remove extras: breakfast, dinner, pickup</td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Apply a promotion code</td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Waive a cancellation fee</td><td class="y"><span style="color:var(--amber-ink)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Needs note</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Create, edit or deactivate promotion codes</td><td class="n"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> No</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Add, edit or delete rooms and room types</td><td class="n"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> No</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Change room rates</td><td class="n"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> No</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr><tr><td>Create users, change roles</td><td class="n"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> No</span></td><td class="y"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Yes</span></td></tr></table></section></div><div class="stack"><section class="panel drawer"><div class="ds"><h2>Create user</h2><div class="meta">Sends an invite email</div></div>
+<div class="pad">
+<div class="grid2"><div class="field"><label>First name <span class="req">*</span></label><div class="input">Jonah</div></div>
+<div class="field"><label>Last name <span class="req">*</span></label><div class="input">Abebe</div></div></div>
+<div class="field mt12"><label>Work email <span class="req">*</span></label><div class="input focus"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> jonah.abebe@example.com</div></div>
+<div class="lbl mt16">Role <span class="req">*</span></div>
+<div class="stack mt8" style="gap:8px">
+<div class="pill-opt on"><div class="row sb"><span class="nm">Receptionist</span><span class="lamp free"></span></div><span class="small muted">Bookings, check-in and out, extras, applies promo codes.</span></div>
+<div class="pill-opt"><div class="row sb"><span class="nm">Admin</span><span class="lamp off"></span></div><span class="small muted">Everything a receptionist can do, plus rooms, rates, promo codes and users.</span></div>
 </div>
-<div class="lanes users"><section class="lane lane--sage" aria-labelledby="u-a">
-  <header class="lane-head"><h2 id="u-a">admins <span class="n">2</span></h2><p class="meta"><span class="code adm">ADMIN</span> office 09–17</p></header>
-  <div class="lane-body"><article class="uc is-you">
-  <span class="avatar is-admin">AM</span>
-  <div class="ub"><p class="un">Aiko Mori</p><p class="ue">aiko.mori@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Office 09–17</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
-  <p class="ul">now (you)</p>
-</article><article class="uc">
-  <span class="avatar is-admin">SO</span>
-  <div class="ub"><p class="un">Samuel Otieno</p><p class="ue">samuel.otieno@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Office 09–17</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
-  <p class="ul">today 08:30</p>
-</article></div>
-</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage-pale" aria-labelledby="u-r">
-  <header class="lane-head"><h2 id="u-r">receptionists <span class="n">6</span></h2><p class="meta"><span class="code rec">RECEPTION</span> 4 active · 1 invited · 1 deactivated</p></header>
-  <div class="lane-body"><article class="uc">
-  <span class="avatar">NR</span>
-  <div class="ub"><p class="un">Nadia Rahimi</p><p class="ue">nadia.rahimi@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Morning 07–15</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
-  <p class="ul">on shift</p>
-</article><article class="uc">
-  <span class="avatar">TF</span>
-  <div class="ub"><p class="un">Tomás Ferreira</p><p class="ue">tomas.ferreira@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Morning 07–15</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
-  <p class="ul">on shift</p>
-</article><article class="uc">
-  <span class="avatar">PM</span>
-  <div class="ub"><p class="un">Priya Menon</p><p class="ue">priya.menon@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Night 23–07</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
-  <p class="ul">today 06:59</p>
-</article><article class="uc">
-  <span class="avatar">JW</span>
-  <div class="ub"><p class="un">Jonah Weiss</p><p class="ue">jonah.weiss@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Evening 15–23</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>Active</span></p></div>
-  <p class="ul">yesterday 22:58</p>
-</article><article class="uc is-inv">
-  <span class="avatar">GA</span>
-  <div class="ub"><p class="un">Grace Achterberg</p><p class="ue">grace.achterberg@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Evening 15–23</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-mail"/></svg>Invited</span></p></div>
-  <p class="ul">invite sent 25 Sep</p>
-</article><article class="uc is-off">
-  <span class="avatar">LB</span>
-  <div class="ub"><p class="un">Luca Bianchi</p><p class="ue">luca.bianchi@alderhouse.example</p>
-    <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> no shift</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-ban"/></svg>Deactivated</span></p></div>
-  <p class="ul">3 Aug</p>
-</article>
-    <article class="uc ghost"><span class="avatar">ML</span><div class="ub"><p class="un">Mei Lin Tan</p><p class="ue">meilin.tan@alderhouse.example</p>
-      <p class="um"><span><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg> Evening 15–23</span><span class="state"><svg class="i i-sm" aria-hidden="true"><use href="#i-square-pen"/></svg>Drafting</span></p></div><p class="ul">joins this lane</p></article>
-  </div>
-</section><div class="rope" aria-hidden="true"></div><section class="lane lane--white form-lane" aria-labelledby="u-n">
-  <header class="lane-head"><h2 id="u-n">new user</h2><p class="meta">Admins create users. Everyone signs in with their own email.</p></header>
-  <div class="lane-body">
-    <div class="fields">
-      <div class="fields two">
-        <div class="field"><label>Full name <span class="req">*</span></label><span class="input"><span class="v">Mei Lin Tan</span></span></div>
-        <div class="field"><label>Shift</label><span class="input"><svg class="i i-sm" aria-hidden="true"><use href="#i-clock"/></svg><span class="v">Evening 15:00–23:00</span><svg class="i i-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></span></div>
-      </div>
-      <div class="field"><label>Work email <span class="req">*</span></label><span class="input is-focus"><svg class="i i-sm" aria-hidden="true"><use href="#i-mail"/></svg><span class="v">meilin.tan@alderhouse.example</span></span><span class="hint">first.last@alderhouse.example</span></div>
-      <div class="field"><span class="label">Role <span class="req">*</span></span>
-        <div class="roles">
-          <div class="role is-on" role="radio" aria-checked="true">
-            <div class="role-h"><span class="radio"></span><h3>receptionist</h3><span class="code rec">RECEPTION</span></div>
-            <ul class="can"><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Make, rebook and cancel bookings</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Check guests in and out</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Add dinner, breakfast and pickup</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Apply promo codes</span></li></ul>
-            <p class="cant-h">Can’t</p>
-            <ul class="cant"><li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg><span>Change rooms</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg><span>Create promo codes</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-x"/></svg><span>Manage users</span></li></ul>
-          </div>
-          <div class="role" role="radio" aria-checked="false">
-            <div class="role-h"><span class="radio"></span><h3>admin</h3><span class="code adm">ADMIN</span></div>
-            <ul class="can"><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Create users</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Add, update and delete rooms</span></li><li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg><span>Create promo codes</span></li></ul>
-            <p class="cant-h small muted">Also sees the front-desk views: today and availability.</p>
-          </div>
-        </div>
-      </div>
-      <label class="check"><span class="box on"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span>Email a sign-in link now <span class="muted">(expires in 72 hours)</span></span></label>
-    </div>
-  </div>
-  <div class="lane-foot"><a class="btn btn-sun btn-block" href="#">create user and send invite<span class="disc"><svg class="i" aria-hidden="true"><use href="#i-user-plus"/></svg></span></a></div>
-</section></div>
+<div class="field mt12"><label>Starts</label><div class="input"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> Mon 19 Oct 2026</div><span class="hint">The invite link expires after 7 days.</span></div>
+<button class="btn primary lg full mt16"><span class="lamp"></span>Create user and send invite</button>
+</div></section><div class="note lock"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Deactivated staff can’t sign in; their past bookings and history stay attached to their name. There must always be at least one active admin.</span></div></div></div>
 </main>
-</body>
-</html>
+<nav class="shelf" aria-label="Main">
+  <div class="grp"><div class="gl"><b>Desk</b>Guests &amp; stays</div><a class="key" href="01-today.html"><span class="lever"></span>Today</a><a class="key" href="02-availability.html"><span class="lever"></span>Availability</a><a class="key" href="03-new-booking.html"><span class="lever"></span>New booking</a><a class="key" href="04-booking-rebook.html"><span class="lever"></span>Bookings</a><a class="key" href="05-check-in.html"><span class="lever"></span>Check in</a><a class="key" href="06-check-out.html"><span class="lever"></span>Check out</a></div>
+  <div class="grp"><div class="gl"><b>Office</b>Admin keys</div><a class="key" href="07-rooms.html"><span class="lever"></span>Rooms</a><a class="key" href="08-promo-codes.html"><span class="lever"></span>Promo codes</a><a class="key on" href="09-users.html"><span class="lever"></span>Users</a></div>
+  <div class="end"><span class="plate"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Signed in as admin</span></div>
+</nav>
+</body></html>

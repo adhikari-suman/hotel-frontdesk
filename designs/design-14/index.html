@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lift Car | Design 14</title>
+<link rel="stylesheet" href="assets/liftcar.css">
+<style>
+body { background: var(--ground); }
+.hero { background: var(--jade); color: #FFFFFF; border-bottom: 2px solid var(--brass); }
+.hero .in { max-width: 1240px; margin: 0 auto; padding: 56px 32px 48px; display: grid; grid-template-columns: 1fr 300px; gap: 40px; align-items: center; }
+.hero p.k { color: #F3E3BD; font-weight: 700; font-size: 14px; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: 76px; line-height: 1; color: #fff; margin: 8px 0 18px; }
+.hero p { font-size: 18px; line-height: 1.6; max-width: 62ch; color: #F4F8F5; }
+.hero svg { width: 300px; height: 180px; }
+section.part { margin-top: 44px; }
+section.part > h2 { font-family: var(--display); font-weight: 400; font-size: 28px; color: var(--jade); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--brass); }
+.sw { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.sw div { border: 1px solid var(--line); background: var(--card); border-radius: 2px; overflow: hidden; }
+.sw i { display: block; height: 72px; }
+.sw b { display: block; padding: 8px 10px 0; font-size: 13.5px; }
+.sw span { display: block; padding: 2px 10px 10px; font-size: 12px; color: var(--slate); }
+.type { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.type .bay { padding: 22px 24px; }
+.type .big { font-family: var(--display); font-size: 64px; line-height: 1; color: var(--jade); }
+.type .ui { font-size: 40px; font-weight: 700; line-height: 1.1; }
+.type p { margin-top: 10px; color: var(--ink-2); font-size: 14px; line-height: 1.55; }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.shots a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 2px; }
+.shots img { display: block; width: 100%; height: 220px; object-fit: cover; object-position: top left; border-bottom: 1px solid var(--line); }
+.shots .cap { padding: 10px 12px 12px; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.shots .cap b { font-weight: 800; }
+.shots .cap span { font-size: 12px; color: var(--slate); font-weight: 600; }
+.shots .adm { color: var(--brass-deep); }
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.principles .bay { padding: 16px 18px; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.principles h3 { margin-bottom: 4px; color: var(--jade); }
+@media (max-width: 900px) { .hero .in, .type, .principles { grid-template-columns: 1fr; } .shots { grid-template-columns: 1fr; } .sw { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 52px; } }
+</style></head>
+<body>
+<header class="hero"><div class="in"><div>
+<h1>Lift Car</h1>
+<p>The front desk as a 1930s hotel lift. Occupancy reads from a brass floor-indicator dial, the 64 rooms stand as four landings of sixteen stepped deco doors, top floor first, and navigation is the floor indicator itself: a semicircular brass dial across the top of every screen where each screen is a numbered floor and the needle points to where you are. The admin screens are the “office floors”, past a key-switch segment on the arc: a receptionist sees them locked, an admin sees the key turned.</p>
+<p class="k" style="margin-top:14px">Design 14 of 15 for the Alder House front desk.</p>
+</div>
+<svg viewBox="0 0 250 150" aria-hidden="true">
+<path d="M25 130 A100 100 0 0 1 225 130" fill="none" stroke="#123F35" stroke-width="16"/>
+<path d="M25 130 A100 100 0 0 1 142 31" fill="none" stroke="#0D2F27" stroke-width="16"/>
+<path d="M25 130 A100 100 0 0 1 225 130" fill="none" stroke="#C4A25B" stroke-width="1.5" transform="translate(0,0)"/>
+<g stroke="#E7DDBE" stroke-width="1" opacity=".35"><line x1="125" y1="130" x2="55" y2="130"/><line x1="125" y1="130" x2="64" y2="95"/><line x1="125" y1="130" x2="90" y2="69"/><line x1="125" y1="130" x2="125" y2="60"/><line x1="125" y1="130" x2="160" y2="69"/><line x1="125" y1="130" x2="186" y2="95"/><line x1="125" y1="130" x2="195" y2="130"/></g>
+<text x="40" y="110" font-family="Limelight" font-size="18" fill="#E4C483">1</text><text x="80" y="62" font-family="Limelight" font-size="18" fill="#E4C483">2</text>
+<text x="160" y="62" font-family="Limelight" font-size="18" fill="#9ADCA0">3</text><text x="200" y="110" font-family="Limelight" font-size="18" fill="#E4C483">4</text>
+<line x1="125" y1="130" x2="160" y2="72" stroke="#E4C483" stroke-width="3.5" stroke-linecap="round"/><circle cx="125" cy="130" r="9" fill="#C4A25B"/>
+</svg></div></header>
+
+<main class="gal">
+<section class="part" style="margin-top:0"><h2>Nine screens</h2>
+<div class="shots">
+<a href="screens/01-today.html"><img src="png/01-today.png" alt="Today board"><div class="cap"><b>Today</b><span>Receptionist</span></div></a>
+<a href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability"><div class="cap"><b>Availability</b><span>Receptionist</span></div></a>
+<a href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking"><div class="cap"><b>New booking</b><span>Receptionist</span></div></a>
+<a href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking with rebook panel"><div class="cap"><b>Booking and rebook</b><span>Receptionist</span></div></a>
+<a href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check in"><div class="cap"><b>Check in</b><span>Receptionist</span></div></a>
+<a href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check out"><div class="cap"><b>Check out</b><span>Receptionist</span></div></a>
+<a href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms admin"><div class="cap"><b>Rooms</b><span class="adm">Admin, office floor</span></div></a>
+<a href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes admin"><div class="cap"><b>Promo codes</b><span class="adm">Admin, office floor</span></div></a>
+<a href="screens/09-users.html"><img src="png/09-users.png" alt="Users admin"><div class="cap"><b>Users</b><span class="adm">Admin, office floor</span></div></a>
+</div></section>
+
+<section class="part"><h2>Palette</h2>
+<div class="sw">
+<div><i style="background:#123F35"></i><b>Lacquer jade</b><span>#123F35 nav band, occupied rooms, primary</span></div>
+<div><i style="background:#C4A25B"></i><b>Brass</b><span>#C4A25B fittings, rules, arrivals (text: #86652A)</span></div>
+<div><i style="background:#9ADCA0"></i><b>Lamp mint</b><span>#9ADCA0 current floor, ready rooms</span></div>
+<div><i style="background:#EFF4EE"></i><b>Ivory mint</b><span>#EFF4EE page ground (card #FBFCF9)</span></div>
+<div><i style="background:#F4DDD5"></i><b>Rose quartz</b><span>#F4DDD5 departures (ink #9A4A3C)</span></div>
+<div><i style="background:#B23A2E"></i><b>Vermilion lacquer</b><span>#B23A2E destructive, out of order</span></div>
+</div></section>
+
+<section class="part"><h2>Type</h2>
+<div class="type">
+<div class="bay deco"><div class="big">312 Deluxe</div><p><b>Limelight</b>, a 1930s display face with heavy stroke contrast. Used only for page titles, bay headings, room numbers and big totals: the engraved numerals of a lift indicator.</p></div>
+<div class="bay deco"><div class="ui">Check in Hannah Moreau</div><div style="font-size:14px; margin-top:8px">Breakfast, 2 guests × 3 nights <b style="float:right">$108.00</b></div><p><b>Urbanist</b>, a geometric sans with deco proportions and tabular figures. Everything you read or type: forms, tables, labels, money.</p></div>
+</div></section>
+
+<section class="part"><h2>Rules the screens follow</h2>
+<div class="principles">
+<div class="bay"><h3>The dial is the map</h3>Navigation lives only on the floor-indicator arc. Desk floors 1 to 6 rise on the left, the key switch sits past them, office floors 7 to 9 descend on the right. The needle and the lit mint floor are where you are.</div>
+<div class="bay"><h3>Doors carry three signals</h3>Every room shows colour, a glyph (dot, arrow, ring, dashed ring, cross) and a word. Colour is never the only cue.</div>
+<div class="bay"><h3>One brass-edged button</h3>Each screen has one primary action: solid jade with a brass edge. Destructive actions are vermilion outlines and state the cost, e.g. “Cancel booking and charge $226.58”.</div>
+</div></section>
+<p class="small muted" style="margin-top:36px">Synthetic data only. Fonts are self-hosted under the SIL Open Font License (see assets/fonts).</p>
+</main></body></html>

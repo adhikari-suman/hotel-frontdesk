@@ -1,125 +1,126 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>New booking · A-103.1 · Alder House front desk</title>
-<link rel="stylesheet" href="../assets/whiteprint.css">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New booking | Alder House front desk</title>
+<link rel="stylesheet" href="../assets/stampsheet.css"></head>
+<body><div class="shell">
+<header class="frank">
+  <div class="mark"><div class="stamp mini drop"><div class="face">AH</div></div><div><b>Alder House</b><span>Front desk</span></div></div>
+  <div class="search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Find guest, booking ref or room</span><kbd>/</kbd></div>
+  <div class="spacer"></div>
+  <div class="pm-wrap"><svg class="postmark" width="120" height="58" viewBox="0 0 120 58" aria-label="Postmark WED 14 OCT 2026" fill="none" stroke="#292DA3" stroke-width="1.4">
+<circle cx="29.0" cy="29.0" r="27.5"/><circle cx="29.0" cy="29.0" r="23.0" stroke-dasharray="2 2.2" stroke-width="1"/><path d="M62 17.0 q7 -4 14 0 t14 0 t14 0 t14 0" /><path d="M62 25.0 q7 -4 14 0 t14 0 t14 0 t14 0" /><path d="M62 33.0 q7 -4 14 0 t14 0 t14 0 t14 0" /><path d="M62 41.0 q7 -4 14 0 t14 0 t14 0 t14 0" />
+<text x="29.0" y="27.0" text-anchor="middle" fill="#292DA3" stroke="none" font-family="Red Hat Text" font-weight="700" font-size="12">14 OCT</text>
+<text x="29.0" y="40.0" text-anchor="middle" fill="#292DA3" stroke="none" font-family="Red Hat Text" font-weight="600" font-size="12">2026</text></svg><div><b style="color:var(--ink);font-weight:600">Wed 14 Oct 2026</b><br>Morning shift, 07:00–15:00</div></div>
+  <div class="user"><div class="avatar a1">MO</div><div><b>Maya Okafor</b><span class="role"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Receptionist</span></div></div>
+</header>
+<main class="page">
+
 <style>
-.stayrow{display:grid;grid-template-columns:1fr 1fr 70px auto auto;gap:14px;align-items:end;margin-top:14px}
-.stayrow .in--ro{justify-content:center}
-.typetab td:first-child,.extab td:first-child{width:34px;text-align:center}
-.typetab td:last-child{font-size:12.5px}
-.typetab tr.is-sel td:last-child{color:var(--line);font-weight:600}
-.pickset{margin-top:16px}
-.pickset legend{margin-bottom:8px}
-.pickset .plan{--tag:50px}
-.fgrid.g3{grid-template-columns:1fr 1fr 1.3fr}
-.span3{grid-column:1/-1}
-.extab td{height:44px}
-.extab td.g .i{color:var(--line);margin-right:4px}
-.pk{display:flex;gap:8px}
-.pk .fld{gap:2px}
-.in--sm{height:30px;font-size:13px;padding:0 8px}
-.pk .fld:first-child{width:130px}.pk .fld:last-child{width:62px}
-.promo{display:grid;grid-template-columns:260px 1fr;gap:16px;align-items:end}
-.promo__d{border:1px dashed var(--line);padding:9px 12px;font-size:13px}
-.promo__d p+p{color:var(--ink-2);margin-top:2px}
-.guar{display:grid;gap:8px}
-.guar legend{margin-bottom:8px}
-@media (max-width:1279px){.stayrow{grid-template-columns:1fr 1fr 70px}.fgrid.g3{grid-template-columns:1fr 1fr}.promo{grid-template-columns:1fr}}
-@media (max-width:760px){.stayrow,.fgrid.g3{grid-template-columns:1fr}}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:20px;align-items:start}
+.sec{padding:18px 20px;border-top:1px solid var(--rule)}
+.sec:first-child{border-top:0}
+.sec h2{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec h2 .aside{margin-left:auto;font-family:var(--sans);font-size:12px;font-weight:500;color:var(--ink-3)}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.types .drop{height:112px}
+.types .denom .face{padding:10px 12px}
+.types .free{margin-top:auto;font-size:12px;font-weight:600;display:flex;align-items:center;gap:4px}
+.types .denom .face .val small{font-family:var(--sans);font-size:12px;font-weight:500;color:var(--ink-3)}
+.xrow{display:grid;grid-template-columns:44px minmax(0,1fr) 210px 130px 80px;gap:14px;align-items:center;padding:10px 0;border-top:1px solid var(--rule)}
+.xrow:first-of-type{border-top:0}
+.xrow .xs{width:40px;height:46px;--r:2px}
+.xrow .xs .face{display:grid;place-items:center;height:100%}
+.xrow .xs svg{width:18px;height:18px}
+.xrow b{display:block;font-size:13.5px}
+.xrow .amt{text-align:right;font-weight:700}
+.xrow.off{color:var(--ink-3)} .xrow.off .amt{color:var(--ink-3);font-weight:500}
+.toggle{width:34px;height:20px;border-radius:10px;background:#CDD0DA;position:relative;flex:none}
+.toggle::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.toggle.on{background:var(--ultra)} .toggle.on::after{left:16px}
+.promo-applied{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px dashed var(--olive);border-radius:5px;background:var(--olive-tint)}
+.promo-applied b{font-size:14px}
+.envelope{padding:20px 20px 18px}
+.env-top{display:flex;flex-direction:column-reverse;gap:10px}
+.env-to{flex:1;padding-top:6px}
+.env-to .k{font-size:12px;color:var(--ink-3)}
+.env-to .n{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.15}
+.env-stamps{display:flex;gap:6px;position:relative;align-self:flex-end}
+.env-stamps .drop{width:48px;height:58px}
+.env-stamps .face{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:100%;font-size:12px;font-weight:700}
+.env-stamps .face svg{width:16px;height:16px}
+.env-stamps .postmark{position:absolute;right:-8px;top:18px;opacity:.85}
+.sticky-foot{display:flex;flex-direction:column;gap:8px;margin-top:16px}
 </style>
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /> <polyline points="16 17 21 12 16 7" /> <line x1="21" x2="9" y1="12" y2="12" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol><symbol id="i-plane-landing" viewBox="0 0 24 24"><path d="M2 22h20" /> <path d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-ticket-percent" viewBox="0 0 24 24"><path d="M2 9a3 3 0 1 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 1 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" /> <path d="M9 9h.01" /> <path d="m15 9-6 6" /> <path d="M15 15h.01" /></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol></defs></svg>
-<a class="skip" href="#main">Skip to the drawing</a>
-<div class="sheet">
-<div class="zone zone--t" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div><div class="zone zone--b" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span></div><div class="zone zone--l" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span></div><div class="zone zone--r" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span></div>
-<div class="drawing">
-<main class="main" id="main">
-<header class="sh"><div class="sh__t"><h1>New booking</h1><p class="sh__m"><span>Draft for <b>Leila Haddad</b></span><span>From a phone call at 10:38</span><span>Not yet held</span></p></div><div class="sh__a"><a class="btn btn--quiet" href="01-today.html"><svg class="i i--s" aria-hidden="true"><use href="#i-x"/></svg>Discard draft</a></div></header><div class="cols"><div class="stack"><section aria-labelledby="s1">
-<div class="dt"><span class="bub" aria-hidden="true"><b>1</b><i>A-103.1</i></span><div class="dt__t"><h2 id="s1">Stay</h2><p class="dt__s">Two nights over the weekend. Check-in from 14:00, check-out by 11:00.</p></div></div>
-<div class="dim "><span class="dim__e">Fri 2 Oct<small>from 14:00</small></span><span class="dim__l"><span class="dim__t">2 nights</span></span><span class="dim__e">Sun 4 Oct<small>by 11:00</small></span></div>
-<div class="stayrow">
-  <label class="fld"><span class="lbl">Check-in<span class="req">*</span></span><span class="inw"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><input class="in" value="Fri 2 Oct 2026"></span></label>
-  <label class="fld"><span class="lbl">Check-out<span class="req">*</span></span><span class="inw"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><input class="in" value="Sun 4 Oct 2026"></span></label>
-  <div class="fld"><span class="lbl">Nights</span><span class="in in--ro"><b>2</b></span></div>
-  <div class="fld"><span class="lbl">Adults</span><span class="stepper"><button type="button" aria-label="Fewer adults"><svg class="i i--s" aria-hidden="true"><use href="#i-minus"/></svg></button><output>2</output><button type="button" aria-label="More adults"><svg class="i i--s" aria-hidden="true"><use href="#i-plus"/></svg></button></span></div>
-  <div class="fld"><span class="lbl">Children</span><span class="stepper"><button type="button" aria-label="Fewer children"><svg class="i i--s" aria-hidden="true"><use href="#i-minus"/></svg></button><output>2</output><button type="button" aria-label="More children"><svg class="i i--s" aria-hidden="true"><use href="#i-plus"/></svg></button></span></div>
+<div class="head"><div><div class="crumb"><a href="02-availability.html">Availability</a><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>New booking</div><h1>New booking</h1><p>Deluxe picked from availability. Totals update as you fill in the form.</p></div>
+<div class="actions"><span class="tag grey"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Draft saved 09:41</span></div></div>
+<div class="cols">
+<section class="panel">
+ <div class="sec"><h2>Stay<span class="aside">Check-in from 14:00, check-out by 11:00</span></h2>
+  <div class="row4">
+   <div class="field"><label>Arrival<span class="req">*</span></label><div class="input"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Wed 14 Oct 2026</div></div>
+   <div class="field"><label>Departure<span class="req">*</span></label><div class="input"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Sat 17 Oct 2026</div></div>
+   <div class="field"><label>Adults</label><div class="stepper"><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span><b>2</b><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></div></div>
+   <div class="field"><label>Children</label><div class="stepper"><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span><b>0</b><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></div></div>
+  </div>
+  <p class="hint" style="margin-top:8px">3 nights: Wed 14, Thu 15, Fri 16 October.</p>
+ </div>
+ <div class="sec"><h2>Room type<span class="aside">Free counts are the lowest over the 3 nights</span></h2><div class="types"><div class="drop"><div class="stamp denom q"><div class="face"><span class="nm">Queen</span><span class="val"><sup>$</sup>136<small> a night</small></span><span class="free" style="color:var(--olive)"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10 free, 3 nights</span></div></div></div><div class="drop"><div class="stamp denom t"><div class="face"><span class="nm">Twin Double</span><span class="val"><sup>$</sup>166<small> a night</small></span><span class="free" style="color:var(--olive)"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>3 free, 3 nights</span></div></div></div><div class="drop"><div class="stamp denom d pick"><div class="face"><span class="nm">Deluxe</span><span class="val"><sup>$</sup>238<small> a night</small></span><span class="free" style="color:var(--olive)"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>5 free, 3 nights</span><span class="tag occ" style="position:absolute;top:8px;right:8px"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Chosen</span></div></div></div><div class="drop"><div class="stamp denom f"><div class="face"><span class="nm">Family Suite</span><span class="val"><sup>$</sup>366<small> a night</small></span><span class="free" style="color:var(--gold-ink)"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3z"/><path d="M12 9v4M12 17h.01"/></svg>Last 1 on 14 Oct</span></div></div></div></div></div>
+ <div class="sec"><h2>Guest<span class="aside"><span class="tag vac"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Returning guest, 2 past stays</span></span></h2>
+  <div class="row2" style="margin-bottom:12px">
+   <div class="field"><label>Full name<span class="req">*</span></label><div class="input">Hannah Moreau</div></div>
+   <div class="field"><label>Email<span class="req">*</span></label><div class="input"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>hannah.moreau@example.com</div></div>
+  </div>
+  <div class="row3">
+   <div class="field"><label>Phone</label><div class="input"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>+1 555 0142 881</div></div>
+   <div class="field"><label>Country</label><div class="input">France<span class="suf"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></div></div>
+   <div class="field"><label>Booking source</label><div class="input">Phone<span class="suf"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></div></div>
+  </div>
+ </div>
+ <div class="sec"><h2>Extras<span class="aside">Priced per guest per night, or per trip</span></h2>
+  <div class="xrow"><div class="drop"><div class="stamp xs" style="color:var(--gold-ink)"><div class="face" style="background:var(--gold-tint)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></div></div></div><div><b>Breakfast</b><span class="muted">$18 per guest per night</span></div><div style="display:flex;gap:8px;align-items:center"><div class="stepper"><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span><b>2</b><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></div><span class="muted"><span class="nowrap">guests, 3 nights</span></span></div><div class="muted">2 × 3 × $18</div><div class="amt">$108.00</div></div>
+  <div class="xrow off"><div class="drop"><div class="stamp xs" style="color:var(--ink-3)"><div class="face"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div></div></div><div><b>Dinner</b><span>$42 per guest per night</span></div><div style="display:flex;gap:8px;align-items:center"><div class="toggle"></div><span>Not added</span></div><div>Offer at check-in</div><div class="amt">$0.00</div></div>
+  <div class="xrow"><div class="drop"><div class="stamp xs" style="color:var(--ultra)"><div class="face" style="background:var(--ultra-tint)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M3 17v-5l2-5h14l2 5v5"/><path d="M3 12h18"/></svg></div></div></div><div><b>Arrival pickup</b><span class="muted">$55 per trip, from the airport</span></div><div style="display:flex;gap:8px;align-items:center"><div class="stepper"><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span><b>1</b><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></div><span class="muted">trip</span></div><div class="muted">Flight AF 022, 12:05</div><div class="amt">$55.00</div></div>
+ </div>
+ <div class="sec"><h2>Promo code<span class="aside"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Codes are created by admins. You can apply one per booking.</span></h2>
+  <div class="row2" style="align-items:end">
+   <div class="field"><label>Code</label><div class="input focus">summer2026<span class="suf"><span class="btn sm ghost">Remove</span></span></div></div>
+   <div class="promo-applied"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg><div><b>Summer 2026</b> <span class="muted">PC-001</span><br><span class="hint ok">Applied: 15% off room nights, saves $107.10</span></div></div>
+  </div>
+ </div>
+ <div class="sec"><h2>Notes for the desk</h2><div class="input" style="height:64px;align-items:flex-start;padding-top:10px">Late flight possible; hold room past 18:00. Prefers high floor.</div></div>
+</section>
+
+<aside class="cover envelope">
+ <div class="env-top">
+  <div class="env-to"><div class="k">Booking for</div><div class="n">Hannah Moreau</div><div class="sub">2 adults, Deluxe<br>Wed 14 to Sat 17 Oct</div></div>
+  <div class="env-stamps">
+   <div class="drop"><div class="stamp" style="--r:2px;color:var(--ultra);height:100%"><div class="face" style="background:var(--ultra-tint)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>3 nts</div></div></div>
+   <div class="drop"><div class="stamp" style="--r:2px;color:var(--gold-ink);height:100%"><div class="face" style="background:var(--gold-tint)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>×2</div></div></div>
+   <div class="drop"><div class="stamp" style="--r:2px;color:var(--olive);height:100%"><div class="face" style="background:var(--olive-tint)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M5 17a2 2 0 1 0 4 0M15 17a2 2 0 1 0 4 0M3 17v-5l2-5h14l2 5v5"/><path d="M3 12h18"/></svg>×1</div></div></div>
+  </div>
+ </div>
+ <div class="divider"></div>
+ <table class="lines">
+  <tr><td>Deluxe, 3 nights<small>3 × $238.00</small></td><td>$714.00</td></tr>
+  <tr class="d"><td>Promo summer2026<small>15% off room nights</small></td><td>−$107.10</td></tr>
+  <tr><td>Breakfast<small>2 guests × 3 nights × $18</small></td><td>$108.00</td></tr>
+  <tr><td>Arrival pickup<small>1 trip × $55</small></td><td>$55.00</td></tr>
+  <tr class="sep"><td>Subtotal</td><td>$769.90</td></tr>
+  <tr><td>Tax 12%</td><td>$92.39</td></tr>
+  <tr class="tot"><td>Total</td><td>$862.29</td></tr>
+ </table>
+ <div class="divider"></div>
+ <div class="field"><label>Payment guarantee</label>
+  <div class="check" style="margin:4px 0"><span class="radio on"></span><span><b>Card on file</b><br><span class="muted">Visa ending 8830, pre-authorise at check-in</span></span></div>
+  <div class="check"><span class="radio"></span><span>Pay at desk on arrival</span></div>
+ </div>
+ <div class="sticky-foot">
+  <a class="btn primary lg" href="04-booking-rebook.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Create booking, $862.29</a>
+  <span class="btn">Save draft</span>
+  <p class="hint" style="text-align:center">Confirmation goes to hannah.moreau@example.com</p>
+ </div>
+</aside>
 </div>
-</section><section aria-labelledby="s2">
-<div class="dt"><span class="bub" aria-hidden="true"><b>2</b><i>A-103.1</i></span><div class="dt__t"><h2 id="s2">Room type and room</h2><p class="dt__s">All four types for Fri 2 and Sat 3. Only Family Suite fits four guests.</p></div></div>
-<table class="sch typetab">
-<thead><tr><th><span class="vh">Choose</span></th><th>Room type</th><th class="num">Sleeps</th><th class="num">Per night</th><th class="num">Free Fri 2</th><th class="num">Free Sat 3</th><th>Fit for 2 adults, 2 children</th></tr></thead>
-<tbody><tr class="is-sel"><td><input class="rd" type="radio" name="type" checked aria-label="Family Suite"></td><td class="g">Family Suite</td><td class="num">4</td><td class="num">$366</td><td class="num">2</td><td class="num">2</td><td><svg class="i i--s" aria-hidden="true"><use href="#i-check"/></svg> Fits the party · 803 and 807 free</td></tr><tr class="is-off"><td><input class="rd" type="radio" name="type" disabled aria-label="Deluxe"></td><td class="g">Deluxe</td><td class="num">2</td><td class="num">$238</td><td class="num">1</td><td class="num">1</td><td>Sleeps 2, the party is 4</td></tr><tr class="is-off"><td><input class="rd" type="radio" name="type" disabled aria-label="Twin Double"></td><td class="g">Twin Double</td><td class="num">2</td><td class="num">$166</td><td class="num">1</td><td class="num">0 · full</td><td>Full on Sat 3</td></tr><tr class="is-off"><td><input class="rd" type="radio" name="type" disabled aria-label="Queen"></td><td class="g">Queen</td><td class="num">2</td><td class="num">$136</td><td class="num">2</td><td class="num">0 · full</td><td>Full on Sat 3</td></tr></tbody></table>
-<fieldset class="pickset"><legend class="lbl">Pick a room on level 8</legend>
-<div class="scrollx"><div class="plan plan--one"><div class="lvl"><div class="lvl__tag"><span class="lvl__no" aria-label="Level 8">8</span><span class="lvl__type">Family Suite</span></div><div class="lvl__shell"><div class="lvl__rooms"><span class="rm rm--occ rm--off" role="img" aria-label="Room 801, booked those nights, Byrne"><span class="rm__h"><span class="rm__no">801</span><span class="rm__cd">RES</span></span><span class="rm__g">Byrne</span></span><span class="rm rm--occ rm--off" role="img" aria-label="Room 802, booked those nights, Vidal"><span class="rm__h"><span class="rm__no">802</span><span class="rm__cd">RES</span></span><span class="rm__g">Vidal</span></span><label class="rm rm--vc rm--pick"><span class="rm__h"><span class="rm__no">803</span><span class="rm__cd">FREE</span></span><span class="rm__g">Free</span><input class="rd rm__rd" type="radio" name="room" value="803" aria-label="Room 803, free both nights"></label><span class="rm rm--occ rm--off" role="img" aria-label="Room 804, booked those nights, Takeda"><span class="rm__h"><span class="rm__no">804</span><span class="rm__cd">RES</span></span><span class="rm__g">Takeda</span></span><span class="rm rm--occ rm--off" role="img" aria-label="Room 805, booked those nights, Moyo"><span class="rm__h"><span class="rm__no">805</span><span class="rm__cd">RES</span></span><span class="rm__g">Moyo</span></span><span class="rm rm--occ rm--off" role="img" aria-label="Room 806, booked those nights, Costa"><span class="rm__h"><span class="rm__no">806</span><span class="rm__cd">RES</span></span><span class="rm__g">Costa</span></span><label class="rm rm--vc rm--pick rm--sel"><span class="rm__h"><span class="rm__no">807</span><span class="rm__cd">FREE</span></span><span class="rm__g">Chosen</span><input class="rd rm__rd" type="radio" name="room" value="807" checked aria-label="Room 807, free both nights"></label><span class="rm rm--occ rm--off" role="img" aria-label="Room 808, booked those nights, Kaur"><span class="rm__h"><span class="rm__no">808</span><span class="rm__cd">RES</span></span><span class="rm__g">Kaur</span></span></div><div class="lvl__corr"></div></div></div></div></div>
-<p class="key"><span><span class="sym sym--occ" aria-hidden="true"></span>RES booked those nights</span><span><span class="sym sym--vc" aria-hidden="true"></span>FREE both nights</span><span><span class="sym sym--sel" aria-hidden="true"></span>Chosen: 807</span></p>
-</fieldset>
-</section><section aria-labelledby="s3">
-<div class="dt"><span class="bub" aria-hidden="true"><b>3</b><i>A-103.1</i></span><div class="dt__t"><h2 id="s3">Guest</h2><p class="dt__s">From the phone call at 10:38.</p></div></div>
-<div class="fgrid g3">
-  <label class="fld"><span class="lbl">Full name<span class="req">*</span></span><input class="in" value="Leila Haddad"></label>
-  <label class="fld"><span class="lbl">Phone</span><span class="inw"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><input class="in" value="+1 617 555 0186"></span></label>
-  <label class="fld"><span class="lbl">Email</span><span class="inw"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><input class="in" value="leila.haddad@example.com"></span></label>
-  <label class="fld span3"><span class="lbl">Requests</span><textarea class="in" rows="2">Children aged 6 and 9.</textarea></label>
-</div>
-</section><section aria-labelledby="s4">
-<div class="dt"><span class="bub" aria-hidden="true"><b>4</b><i>A-103.1</i></span><div class="dt__t"><h2 id="s4">Extras</h2><p class="dt__s">Dinner, breakfast and arrival pickup can be added to any booking.</p></div></div>
-<table class="sch extab">
-<thead><tr><th><span class="vh">Add</span></th><th>Extra</th><th>Rate</th><th>For this stay</th><th class="num">Amount</th></tr></thead>
-<tbody>
-<tr class="is-sel"><td><input class="ck" type="checkbox" checked aria-label="Breakfast"></td><td class="g"><svg class="i" aria-hidden="true"><use href="#i-coffee"/></svg> Breakfast</td><td>$18 per guest per night</td><td>4 guests × 2 nights × $18</td><td class="num strong">$144.00</td></tr>
-<tr><td><input class="ck" type="checkbox" aria-label="Dinner"></td><td class="g"><svg class="i" aria-hidden="true"><use href="#i-utensils"/></svg> Dinner</td><td>$42 per guest per night</td><td class="muted">Not added</td><td class="num muted">—</td></tr>
-<tr class="is-sel"><td><input class="ck" type="checkbox" checked aria-label="Arrival pickup"></td><td class="g"><svg class="i" aria-hidden="true"><use href="#i-plane-landing"/></svg> Arrival pickup</td><td>$55 per trip</td>
-<td><div class="pk"><label class="fld"><span class="lbl">Flight lands</span><input class="in in--sm is-focus" value="Fri 2 Oct 13:20"></label><label class="fld"><span class="lbl">Terminal</span><input class="in in--sm" value="B"></label></div></td><td class="num strong">$55.00</td></tr>
-</tbody></table>
-</section><section aria-labelledby="s5">
-<div class="dt"><span class="bub" aria-hidden="true"><b>5</b><i>A-103.1</i></span><div class="dt__t"><h2 id="s5">Promo code</h2><p class="dt__s">Apply a code the guest quotes. One code per booking.</p></div></div>
-<div class="promo">
-  <label class="fld"><span class="lbl">Code</span><span class="inw"><svg class="i" aria-hidden="true"><use href="#i-ticket-percent"/></svg><input class="in in--code" value="AUTUMN26"><span class="ok"><svg class="i i--s" aria-hidden="true"><use href="#i-circle-check"/></svg>Valid</span></span></label>
-  <div class="promo__d"><p><b>Autumn Weekends 2026</b></p><p>15% off room nights · 1 Sep–30 Nov 2026 · 82 of 120 uses left</p></div>
-</div>
-<p class="perm" style="margin-top:12px"><svg class="i i--s" aria-hidden="true"><use href="#i-lock"/></svg><span><b>Codes are created by admins.</b> You can apply a code to a booking, not create or edit one.</span></p>
-</section></div><aside class="sum" aria-labelledby="s6">
-<div class="dt"><span class="bub" aria-hidden="true"><b>6</b><i>A-103.1</i></span><div class="dt__t"><h2 id="s6">Booking schedule</h2><p class="dt__s">Draft · not yet held</p></div></div>
-<div class="panel">
-  <div class="sum__who"><span class="rtag"><b>807</b><span>Level 8</span></span><div><h3>Family Suite</h3><p>Leila Haddad · 2 adults, 2 children</p></div></div>
-  <div class="dim "><span class="dim__e">Fri 2 Oct<small>from 14:00</small></span><span class="dim__l"><span class="dim__t">2 nights</span></span><span class="dim__e">Sun 4 Oct<small>by 11:00</small></span></div>
-  <table class="tot">
-    <tr><td>Room <small>2 × $366</small></td><td>$732.00</td></tr>
-    <tr class="less"><td>Promo <span class="pcode">AUTUMN26</span> <small>15% off rooms</small></td><td>−$109.80</td></tr>
-    <tr><td>Breakfast <small>4 × 2 × $18</small></td><td>$144.00</td></tr>
-    <tr><td>Arrival pickup <small>Fri 13:20</small></td><td>$55.00</td></tr>
-    <tr class="sub"><td>Subtotal</td><td>$821.20</td></tr>
-    <tr><td>Tax 12%</td><td>$98.54</td></tr>
-    <tr class="grand"><td>Total</td><td>$919.74</td></tr>
-  </table>
-  <fieldset class="guar"><legend class="lbl">Guarantee</legend>
-    <label class="opt"><input class="rd" type="radio" name="g" checked><span>Pay at check-in<small>A card is taken when the guest arrives.</small></span></label>
-    <label class="opt"><input class="rd" type="radio" name="g"><span>Card now</span></label>
-  </fieldset>
-  <p class="perm"><svg class="i i--s" aria-hidden="true"><use href="#i-info"/></svg><span><b>Free cancellation until Thu 1 Oct, 14:00.</b></span></p>
-  <button class="btn btn--primary btn--lg btn--block" type="button"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Confirm booking</button>
-</div>
-</aside></div>
 </main>
-<div class="strip-top">
-  <div class="proj"><svg class="proj__mark" viewBox="0 0 34 34" aria-hidden="true" fill="none" stroke="currentColor"><rect x="1.5" y="1.5" width="31" height="31" stroke-width="2"/><path d="M1.5 22.5H32.5M11.5 1.5V22.5M22 1.5V22.5" stroke-width="1.3"/><path d="M8 22.5A5 5 0 0 0 3 17.5V22.5" stroke-width="1"/><rect x="13.5" y="3.5" width="6.5" height="17" fill="currentColor" fill-opacity=".18" stroke="none"/></svg><div><p class="proj__name">Alder House</p><p class="proj__sub">Front desk · 64 rooms</p></div></div>
-  <nav class="idx" aria-label="Sheet index"><h2 class="idx__h">Sheet index</h2><p class="idx__grp"><span>A · Front desk</span></p><ul><li><a href="01-today.html"><span class="idx__no">A-101</span><span class="idx__t">Today</span></a></li><li><a href="02-availability.html"><span class="idx__no">A-102</span><span class="idx__t">Availability</span></a></li><li><a href="03-new-booking.html" class="is-parent"><span class="idx__no">A-103</span><span class="idx__t">Bookings</span></a><ul class="idx__sub"><li><a href="03-new-booking.html" aria-current="page"><span class="idx__no">A-103.1</span><span class="idx__t">New booking</span></a></li><li><a href="04-booking-rebook.html"><span class="idx__no">A-103.2</span><span class="idx__t">Rebook · HVK-2094</span></a></li><li><a href="05-check-in.html"><span class="idx__no">A-103.3</span><span class="idx__t">Check-in · 704</span></a></li><li><a href="06-check-out.html"><span class="idx__no">A-103.4</span><span class="idx__t">Check-out · 505</span></a></li></ul></li></ul><p class="idx__grp"><span>B · Setup</span><span>Admin only</span></p><ul><li><span class="idx__lock" aria-disabled="true" title="Admin only"><span class="idx__no">B-201</span><span class="idx__t">Rooms</span><svg class="i i--s" role="img" aria-label="Admin only"><use href="#i-lock"/></svg></span></li><li><span class="idx__lock" aria-disabled="true" title="Admin only"><span class="idx__no">B-202</span><span class="idx__t">Promo codes</span><svg class="i i--s" role="img" aria-label="Admin only"><use href="#i-lock"/></svg></span></li><li><span class="idx__lock" aria-disabled="true" title="Admin only"><span class="idx__no">B-203</span><span class="idx__t">Users</span><svg class="i i--s" role="img" aria-label="Admin only"><use href="#i-lock"/></svg></span></li></ul></nav>
-</div>
-<div class="strip-mid"><section class="snotes"><h2>General notes</h2><ol><li><span>Check-in from 14:00, check-out by 11:00.</span></li><li><span>Family Suite sleeps 4; the other types sleep 2.</span></li><li><span>One promo code per booking. Codes are created by admins.</span></li></ol></section></div>
-<div class="tb" role="contentinfo">
-  <dl>
-    <div class="tb__c tb__c--full tb__title"><dt>Sheet title</dt><dd>New booking</dd></div>
-    <div class="tb__c"><dt>Date</dt><dd>Sun 27 Sep 2026</dd></div>
-    <div class="tb__c"><dt>Time</dt><dd>10:44</dd></div>
-    <div class="tb__c tb__c--full"><dt>Drawn by</dt><dd><span class="tb__by"><span>N. Rahimi</span><a class="tb__out" href="#"><svg class="i i--s" aria-hidden="true"><use href="#i-log-out"/></svg>Sign out</a></span><small>Receptionist · morning shift 07–15</small></dd></div>
-    <div class="tb__c tb__c--full tb__no"><dt>Sheet</dt><dd>A-103.1</dd></div>
-  </dl>
-</div>
-</div>
-</div>
-</body>
-</html>
+<nav class="index" aria-label="Main"><h2 class="navh">Front desk</h2><a class="" href="01-today.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Today<span class="n">64</span></a><a class="" href="02-availability.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Availability<span class="n">14 nights</span></a><a class="on" href="03-new-booking.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New booking<span class="n"></span></a><a class="" href="04-booking-rebook.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></svg>Bookings<span class="n">112</span></a><a class="" href="05-check-in.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5M15 12H3"/></svg>Check in<span class="n">9</span></a><a class="" href="06-check-out.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg>Check out<span class="n">7</span></a><div class="lockline"></div><h2 class="navh"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Admin only</h2><a class="locked" href="07-rooms.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg>Rooms<span class="n"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span></a><a class="locked" href="08-promo-codes.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg>Promo codes<span class="n">View only</span></a><a class="locked" href="09-users.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>Users<span class="n"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span></a><p class="note">Rooms, codes and staff are managed by admins. You can apply promo codes to bookings.</p></nav>
+</div></body></html>

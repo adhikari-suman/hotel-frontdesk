@@ -1,126 +1,60 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>promo codes · alder house front desk</title>
-<link rel="stylesheet" href="../assets/lanes.css">
-<style>
-.promos .lane--sage { flex: .8 1 0; }
-.promos .form-lane { flex: 1.45 1 0; }
-.pc { background: var(--white); border-radius: var(--r-card); padding: 14px; box-shadow: var(--shadow-card); display: grid; gap: 8px; }
-.pc-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.pc-title { font-size: var(--t-16); font-weight: 600; line-height: 1.2; }
-.pc-d { display: grid; gap: 4px; margin: 0; font-size: var(--t-13); }
-.pc-d div { display: grid; grid-template-columns: 44px 1fr; gap: 6px; }
-.pc-d dt { color: var(--ink-2); }
-.pc-d dd { margin: 0; font-weight: 500; }
-.uses { display: grid; gap: 5px; font-size: var(--t-13); }
-.uses b { font-weight: 600; }
-.bar { height: 8px; border-radius: 999px; background: var(--ground); border: 1px solid rgba(11, 63, 58, .3); overflow: hidden; }
-.bar i { display: block; height: 100%; background: var(--water-deep); }
-.pid { font-size: var(--t-12); color: var(--ink-2); }
-.pc.is-ended { background: rgba(255, 255, 255, .6); box-shadow: none; border: 1px dashed rgba(11, 63, 58, .35); }
-.pc.is-ended .promo { background: var(--ink-2); }
-.pc.is-ovl { box-shadow: 0 0 0 2px var(--marigold), var(--shadow-card); }
-.ovl { display: flex; gap: 6px; align-items: center; font-size: var(--t-12); font-weight: 600; padding: 4px 8px; border-radius: 6px; background: var(--marigold-pale); }
-.preview { border-radius: var(--r-card); border: 1.5px dashed var(--line-strong); overflow: hidden; }
-.pv-h { display: flex; align-items: center; gap: 6px; font-size: var(--t-13); font-weight: 600; padding: 8px 12px; background: var(--water-pale); }
-.pv-body { padding: 12px; display: grid; gap: 8px; }
-.pv-body .i { vertical-align: -2px; }
-</style>
-</head>
-<body class="is-admin">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></symbol><symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol><symbol id="i-calendar-days" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="M8 14h.01" /> <path d="M12 14h.01" /> <path d="M16 14h.01" /> <path d="M8 18h.01" /> <path d="M12 18h.01" /> <path d="M16 18h.01" /></symbol><symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-circle-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="1" /></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /> <path d="M12 7v5l4 2" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-percent" viewBox="0 0 24 24"><line x1="19" x2="5" y1="5" y2="19" /> <circle cx="6.5" cy="6.5" r="2.5" /> <circle cx="17.5" cy="17.5" r="2.5" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol></defs></svg>
-<header class="topbar"><a class="wordmark" href="01-today.html"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="7" width="6.5" height="21" rx="3.25" fill="#77EEBB"/><rect x="11.75" y="7" width="6.5" height="21" rx="3.25" fill="#2FB38A"/><rect x="21.5" y="13" width="6.5" height="15" rx="3.25" fill="#0B3F3A"/><circle cx="24.75" cy="6" r="4.25" fill="#EEBB33"/></svg><span>alder house</span></a><nav class="nav nav-admin" aria-label="Main"><a href="01-today.html">today</a><a href="02-availability.html">availability</a><span class="nav-sep" aria-hidden="true"></span><span class="nav-group">admin</span><a href="07-rooms.html">rooms</a><a href="08-promo-codes.html" aria-current="page">promo codes</a><a href="09-users.html">users</a></nav><div class="topbar-end"><span class="clock">sun 27 sep<b>11:05</b></span><div class="who"><span class="avatar is-admin">AM</span><span><b>Aiko Mori</b><small>admin · front office manager</small></span></div></div><div class="rope-h" aria-hidden="true"></div></header>
-<main class="page">
-<div class="pagehead">
-  <div class="titles"><h1>promo codes</h1>
-    <p class="sub"><span><b class="num">6</b> codes</span><span class="dot-sep">2 active · 2 scheduled · 2 ended</span><span class="dot-sep">A booking can use one code</span></p></div>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=1440">
+<title>Promotion codes — Alder House front desk</title>
+<link rel="stylesheet" href="../assets/switchboard.css"></head>
+<body>
+<header class="strip">
+  <div class="mark"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" rx="3" fill="#22252B"/><circle cx="8" cy="9" r="2.6" fill="#74FDE0"/><circle cx="18" cy="9" r="2.6" fill="#F9FAF7"/><circle cx="8" cy="18" r="2.6" fill="#F9FAF7"/><circle cx="18" cy="18" r="2.6" fill="#A50D2A"/><path d="M8 9 C 8 14, 18 13, 18 18" stroke="#A50D2A" stroke-width="1.6" fill="none"/></svg><span>Alder House</span><span class="sub">Front desk</span></div>
+  <div class="when"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span><b>Wed 14 Oct 2026</b><span>09:22</span><span>Day shift 07:00–15:00</span></div>
+  <div class="op"><div class="search"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Guest, booking ref, room<kbd>/</kbd></div><div class="who"><span class="av">DR</span>Daniel Reyes</div><span class="roleplate admin">Admin</span></div>
+</header>
+<main class="board">
+<div class="head"><div><h1>Promotion codes</h1><div class="lede">Every code has a date range. A use limit is optional.</div></div>
+<div class="actions"><span class="tag lock"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Admin area</span></div></div>
+<div class="meter">
+<div><span class="k"><span class="lamp free"></span> Active</span><span class="v">2<small>autumn26, longstay7</small></span></div>
+<div><span class="k"><span class="lamp arr"></span> Scheduled</span><span class="v">1<small>starts 1 Dec</small></span></div>
+<div><span class="k"><span class="lamp off"></span> Ended</span><span class="v">1</span></div>
+<div><span class="k"><span class="lamp ooo"></span> Used up</span><span class="v">1</span></div>
+<div><span class="k">Uses this year</span><span class="v">253<small>all codes</small></span></div>
 </div>
-<div class="lanes promos"><section class="lane lane--sage" aria-labelledby="p-active">
-  <header class="lane-head"><h2 id="p-active">active <span class="n">2</span></h2></header>
-  <div class="lane-body"><article class="pc">
-  <div class="pc-top"><span class="promo">autumn26</span><span class="state small"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-dot"/></svg>Active</span></div>
-  <p class="pc-title">Autumn Weekends 2026</p>
-  <dl class="pc-d"><div><dt>Valid</dt><dd>1 Sep–30 Nov 2026</dd></div><div><dt>Offer</dt><dd>15% off room nights</dd></div></dl>
-  <div class="uses"><span class="num"><b>38</b> of 120 used</span><span class="bar"><i style="width:31.7%"></i></span></div>
-  
-  <p class="pid mono">PRM-0009</p>
-</article><article class="pc">
-  <div class="pc-top"><span class="promo">longstay7</span><span class="state small"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-dot"/></svg>Active</span></div>
-  <p class="pc-title">Stay 7, Pay 6</p>
-  <dl class="pc-d"><div><dt>Valid</dt><dd>1 Jan–31 Dec 2026</dd></div><div><dt>Offer</dt><dd>7th night free</dd></div></dl>
-  <div class="uses"><span class="num"><b>12</b> used · no limit</span></div>
-  
-  <p class="pid mono">PRM-0011</p>
-</article></div>
-</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage" aria-labelledby="p-scheduled">
-  <header class="lane-head"><h2 id="p-scheduled">scheduled <span class="n">2</span></h2></header>
-  <div class="lane-body"><article class="pc">
-  <div class="pc-top"><span class="promo">diwali26</span><span class="state small"><svg class="i i-sm" aria-hidden="true"><use href="#i-calendar-days"/></svg>Scheduled</span></div>
-  <p class="pc-title">Diwali Lights 2026</p>
-  <dl class="pc-d"><div><dt>Valid</dt><dd>6–15 Nov 2026</dd></div><div><dt>Offer</dt><dd>10%</dd></div></dl>
-  <div class="uses"><span class="num"><b>0</b> of 40 used</span><span class="bar"><i style="width:0.0%"></i></span></div>
-  
-  <p class="pid mono">PRM-0012</p>
-</article><article class="pc is-ovl">
-  <div class="pc-top"><span class="promo">winter26</span><span class="state small"><svg class="i i-sm" aria-hidden="true"><use href="#i-calendar-days"/></svg>Scheduled</span></div>
-  <p class="pc-title">Winter Escape</p>
-  <dl class="pc-d"><div><dt>Valid</dt><dd>1 Dec 2026–28 Feb 2027</dd></div><div><dt>Offer</dt><dd>20%</dd></div></dl>
-  <div class="uses"><span class="num"><b>0</b> of 80 used</span><span class="bar"><i style="width:0.0%"></i></span></div>
-  <p class="ovl"><svg class="i i-sm" aria-hidden="true"><use href="#i-triangle-alert"/></svg>Overlaps the new code for 7 nights</p>
-  <p class="pid mono">PRM-0013</p>
-</article></div>
-</section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage" aria-labelledby="p-ended">
-  <header class="lane-head"><h2 id="p-ended">ended <span class="n">2</span></h2></header>
-  <div class="lane-body"><article class="pc is-ended">
-  <div class="pc-top"><span class="promo">spring26</span><span class="state small"><svg class="i i-sm" aria-hidden="true"><use href="#i-ban"/></svg>Used up</span></div>
-  <p class="pc-title">Spring 2026</p>
-  <dl class="pc-d"><div><dt>Valid</dt><dd>1 Mar–31 May 2026</dd></div><div><dt>Offer</dt><dd>10%</dd></div></dl>
-  <div class="uses"><span class="num"><b>150</b> of 150 used</span><span class="bar"><i style="width:100.0%"></i></span></div>
-  
-  <p class="pid mono">PRM-0010</p>
-</article><article class="pc is-ended">
-  <div class="pc-top"><span class="promo">summer2020</span><span class="state small"><svg class="i i-sm" aria-hidden="true"><use href="#i-history"/></svg>Expired</span></div>
-  <p class="pc-title">Summer 2020</p>
-  <dl class="pc-d"><div><dt>Valid</dt><dd>1 Jun–31 Aug 2020</dd></div><div><dt>Offer</dt><dd>15%</dd></div></dl>
-  <div class="uses"><span class="num"><b>212</b> used · no limit</span></div>
-  
-  <p class="pid mono">PRM-0001</p>
-</article></div>
-</section><div class="rope" aria-hidden="true"></div><section class="lane lane--white form-lane" aria-labelledby="p-new">
-  <header class="lane-head"><h2 id="p-new">new promo code</h2><p class="meta">Only admins create codes. Receptionists apply them.</p></header>
-  <div class="lane-body">
-    <div class="fields">
-      <div class="fields two">
-        <div class="field"><span class="label">ID <span class="opt">automatic</span></span><span class="input is-readonly"><span class="v mono">PRM-0014</span><svg class="i i-sm" aria-hidden="true"><use href="#i-lock"/></svg></span></div>
-        <div class="field"><label>Code <span class="req">*</span></label><span class="input is-focus"><span class="v mono">newyear27</span></span><span class="hint">Letters and digits, any case</span></div>
-      </div>
-      <div class="field"><label>Title <span class="req">*</span></label><span class="input"><span class="v">New Year 2027</span></span></div>
-      <div class="fields two">
-        <div class="field"><label>Valid from <span class="req">*</span></label><span class="input"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><span class="v">Mon 28 Dec 2026</span></span></div>
-        <div class="field"><label>Valid to <span class="req">*</span></label><span class="input"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg><span class="v">Sun 3 Jan 2027</span></span></div>
-      </div>
-      <p class="hint" style="margin-top:-6px">Both dates are required.</p>
-      <div class="fields two">
-        <div class="field"><label>Usage limit <span class="opt">optional</span></label><span class="input"><span class="v num">60</span><span class="muted small">uses</span></span><span class="hint">Empty means no limit</span></div>
-        <div class="field"><label>Offer</label><span class="input"><svg class="i i-sm" aria-hidden="true"><use href="#i-percent"/></svg><span class="v">10% off room nights</span><svg class="i i-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></span></div>
-      </div>
-      <p class="note warn"><svg class="i i-sm" aria-hidden="true"><use href="#i-triangle-alert"/></svg><span><b>Overlaps <span class="promo">winter26</span> for 7 nights</b> (28 Dec–3 Jan). A booking can use only one code.</span></p>
-      <div class="preview">
-        <p class="pv-h"><svg class="i i-sm" aria-hidden="true"><use href="#i-eye"/></svg> What receptionists will see</p>
-        <div class="pv-body">
-          <span class="label small strong">Promo code</span>
-          <span class="input is-valid"><span class="v mono">NEWYEAR27</span><span class="state ok small"><svg class="i i-sm" aria-hidden="true"><use href="#i-circle-check"/></svg>valid</span></span>
-          <p class="small"><b>New Year 2027</b> · 10% off room nights · 28 Dec 2026–3 Jan 2027 · <span class="num">60 of 60</span> uses left</p>
-          <p class="small muted"><svg class="i i-sm" aria-hidden="true"><use href="#i-lock"/></svg> Codes are created by admins.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="lane-foot"><a class="btn btn-sun btn-block" href="#">create promo code<span class="disc"><svg class="i" aria-hidden="true"><use href="#i-plus"/></svg></span></a></div>
-</section></div>
+<div class="cols c-main-side mt16"><div class="stack"><section class="panel "><div class="ds"><h2>Promotion codes</h2><div class="meta">Checked on the booking date</div></div><div class="tabs"><span class="on">All 5</span><span>Active 2</span><span>Scheduled 1</span><span>Ended or used up 2</span><span style="margin-left:auto" class="row"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg> Find code</span></div>
+<table class="t"><tr><th>ID</th><th>Code</th><th>Title</th><th>Valid dates</th><th>Uses</th><th>Status</th><th class="right">Actions</th></tr><tr class="dim"><td class="code" style="white-space:nowrap">PC-001</td><td><span class="codechip">summer2026</span></td><td style="white-space:nowrap"><b>Summer 2026</b></td><td style="white-space:nowrap">1 Jun → 30 Sep 2026</td><td><div class="row" style="gap:10px"><span style="width:64px;height:6px;border-radius:3px;background:#E3E6E0;overflow:hidden;display:block"><i style="display:block;height:100%;width:82%;background:var(--graphite-2)"></i></span><span>164 / 200</span></div><div class="small muted">36 left</div></td><td><span class="tag off"><span class="lamp off"></span>Ended</span></td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm">Duplicate</span></span></td></tr><tr class=""><td class="code" style="white-space:nowrap">PC-002</td><td><span class="codechip">autumn26</span></td><td style="white-space:nowrap"><b>Autumn Escape</b></td><td style="white-space:nowrap">1 Oct → 30 Nov 2026</td><td><div class="row" style="gap:10px"><span style="width:64px;height:6px;border-radius:3px;background:#E3E6E0;overflow:hidden;display:block"><i style="display:block;height:100%;width:31%;background:var(--graphite-2)"></i></span><span>37 / 120</span></div><div class="small muted">83 left</div></td><td><span class="tag free"><span class="lamp free"></span>Active</span></td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm danger">Deactivate</span></span></td></tr><tr class=""><td class="code" style="white-space:nowrap">PC-003</td><td><span class="codechip">longstay7</span></td><td style="white-space:nowrap"><b>Stay 7, Pay 6</b></td><td style="white-space:nowrap">1 Jan → 31 Dec 2026</td><td><div class="row" style="gap:10px"><span style="width:64px;height:6px;border-radius:3px;background:repeating-linear-gradient(90deg,#C9CDC6 0 4px,transparent 4px 7px);display:block"></span><span style="white-space:nowrap">22 / no limit</span></div><div class="small muted">unlimited</div></td><td><span class="tag free"><span class="lamp free"></span>Active</span></td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm danger">Deactivate</span></span></td></tr><tr class=""><td class="code" style="white-space:nowrap">PC-004</td><td><span class="codechip">winter2026</span></td><td style="white-space:nowrap"><b>Winter 2026</b></td><td style="white-space:nowrap">1 Dec → 28 Feb 2027</td><td><div class="row" style="gap:10px"><span style="width:64px;height:6px;border-radius:3px;background:#E3E6E0;overflow:hidden;display:block"><i style="display:block;height:100%;width:0%;background:var(--graphite-2)"></i></span><span>0 / 150</span></div><div class="small muted">150 left</div></td><td><span class="tag arr"><span class="lamp arr"></span>Scheduled</span></td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm danger"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/></svg> Delete</span></span></td></tr><tr class=""><td class="code" style="white-space:nowrap">PC-005</td><td><span class="codechip">staffkin</span></td><td style="white-space:nowrap"><b>Friends & Family</b></td><td style="white-space:nowrap">1 Jan → 31 Dec 2026</td><td><div class="row" style="gap:10px"><span style="width:64px;height:6px;border-radius:3px;background:#E3E6E0;overflow:hidden;display:block"><i style="display:block;height:100%;width:100%;background:var(--crimson)"></i></span><span>30 / 30</span></div><div class="small muted">0 left</div></td><td><span class="tag ooo"><span class="lamp ooo"></span>Used up</span></td><td class="right"><span class="row" style="justify-content:flex-end"><span class="btn sm"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg> Edit</span><span class="btn sm">Duplicate</span></span></td></tr></table></section><section class="panel "><div class="ds"><h2>Code calendar, 2026–27</h2></div><div class="pad"><div style="display:grid;grid-template-columns:repeat(14,1fr);font-size:12px;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:4px"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span></div>
+<div style="position:relative">
+<span style="position:absolute;left:67.28%;top:0;bottom:0;border-left:2px solid var(--crimson);z-index:0"></span>
+<div style="position:relative;height:24px;margin:4px 0"><span style="position:absolute;left:35.714285714285715%;width:28.57142857142857%;top:2px;height:20px;z-index:1;border-radius:10px;background:#B3B8B0;color:#22252B;font-size:12px;font-weight:600;line-height:20px;padding:0 10px;white-space:nowrap;overflow:hidden">summer2026 · ended</span></div>
+<div style="position:relative;height:24px;margin:4px 0"><span style="position:absolute;left:64.28571428571429%;width:14.285714285714285%;top:2px;height:20px;z-index:1;border-radius:10px;background:var(--graphite-2);color:#fff;font-size:12px;font-weight:600;line-height:20px;padding:0 10px;white-space:nowrap;overflow:hidden">autumn26</span></div>
+<div style="position:relative;height:24px;margin:4px 0"><span style="position:absolute;left:0.0%;width:85.71428571428571%;top:2px;height:20px;z-index:1;border-radius:10px;background:var(--graphite-2);color:#fff;font-size:12px;font-weight:600;line-height:20px;padding:0 10px;white-space:nowrap;overflow:hidden">longstay7 · all year</span></div>
+<div style="position:relative;height:24px;margin:4px 0"><span style="position:absolute;left:78.57142857142857%;width:21.428571428571427%;top:2px;height:20px;z-index:1;border-radius:10px;background:var(--amber);color:#22252B;font-size:12px;font-weight:600;line-height:20px;padding:0 10px;white-space:nowrap;overflow:hidden">winter2026 · scheduled</span></div>
+<div style="position:relative;height:24px;margin:4px 0"><span style="position:absolute;left:0.0%;width:85.71428571428571%;top:2px;height:20px;z-index:1;border-radius:10px;background:var(--crimson);color:#fff;font-size:12px;font-weight:600;line-height:20px;padding:0 10px;white-space:nowrap;overflow:hidden">staffkin · used up, 30 of 30</span></div>
+</div><div class="small muted mt8 row"><span style="width:10px;border-top:2px solid var(--crimson)"></span> Today, 14 Oct</div></div></section></div><div class="stack"><section class="panel drawer"><div class="ds"><h2>Create promotion code</h2><div class="meta">ID PC-006 on save</div></div>
+<div class="pad">
+<div class="grid2">
+<div class="field"><label>Code <span class="req">*</span></label><div class="input focus"><span class="eng" style="font-size:12px">spring2027</span></div><span class="hint">Lowercase letters and digits. Guests type this.</span></div>
+<div class="field"><label>Title <span class="req">*</span></label><div class="input">Spring 2027</div><span class="hint">Shown on folios and emails.</span></div>
+</div>
+<div class="lbl mt12">Valid dates <span class="req">*</span></div>
+<div class="grid2 mt4">
+<div class="field"><div class="input"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> 1 Mar 2027</div></div>
+<div class="field"><div class="input bad"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> <span class="muted">End date</span></div></div>
+</div>
+<div class="field mt4"><span class="err"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg> Add an end date. Every code needs a start and an end.</span></div>
+<div class="divider"></div>
+<div class="row sb"><label class="check"><span class="toggle on"></span> <b>Limit total uses</b></label><span class="small muted">optional</span></div>
+<div class="grid2 mt8"><div class="field"><label>Max uses</label><div class="input">100<span class="suf">bookings</span></div></div><div class="field"><label>Per guest</label><div class="input ro">No limit</div></div></div>
+<div class="divider"></div>
+<div class="field"><label>Offer</label><div class="input">15% off room nights<span class="suf">▾</span></div>
+<span class="hint row" style="color:var(--amber-ink)"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Offer types are a placeholder until the discount rules are agreed.</span></div>
+<button class="btn primary lg full mt16"><span class="lamp"></span>Create code</button>
+<div class="small muted mt8" style="text-align:center">Receptionists will see it the moment it's active.</div>
+</div></section><section class="panel "><div class="ds"><h2>Who can do what</h2></div><div class="pad-s small" style="display:grid;gap:8px">
+<div class="row"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span><b>Admins</b> create, edit, deactivate and delete codes.</span></div>
+<div class="row"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg> <span><b>Receptionists</b> see this list read-only and apply active codes to bookings.</span></div>
+<div class="row"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> <span>A code that has been used can't be deleted, only deactivated.</span></div></div></section></div></div>
 </main>
-</body>
-</html>
+<nav class="shelf" aria-label="Main">
+  <div class="grp"><div class="gl"><b>Desk</b>Guests &amp; stays</div><a class="key" href="01-today.html"><span class="lever"></span>Today</a><a class="key" href="02-availability.html"><span class="lever"></span>Availability</a><a class="key" href="03-new-booking.html"><span class="lever"></span>New booking</a><a class="key" href="04-booking-rebook.html"><span class="lever"></span>Bookings</a><a class="key" href="05-check-in.html"><span class="lever"></span>Check in</a><a class="key" href="06-check-out.html"><span class="lever"></span>Check out</a></div>
+  <div class="grp"><div class="gl"><b>Office</b>Admin keys</div><a class="key" href="07-rooms.html"><span class="lever"></span>Rooms</a><a class="key on" href="08-promo-codes.html"><span class="lever"></span>Promo codes</a><a class="key" href="09-users.html"><span class="lever"></span>Users</a></div>
+  <div class="end"><span class="plate"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Signed in as admin</span></div>
+</nav>
+</body></html>

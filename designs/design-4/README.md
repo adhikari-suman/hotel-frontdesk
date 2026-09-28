@@ -1,148 +1,58 @@
-# Design 4: Noughts & Crosses
+# Design 4 — Fob Rack
 
-Nine desktop screens (1440 px) for the Alder House front desk, in static HTML and CSS. Open `index.html` for the gallery, or go to `png/` for the 2x captures.
+**Idea.** The front desk as the wall of pigeonholes behind the counter. Every room is a recessed cubby; a coloured plastic key fob hanging in the cubby means the key is at the desk (room free or ready for an arrival), an empty cubby means a guest has the key. Navigation hangs from a rail as punched fobs. Whatever you are working on is written up on a perforated "counter slip" on the right.
 
-```
-design-4/
-├── index.html              gallery, palette, type, marks, states, placeholder note
-├── README.md               this file
-├── assets/noughts.css      tokens and components (the design system)
-├── assets/fonts/           Schibsted Grotesk (variable 400–900) and Fragment Mono, woff2, OFL
-├── screens/                01-today … 09-users as HTML
-└── png/                    the same nine as PNG, 1440 px wide at 2x, full page
-```
-
-## The direction in plain words
-
-This is Swiss International Typographic Style on a strict three-module grid. The page is a white field with big flush-left black grotesk, and 1 px black rules separate the modules. There are no cards, pills, shadows or rounded corners.
-
-- **Colour:** there is one colour, a lavender field. It marks what you have selected, the item you are on, and keyboard focus. Taupe is the second neutral. It fills disabled things, danger messages and the admin area.
-- **Status:** room status is drawn as the marks of noughts and crosses. O is a free room and X is a taken one. Small arrows show who is arriving or leaving.
-- **The house:** Today shows the whole hotel as an 8 × 8 board of these marks, one row per floor.
-
-The scene is a bright office by day, so the design is light.
-
-## Topology
-
-- **No sidebar.** Every page uses the same 3-column grid: 48 px margins and 24 px gutters, so each module is 432 px wide at 1440. Content snaps to 1, 2 or 3 modules.
-- **Top band:** three modules separated by vertical 1 px rules.
-  1. The wordmark.
-  2. The navigation as two vertical text lists: *Front desk* (Today, Availability, Bookings) and *Admin* (Rooms, Promo codes, Users).
-  3. The date, a large clock and the signed-in user.
-- **Page head:** a huge flush-left title (88 px) and a one-line lede fill modules 1–2. Module 3 holds the one commitment for the page, or stays empty for asymmetric white space.
-- **Receptionist vs admin:**
-  - On receptionist screens the Admin list stays visible but locked ("Admin, for admins only", with a lock on each item).
-  - On admin screens the whole band turns taupe, so you always know you are in the admin area.
+Open `index.html` for the gallery, palette, type specimen and all 9 screens.
 
 ## Tokens
 
-### Colour (no other hues)
-| Token | Hex | Role |
+| Token | Hex | Meaning |
 |---|---|---|
-| `--paper` | `#FFFFFF` | Page ground |
-| `--ink` | `#0B0B0C` | Text, rules, marks, the primary button |
-| `--lav` | `#CCBBFF` | Selection field, current item (nav, board cell, list row), focus field |
-| `--taupe` | `#CCBBAA` | Disabled, danger, out-of-order cells, admin band |
-| `--ink-2` | `#4A453F` | Secondary text: 9.5:1 on paper, 5.5:1 on lavender, 5.1:1 on taupe |
-| `--taupe-tint` | `#EEE8E1` | Tonight column, read-only fields, cells that can't be picked |
-| `--hair` | `#CFC6BB` | Row hairlines inside a module (module rules stay ink) |
+| `--ink` / `--band` | `#2A1A28` | Plum ink: text, top band, active filter chip |
+| `--paper` | `#EEEBF5` | Lilac page ground |
+| `--cubby` | `#FBFAFD` | Recessed panels (inner top shadow) |
+| `--well` | `#E3DEEC` | Empty wells, neutral chips |
+| `--rule` / `--rule-strong` | `#D6CFE2` / `#B9AFCB` | Hairlines, input borders |
+| `--teal` | `#1F6F82` | Primary action, selection, active nav fob |
+| `--amber` | `#C9861A` | Arrivals ("Due in"), low availability (2 or fewer) |
+| `#8F7CD0` | | Departures ("Due out") outline |
+| `--moss` | `#306515` | Free, verified, discount amounts |
+| `--ox` | `#A71C0D` | Destructive actions, closed rooms, validation errors |
+| `--fob-q` | `#BAABEA` | Queen fob |
+| `--fob-t` | `#8CCBD9` | Twin Double fob |
+| `--fob-d` | `#7A4A70` | Deluxe fob |
+| `--fob-f` | `#8DBF5A` | Family Suite fob |
+| `#F4EDDC` | | Office (admin) nav fobs, permission notes |
 
-Inside a lavender field, secondary text steps up to ink. The primary action is ink with white text, and there is exactly one per screen.
+## Type
+- **Big Shoulders Display** 600/800: room numbers, headings, dates in slips, totals. It's condensed, so 16 rooms fit on one floor row.
+- **Atkinson Hyperlegible** 400/700: all UI and data. Slashed zero and distinct 1/l help when reading refs like AH-26-0417 aloud.
+- Both self-hosted in `assets/fonts/` (woff2 from fontsource) with OFL licences.
 
-### Type
-- **Schibsted Grotesk**, the variable 400–900 axis, for everything except codes.
-  - Display: 88 px / 0.92, weight 700, −0.03em. Page names only.
-  - Section heads: 24 px / 650. Sub-heads: 17 px / 600.
-  - Body: 15 px. Labels: 13 px, regular weight, no caps or small caps.
-  - Smallest text: 11 px, used for board cell details.
-  - Big single figures, such as totals, the balance and the clock, are 44 px, weight 650 and proportional.
-- **Fragment Mono** only for codes and references: `autumn26`, `HVK-2094`, `PRM-0014`.
-- **Status codes** (VC, OCC, ARR, DUE, OOO) are set in the grotesk at weight 650. In Fragment Mono at 11 px, OOO reads as 000.
-- **Tabular figures** are used only in data columns: board and room numbers, table amounts, ledgers and availability counts. This face also tabulates punctuation, so running text keeps proportional figures.
+## Components
+- **Top band**: hotel, date, search, signed-in user with role badge (Receptionist lilac, Admin tan with shield).
+- **Fob nav rail**: hex key-fob tabs on rings. Desk group | Office group. Office fobs carry a lock icon; for receptionists they are greyed and labelled "admin only".
+- **Cubby**: recessed room cell. Status is always a word ("Free", "Staying", "Due in", "Due out", "Closed") plus a border treatment and fob presence, never colour alone. Closed rooms are hatched.
+- **Counter slip**: white card with a perforated top edge. Holds the running registration card, quote, rebook panel, payment, or create forms.
+- **Cubby box**: recessed section panel with a condensed heading.
+- **Pills**: icon + text for every status (Active, Scheduled dashed, Expired, Used up, Invited, Deactivated).
+- **Totals block**: dashed subtotal rule, solid rule over a large condensed grand total.
+- **Promo ticket**: dashed moss border for an applied code.
+- **Steps**: numbered circles on check in only, because it's a real sequence.
 
-### Spacing, radius, depth
-- Spacing is on a 4 px base: 4, 8, 12, 16, 24, 32, 48, 72, 104.
-- Radius is **0** everywhere, including checkboxes and radios, which are squares.
-- There are no shadows. Depth comes from rules and fields only.
+## Rules
+- One teal primary button per screen. Destructive actions are oxblood outline, or solid oxblood only for the final confirm (Cancel and charge).
+- Text is 11px minimum. Status never relies on colour alone.
+- Admin-only features are marked with a lock in the nav and a note on the page. Receptionists see "Only admins create codes" next to the promo field.
+- Delete stays blocked while a room has current or future bookings. A dark tooltip gives the reason and suggests an alternative.
 
-## Status without colour
-
-Every status carries a drawn mark, a text code and, in lists, words. Colour is never the carrier.
-
-| Status | Mark (SVG strokes) | Code | Extra cue |
-|---|---|---|---|
-| Vacant, ready | O | VC | "Ready" |
-| In house | X | OCC | surname, out date |
-| Arriving today | O with an inward arrow | ARR | ETA |
-| Due out today | X with an outward arrow | DUE | out time, balance, "Late check-out 12:00" |
-| Out of order | slashed square | OOO | reason and return date; the cell is also taupe |
-
-The same grammar carries through the whole set:
-
-- **Tonight's mark rows on Rooms:** X is sold, O is free, and a slashed square is out of order.
-- **Promo status:** O is active, O with an arrow is scheduled, X is used up, and X with an arrow is expired.
-- **User status:** O is active, O with an arrow is invited, and a slashed square is deactivated.
-- **Role cards:** O lists what a role *can* do and X what it *can't*, each under a written "Can" or "Can't" label.
-- **Other signals:** selection shows as lavender plus a 2 px ink outline or a checked control. Tonight shows as an inverted black column head plus the word "Tonight".
-
-## Components (all in `noughts.css`)
-
-- **Frame:**
-  - `.band` / `.bm`: the three-module top band.
-  - `.nav`: the vertical text lists, with the current item as a lavender field.
-  - `.head` / `.display` / `.lede`: the page head.
-  - `.sec`: a module section opened by a 1 px ink rule.
-- **Board:**
-  - `.board` / `.cell` / `.fl`: the noughts-and-crosses board. Rules sit only between cells, like the game grid.
-  - `.strip`: one floor of cells, reused for picking a room on New booking and Check in.
-- **Marks:** `.mk`, drawn from the `#m-o`, `#m-x`, `#m-arr`, `#m-due` and `#m-ooo` symbols embedded in each page.
-- **Lists and choices:**
-  - `.q` / `.q-row`: the arrivals and departures lists.
-  - `.choices` / `.choice`: a list of options. The chosen row is a lavender field; rows that can't be chosen are taupe-tint with the reason in words.
-- **Money:** `.ledger` for totals, and `.tbl` for tables (ink rule under the head, hairlines between rows).
-- **Buttons:**
-  - `.btn`: 1 px ink border. Hover and pressed turn it lavender; disabled is taupe-tint.
-  - `.btn-primary`: ink with white text.
-  - `.btn-text` / `.link`: underlined text actions.
-- **Forms:**
-  - `.input`: 1 px ink border, lavender field plus a 2 px ink outline on focus, taupe-tint when read-only.
-  - `.err`: black on taupe, with a drawn X and words.
-  - `.ck` / `.rd`: square checkboxes and radios.
-- **Notes:**
-  - `.note`: a bordered notice.
-  - `.note.is-danger`: black on taupe, with a drawn X and words (for example, Delete blocked on Rooms).
-  - `.perm`: a permission line with a lock.
-- **Other:**
-  - `.stamp`: the ruled line that shows how the booking will read after check-in.
-  - `.outcome`: one mark turning into another (ARR → OCC, DUE → VC).
-- **Browser surfaces:** text selection is lavender, and scrollbars are square ink on paper. Focus shows as an ink outline with a lavender field.
-
-## Where permissions show
-
-- **Receptionist band:** the Admin list is visible, but each item is locked.
-- **New booking:** "Codes are created by admins. You can apply a code, not create one."
-- **Rooms:** Delete is off on every type that has bookings. On Family Suite the danger note explains why: "14 upcoming bookings and 7 rooms occupied tonight". Beside the table, "Who can change rooms" lists the admins by name.
-- **Promo codes:** the lede says who applies codes and who creates them. The form previews what a receptionist will see.
-- **Users:** the role cards list what each role can and can't do.
-
-## Responsive
-
-- **At 1180:** the grid keeps three modules and the board cells shrink.
-- **Below 1000:** the grid collapses to one column, the band stacks, and the board and wide tables scroll sideways.
-- **At 390:** the display type drops to 56 px, and the margins become 16 px.
-
-## Open decisions
-
-1. **Promo "Offer" field.** The brief gives a code an id, code, title, date range and optional count, but no discount. These designs add an **Offer** (for example, "15% off room nights" or "7th night free") because a code needs a value. The discount model needs confirming.
-2. **Placeholders, not spec:**
-   - The 12% tax.
-   - The extras prices: breakfast $18 and dinner $42 per guest per night, arrival pickup $55 per trip.
-   - The room prices.
-3. **Overlapping codes.** The form warns that `newyear27` overlaps `winter26` and that a booking can use only one code. Whether overlaps should be allowed at all is a policy call.
-4. **Price changes.** On Rooms, existing bookings keep their price and only new bookings use the new price. This follows the content brief and needs product sign-off.
-5. **Bookings list.** "Bookings" in the nav opens a booking record. A search or list view is not part of this set.
-6. **Payment.** Pre-authorisation and card-on-file appear only as outcomes. Payment processing is out of scope.
-
-## Synthetic data
-
-All names, rooms, prices, phone numbers (555), emails (`example.com`, `alderhouse.example`) and references are invented for the demo. "Alder House" is a placeholder name.
+## Screen notes and open decisions
+- **Promo offer is a placeholder.** The brief doesn't define offers. "15% off room nights" (summer2026) is used as given. The other offers are invented: autumn26 10%, longstay7 7th night free, winter2026 free breakfast, staffkin 20%. The create form labels the Offer field "to be defined".
+- **summer2026 vs. today.** The code's range ends 30 Sep but the hero booking uses it on 14 Oct. We treat the date range as a **booking window**: the code was applied to quote Q-0928 on 28 Sep and is honoured when that quote is confirmed. This needs a product decision.
+- **Cancellation terms** (free until 48 h before arrival, then first night + tax as the fee) and the **waive-fee approval** are placeholders.
+- **Incidentals hold** ($150), key encoding, card "Visa ending 0042", guest note, pickup time, the second guest and quote/folio numbers are all synthetic.
+- **Check out** is shown on the departure date (Sat 17 Oct), so the top band shows that date.
+- **Rebook** (04) shows the panel open, not yet confirmed. Screens 05 and 06 follow the original 14–17 Oct dates.
+- **Rooms** (07) shows an unsaved Deluxe price edit ($238 → $248) as an example. Canonical prices elsewhere stay $238.
+- Occupancy numbers on Today: 41 in house (7 of them due out), 9 arrivals, 12 free, 2 closed = 64. After changeover tonight: 43 occupied, 19 free.
+- Tax 12% is a placeholder.

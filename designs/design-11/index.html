@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Warp & Weft · design 11</title><link rel="stylesheet" href="assets/weave.css">
+<style>
+.wrap{max-width:1240px;margin:0 auto;padding:48px 32px 64px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:36px}
+.hero h1{font:800 64px/1 var(--serif);letter-spacing:-.02em}
+.hero p{font-size:15px;line-height:1.6;max-width:62ch;margin-top:16px}
+.bolt{height:190px;border-radius:3px;display:grid;grid-template-columns:repeat(16,1fr);gap:3px;padding:10px;background:var(--card);border:1px solid var(--thread)}
+.bolt i{border-radius:1px}
+.sw5{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:8px 0 36px}
+.sw5 div{border:1px solid var(--thread);background:var(--card);border-radius:3px;overflow:hidden}
+.sw5 div i{display:block;height:64px}
+.sw5 div p{padding:8px 10px;font-size:12px}
+.sw5 div p b{display:block;font:600 12px var(--mono)}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
+.spec > div{background:var(--card);border:1px solid var(--thread);border-radius:3px;padding:18px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.shots a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--thread);border-radius:3px;overflow:hidden}
+.shots img{width:100%;height:220px;object-fit:cover;object-position:top left;display:block;border-bottom:1px solid var(--thread)}
+.shots span{display:flex;gap:8px;padding:10px 12px;font:600 13px var(--sans)}
+.shots span em{font-style:normal;color:var(--muted);font-weight:500;margin-left:auto}
+h2.s{font:700 22px var(--serif);margin:0 0 12px}
+</style></head><body><div class="wrap">
+<div class="hero"><div><div class="row" style="margin-bottom:14px"><span class="label">Design 11</span><span class="label">Alder House front desk</span></div><h1>Warp &amp; Weft</h1>
+<p>The hotel read as cloth on a loom. Floors and room types run as warp threads, nights run across as weft, and every stay is woven into the grid. Status is carried by weave pattern as well as colour: plain for free, indigo twill for in house, dotted for arriving, striped for departing, basket-hatched for out of order. An indigo selvedge rail holds the navigation, admin threads sit below a stitch line, and working panels rise from the bottom as shuttle trays.</p></div>
+<div class="bolt" id="bolt"></div></div>
+
+<h2 class="s">Palette</h2>
+<div class="sw5">
+<div><i style="background:#1C2B49"></i><p><b>#1C2B49</b>Indigo: text, primary, in house</p></div>
+<div><i style="background:#E7E9E1;background-image:repeating-linear-gradient(0deg,rgba(28,43,73,.06) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(28,43,73,.05) 0 1px,transparent 1px 4px)"></i><p><b>#E7E9E1</b>Raw cotton: ground</p></div>
+<div><i style="background:#FAFAF6"></i><p><b>#FAFAF6</b>Loom card: surfaces</p></div>
+<div><i style="background:#9BBFA0"></i><p><b>#9BBFA0</b>Celadon: free, ok</p></div>
+<div><i style="background:#D1A53A"></i><p><b>#D1A53A</b>Weld: arriving, attention</p></div>
+<div><i style="background:#5A4632"></i><p><b>#5A4632</b>Walnut: departing</p></div>
+<div><i style="background:#B9412E"></i><p><b>#B9412E</b>Madder: destructive, out of order</p></div>
+<div><i style="background:#D3D3C7"></i><p><b>#D3D3C7</b>Thread: rules, borders</p></div>
+</div>
+
+<h2 class="s">Type</h2>
+<div class="spec">
+<div><div style="font:800 40px/1 var(--serif)">Besley</div><p class="sm muted" style="margin-top:8px">Clarendon slab for headings and names. Reads like a woven label.</p><div style="font:500 italic 18px var(--serif);margin-top:10px">Tonight at Alder House</div></div>
+<div><div style="font:600 34px/1 var(--sans)">Hanken Grotesk</div><p class="sm muted" style="margin-top:8px">Interface text, forms and tables, 11–16px.</p><div style="font:400 15px var(--sans);margin-top:10px">Check in Hannah Moreau to room 312</div></div>
+<div><div style="font:600 30px/1 var(--mono)">312 $862.29</div><p class="sm muted" style="margin-top:8px">Spline Sans Mono for room numbers, money, refs and codes.</p><div style="font:500 15px var(--mono);margin-top:10px">AH-26-0417 summer2026</div></div>
+</div>
+
+<h2 class="s">Screens</h2>
+<div class="shots">
+<a href="screens/01-today.html"><img src="png/01-today.png" alt="Today board"><span>Today board<em>Receptionist</em></span></a>
+<a href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability"><span>Availability<em>Receptionist</em></span></a>
+<a href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking"><span>New booking<em>Receptionist</em></span></a>
+<a href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking and rebook"><span>Booking, rebook, cancel<em>Receptionist</em></span></a>
+<a href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check in"><span>Check in<em>Receptionist</em></span></a>
+<a href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check out"><span>Check out<em>Receptionist</em></span></a>
+<a href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms"><span>Rooms<em>Admin</em></span></a>
+<a href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes"><span>Promo codes<em>Admin</em></span></a>
+<a href="screens/09-users.html"><img src="png/09-users.png" alt="Staff"><span>Staff and roles<em>Admin</em></span></a>
+</div></div>
+<script>
+// decorative bolt of cloth: 4 floors x 16 rooms in the weave patterns used on the board
+const p={o:'repeating-linear-gradient(135deg,#1C2B49 0 3px,#2E4170 3px 6px)',a:'radial-gradient(circle,rgba(209,165,58,.7) 1.3px,transparent 1.7px) 0 0/6px 6px,#FBF4DF',d:'repeating-linear-gradient(90deg,rgba(90,70,50,.3) 0 2px,transparent 2px 6px),#F1ECE4',f:'#FAFAF6',x:'repeating-linear-gradient(45deg,rgba(185,65,46,.5) 0 1.5px,transparent 1.5px 6px),repeating-linear-gradient(-45deg,rgba(185,65,46,.5) 0 1.5px,transparent 1.5px 6px),#FBF1EE'};
+const rows=["ffodafoaofofoooa", "ofaooodofoaodxdf", "offoodooaooaoofo", "daofofxoodoofoao"];
+const b=document.getElementById('bolt');rows.forEach(r=>{for(let i=0;i<16;i++){const e=document.createElement('i');e.style.background=p[r[i]];e.style.border='1px solid rgba(28,43,73,.18)';b.appendChild(e);}});
+</script></body></html>

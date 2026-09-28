@@ -1,79 +1,36 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>pool lanes · design 3 · alder house front desk</title>
-<link rel="stylesheet" href="assets/lanes.css">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Switchboard — design 3</title><link rel="stylesheet" href="assets/switchboard.css">
 <style>
-.intro { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px; align-items: start; margin-bottom: 36px; }
-.intro h1 { font-size: 4.5rem; letter-spacing: -0.03em; margin-bottom: 18px; }
-.lede { font-size: var(--t-19); line-height: 1.5; max-width: 62ch; }
-.ph { background: var(--white); border-radius: var(--r-lane); padding: 20px 22px; box-shadow: inset 0 0 0 2.5px var(--marigold); }
-.ph h2 { margin-bottom: 12px; }
-.spec { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px; margin-bottom: 40px; }
-.specblock h2 { margin-bottom: 14px; }
-.sws { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
-.sw { display: grid; gap: 3px; align-content: start; }
-.sw .chip { height: 150px; border-radius: 14px; background: var(--c); box-shadow: inset 0 0 0 1px rgba(11, 63, 58, .18); margin-bottom: 6px; }
-.sw b { font-weight: 600; font-size: var(--t-14); }
-.type .t1 { font-size: 4rem; line-height: 1; font-weight: 500; letter-spacing: -0.02em; }
-.type .t2 { font-size: var(--t-28); font-weight: 400; margin: 6px 0 12px; }
-.type .t3 { max-width: 60ch; margin-bottom: 12px; }
-.type .t4, .type .t5 { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
-.gallery .lane-body { gap: 16px; }
-.shot { margin: 0; background: var(--white); border-radius: var(--r-card); padding: 8px; box-shadow: var(--shadow-card); }
-.shot img { display: block; width: 100%; height: 230px; object-fit: cover; object-position: top left; border-radius: 6px; border: 1px solid var(--line); }
-.shot figcaption { display: grid; gap: 2px; padding: 10px 6px 4px; }
-.shot figcaption b { font-size: var(--t-16); font-weight: 600; text-transform: lowercase; }
-.foot { margin-top: 22px; }
-@media (max-width: 1180px) { .intro, .spec { grid-template-columns: 1fr; } .sws { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-</style>
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol></defs></svg>
-<header class="topbar"><a class="wordmark" href="index.html"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x="2" y="7" width="6.5" height="21" rx="3.25" fill="#77EEBB"/><rect x="11.75" y="7" width="6.5" height="21" rx="3.25" fill="#2FB38A"/><rect x="21.5" y="13" width="6.5" height="15" rx="3.25" fill="#0B3F3A"/><circle cx="24.75" cy="6" r="4.25" fill="#EEBB33"/></svg><span>alder house</span></a>
-<nav class="nav" aria-label="Design"><a href="index.html" aria-current="page">design 3 · pool lanes</a><a href="screens/01-today.html">open the screens</a></nav>
-<div class="rope-h" aria-hidden="true"></div></header>
-<main class="page">
-  <div class="intro">
-    <div>
-      <h1>pool lanes</h1>
-      <p class="lede">A 1960s motor-lodge-modern front desk, light as a sunny lobby. The day flows down vertical swim lanes, arriving, in the house and leaving, divided by ropes of marigold and white buoys, with the 64 rooms laid out as a pool deck of rounded tiles. One marigold sun marks the single committing action on every screen, and every heading speaks in all-lowercase Jost.</p>
-    </div>
-    <aside class="ph">
-      <h2>placeholders, not spec</h2>
-      <ul class="checks">
-        <li><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span><b>Tax 12%</b> is a placeholder rate.</span></li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span><b>Extras prices</b>: breakfast $18 per guest per night, dinner $42 per guest per night, pickup $55 per trip.</span></li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span><b>Promo “Offer” field</b> (15% off, 7th night free) is not in the brief. It is an open decision.</span></li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-info"/></svg><span><b>Room prices</b> ($136, $166, $238, $366) are demo values.</span></li>
-      </ul>
-    </aside>
-  </div>
-
-  <div class="spec">
-    <section class="specblock"><h2>palette</h2><ul class="sws"><li class="sw" style="--c:#F2F7F3"><span class="chip"></span><b>ground</b><span class="mono small">#F2F7F3</span><span class="small muted">pool-deck white, the page</span></li><li class="sw" style="--c:#BDF1DC"><span class="chip"></span><b>water pale</b><span class="mono small">#BDF1DC</span><span class="small muted">arriving lane, current nav</span></li><li class="sw" style="--c:#77EEBB"><span class="chip"></span><b>water</b><span class="mono small">#77EEBB</span><span class="small muted">arriving status, focus halo</span></li><li class="sw" style="--c:#2FB38A"><span class="chip"></span><b>water deep</b><span class="mono small">#2FB38A</span><span class="small muted">in-house status and lane</span></li><li class="sw" style="--c:#0B3F3A"><span class="chip"></span><b>ink</b><span class="mono small">#0B3F3A</span><span class="small muted">all text, lane ropes</span></li><li class="sw" style="--c:#EEBB33"><span class="chip"></span><b>marigold</b><span class="mono small">#EEBB33</span><span class="small muted">the one primary action, due-out edge</span></li><li class="sw" style="--c:#CCDDAA"><span class="chip"></span><b>sage</b><span class="mono small">#CCDDAA</span><span class="small muted">admin lanes, out of order (hatched)</span></li></ul></section>
-    <section class="specblock type"><h2>type</h2>
-      <p class="t1">arriving 10</p>
-      <p class="t2">in the house <span class="num">43</span> · leaving <span class="num">5</span></p>
-      <p class="t3">Jost, variable 100–900. All-lowercase headings, sentence-case body, tabular numerals in data: $1,106.20 · 53 of 64.</p>
-      <p class="t4"><span class="ref">HVK-2094</span> <span class="promo">autumn26</span> <span class="small muted">Azeret Mono for refs and codes, slashed zero</span></p>
-      <p class="t5"><span class="code arr">ARR</span> <span class="code occ">OCC</span> <span class="code due">DUE</span> <span class="code vc">VC</span> <span class="code ooo">OOO</span> <span class="small muted">status codes, Jost caps, wide tracking</span></p>
-    </section>
-  </div>
-
-  <div class="lanes gallery"><section class="lane lane--arr" aria-label="front desk"><header class="lane-head"><h2>front desk <span class="n">3</span></h2></header><div class="lane-body"><figure class="shot"><a href="png/01-today.png"><img src="png/01-today.png" alt="today screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/01-today.html"><b>today</b></a><span class="small muted">Three lanes, arriving, in the house, leaving, under a 64-tile deck map</span></figcaption></figure><figure class="shot"><a href="png/02-availability.png"><img src="png/02-availability.png" alt="availability screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/02-availability.html"><b>availability</b></a><span class="small muted">Room types and Family Suite rooms as vertical lanes, nights running down</span></figcaption></figure><figure class="shot"><a href="png/03-new-booking.png"><img src="png/03-new-booking.png" alt="new booking screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/03-new-booking.html"><b>new booking</b></a><span class="small muted">Stay, guest and extras, price and confirm: the booking swims left to right</span></figcaption></figure></div></section><div class="rope" aria-hidden="true"></div><section class="lane lane--pale" aria-label="guest"><header class="lane-head"><h2>guest <span class="n">3</span></h2></header><div class="lane-body"><figure class="shot"><a href="png/04-booking-rebook.png"><img src="png/04-booking-rebook.png" alt="booking, rebook screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/04-booking-rebook.html"><b>booking, rebook</b></a><span class="small muted">Rebook lane with nights as water tanks and the difference in large numerals</span></figcaption></figure><figure class="shot"><a href="png/05-check-in.png"><img src="png/05-check-in.png" alt="check in screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/05-check-in.html"><b>check in</b></a><span class="small muted">Pick a ready Deluxe tile, then 704 drifts from arriving to in the house</span></figcaption></figure><figure class="shot"><a href="png/06-check-out.png"><img src="png/06-check-out.png" alt="check out screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/06-check-out.html"><b>check out</b></a><span class="small muted">A marigold-edged folio lane ends with 505 turning vacant</span></figcaption></figure></div></section><div class="rope" aria-hidden="true"></div><section class="lane lane--sage" aria-label="admin"><header class="lane-head"><h2>admin <span class="n">3</span></h2></header><div class="lane-body"><figure class="shot"><a href="png/07-rooms.png"><img src="png/07-rooms.png" alt="rooms screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/07-rooms.html"><b>rooms</b></a><span class="small muted">One sage lane per room type, its floors as tiles, Deluxe price mid-edit</span></figcaption></figure><figure class="shot"><a href="png/08-promo-codes.png"><img src="png/08-promo-codes.png" alt="promo codes screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/08-promo-codes.html"><b>promo codes</b></a><span class="small muted">Codes flow through active, scheduled and ended lanes beside the new-code form</span></figcaption></figure><figure class="shot"><a href="png/09-users.png"><img src="png/09-users.png" alt="users screen" loading="lazy" width="1440" height="1000"></a>
-  <figcaption><a href="screens/09-users.html"><b>users</b></a><span class="small muted">Admins and receptionists as lanes, role cards list what each can and can’t do</span></figcaption></figure></div></section></div>
-  <p class="foot small muted">Static HTML and CSS, no scripts. Fonts self-hosted (SIL OFL). PNGs are headless-Chrome captures at 1440 px, @2x. All names, bookings and figures are synthetic.</p>
-</main>
-</body>
-</html>
+body{display:block}
+.wrap{max-width:1320px;margin:0 auto;padding:40px 24px 64px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end;border-bottom:2px solid var(--graphite);padding-bottom:28px}
+.hero h1{font-family:var(--display);font-size:44px;line-height:1.1;letter-spacing:.01em}
+.hero p{font-size:16px;line-height:1.6;max-width:62ch;margin:14px 0 0}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.shot{display:block;background:var(--face);border:1px solid var(--rule);border-radius:3px;text-decoration:none;overflow:hidden}
+.shot img{display:block;width:100%;height:230px;object-fit:cover;object-position:top;border-bottom:1px solid var(--rule)}
+.shot:hover,.shot:focus-visible{outline:2px solid var(--crimson);outline-offset:2px}
+.sws{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sw{display:grid;gap:3px;font-size:13px} .sw span:first-child{height:54px;border-radius:3px;border:1px solid var(--rule-2)}
+.sec{margin-top:40px} .sec h2{font-family:var(--display);font-size:15px;margin-bottom:14px}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.mini{display:flex;gap:4px} .mini .jack{width:64px}
+@media (max-width:800px){.hero,.spec{grid-template-columns:1fr}.gal{grid-template-columns:1fr}.sws{grid-template-columns:1fr 1fr}.hero h1{font-size:32px}}
+</style></head><body><div class="wrap">
+<div class="hero"><div><div class="small muted">Alder House front desk · design 3 of 15</div><h1>Switchboard</h1>
+<p>The front desk as a hotel telephone switchboard. Every room is a jack in a 16 × 4 field, one row per floor, with a lamp that tells you its state. A booking is a crimson patch cord plugged into a room. The folio is a toll ticket with time-stamped lines. Navigation sits on a key shelf at the bottom of the screen, where the operator's lever keys used to be; admin keys sit behind a lock.</p></div>
+<div class="panel"><div class="ds"><h2>Lamps, always paired with a word</h2></div><div class="pad"><div class="mini">
+<div class="jack free"><span class="lamp free"></span><span class="hole"></span><span class="rn">309</span><span class="st">Free</span></div>
+<div class="jack occ"><span class="lamp occ"></span><span class="hole"></span><span class="rn">310</span><span class="st">In</span></div>
+<div class="jack arr plugged"><span class="lamp arr"></span><span class="hole"></span><span class="rn">312</span><span class="st">Arrive</span></div>
+<div class="jack dep"><span class="lamp dep"></span><span class="hole"></span><span class="rn">311</span><span class="st">Depart</span></div>
+<div class="jack ooo"><span class="lamp ooo"></span><span class="hole"></span><span class="rn">406</span><span class="st">OOO</span></div>
+</div><div class="small muted mt12">Shape differs too: ring for in house, diamond for out of order, hatching for rooms to clean.</div></div></div></div>
+<div class="sec"><h2>Nine screens</h2><div class="gal"><a class="shot" href="screens/01-today.html"><img src="png/01-today.png" alt="Today board screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">01</span>&nbsp; <b>Today board</b></span><span class="roleplate">Receptionist</span></div></a><a class="shot" href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">02</span>&nbsp; <b>Availability</b></span><span class="roleplate">Receptionist</span></div></a><a class="shot" href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">03</span>&nbsp; <b>New booking</b></span><span class="roleplate">Receptionist</span></div></a><a class="shot" href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking, rebook, cancel screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">04</span>&nbsp; <b>Booking, rebook, cancel</b></span><span class="roleplate">Receptionist</span></div></a><a class="shot" href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check in screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">05</span>&nbsp; <b>Check in</b></span><span class="roleplate">Receptionist</span></div></a><a class="shot" href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check out screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">06</span>&nbsp; <b>Check out</b></span><span class="roleplate">Receptionist</span></div></a><a class="shot" href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">07</span>&nbsp; <b>Rooms</b></span><span class="roleplate admin">Admin</span></div></a><a class="shot" href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promotion codes screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">08</span>&nbsp; <b>Promotion codes</b></span><span class="roleplate admin">Admin</span></div></a><a class="shot" href="screens/09-users.html"><img src="png/09-users.png" alt="Users screen" loading="lazy"><div class="row sb pad-s"><span><span class="eng" style="font-size:12px">09</span>&nbsp; <b>Users</b></span><span class="roleplate admin">Admin</span></div></a></div></div>
+<div class="sec"><h2>Palette</h2><div class="sws"><div class="sw"><span style="background:#ECEEEB"></span><b>Exchange steel</b><span class="small muted">#ECEEEB · Page ground</span></div><div class="sw"><span style="background:#F9FAF7"></span><b>Faceplate</b><span class="small muted">#F9FAF7 · Panels</span></div><div class="sw"><span style="background:#E1E4DE"></span><b>Designation strip</b><span class="small muted">#E1E4DE · Panel labels</span></div><div class="sw"><span style="background:#22252B"></span><b>Graphite</b><span class="small muted">#22252B · Ink, primary lever keys</span></div><div class="sw"><span style="background:#A50D2A"></span><b>Cord crimson</b><span class="small muted">#A50D2A · Patch cords, selection, destructive</span></div><div class="sw"><span style="background:#74FDE0"></span><b>Lamp mint</b><span class="small muted">#74FDE0 · Free rooms</span></div><div class="sw"><span style="background:#F0B429"></span><b>Lamp amber</b><span class="small muted">#F0B429 · Arrivals</span></div><div class="sw"><span style="background:#6CC3F0"></span><b>Lamp sky</b><span class="small muted">#6CC3F0 · Departures</span></div></div></div>
+<div class="sec"><h2>Type</h2><div class="spec">
+<div class="panel pad"><div class="eng" style="font-size:34px;line-height:1.15">Room 312<br>AH-26-0417</div><div class="small muted mt12">Michroma, one weight. A wide engineering face used for engraved labels: headings, room numbers, codes, totals.</div></div>
+<div class="panel pad"><div style="font-size:22px;font-weight:650;line-height:1.3">Hannah Moreau, Deluxe, 3 nights</div><div style="font-size:15px;line-height:1.55;margin-top:6px">Breakfast for 2 guests, arrival pickup at 14:10. $862.29 including 12% tax.</div><div class="small muted mt12">Archivo, variable weight and width. Everything you read and type: forms, tables, lists, tabular numbers.</div></div>
+</div></div>
+<div class="sec small muted">Synthetic data only. Fonts are self-hosted under the SIL Open Font License (see assets/fonts). Notes, tokens and open decisions are in README.md.</div>
+</div></body></html>

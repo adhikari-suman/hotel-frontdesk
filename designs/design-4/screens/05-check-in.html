@@ -1,141 +1,45 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Check in, Chidi Okafor · Alder House front desk</title>
-<link rel="stylesheet" href="../assets/noughts.css">
-<style>
-.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
-
-.xrow { display: grid; grid-template-columns: 20px 22px minmax(0,1fr) auto; gap: 14px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--hair); }
-.xrow:first-child { border-top: 1px solid var(--ink); }
-.xrow .amt { font-size: 17px; font-weight: 600; text-align: right; white-space: nowrap; }
-.xrow.is-offrow { color: var(--ink-2); }
-.xrow.is-offrow .h3 { color: var(--ink); }
-.xsub { grid-column: 3 / 5; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 10px; }
-.strip { display: grid; grid-template-columns: repeat(8, minmax(0,1fr)); }
-.strip .cell { min-height: 96px; }
-.strip-l { font-size: var(--t-sm); color: var(--ink-2); margin: 16px 0 8px; }
-.strip .cell .mk-lg { width: 34px; height: 34px; }
-.cell.pick { cursor: pointer; }
-.cell.pick .cell-when { color: var(--ink); font-weight: 600; }
-.aside { align-self: start; }
-.aside .sec + .sec { margin-top: var(--s7); }
-.hist li { display: grid; grid-template-columns: 124px minmax(0,1fr); gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
-.hist li:first-child { border-top: 1px solid var(--ink); }
-.hist time { color: var(--ink-2); }
-.promo-res { border: 1px solid var(--ink); padding: 14px 16px; display: grid; gap: 4px; }
-.promo-res .h3 { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
-.valid { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; margin-left: auto; }
-.sumhead { display: grid; gap: 4px; margin-bottom: 18px; }
-.terms { display: grid; gap: 6px; margin: 20px 0 22px; font-size: 14px; }
-.terms p { display: flex; gap: 8px; align-items: flex-start; }
-.terms .i { width: 16px; height: 16px; margin-top: 2px; }
-
-.outcome { display: grid; grid-template-columns: auto auto auto; justify-content: start; align-items: center; column-gap: 18px; margin: 6px 0 18px; }
-.outcome .mk-xl { width: 76px; height: 76px; }
-.outcome .ar { width: 28px; height: 28px; stroke-width: 1.6; }
-.outcome-l { display: grid; grid-template-columns: 76px 28px 76px; column-gap: 18px; font-size: var(--t-sm); margin-bottom: 22px; }
-.outcome-l span { text-align: center; }
-.stepper { display: inline-grid; grid-template-columns: 46px 64px 46px; border: 1px solid var(--ink); height: 46px; }
-.stepper button { border: 0; background: var(--paper); cursor: pointer; display: grid; place-items: center; }
-.stepper button + span, .stepper span + button { border-left: 1px solid var(--ink); }
-.stepper span { display: grid; place-items: center; font-size: 20px; font-weight: 650; }
-.stepper button:hover { background: var(--lav); }
-
-.dg2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-.rm-legend { margin-top: 14px; }
-.rm-legend .mk + .mk { margin-left: -3px; }
-.rchoice { grid-template-columns: 20px 26px minmax(0,1fr) 0; padding: 12px; }
-.xrow.x3 { grid-template-columns: 22px minmax(0,1fr) auto; }
-.xrow.x3o { grid-template-columns: 20px 22px minmax(0,1fr) auto; }
-.stepper { margin-top: 2px; justify-self: start; }
-.head-aside .note { background: var(--paper); }
-
-</style>
-</head>
-<body class="is-rx">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14" /> <path d="M12 5v14" /></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" /> <path d="m15 5 4 4" /></symbol><symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M3 6h18" /> <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /> <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /> <line x1="10" x2="10" y1="11" y2="17" /> <line x1="14" x2="14" y1="11" y2="17" /></symbol><symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /> <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" /> <rect x="6" y="14" width="12" height="8" rx="1" /></symbol><symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /> <polyline points="16 17 21 12 16 7" /> <line x1="21" x2="9" y1="12" y2="12" /></symbol><symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2" /> <path d="M14 2v2" /> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" /> <path d="M6 2v2" /></symbol><symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></symbol><symbol id="i-car-front" viewBox="0 0 24 24"><path d="m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8" /> <path d="M7 14h.01" /> <path d="M17 14h.01" /> <rect width="18" height="8" x="3" y="10" rx="2" /> <path d="M5 18v2" /> <path d="M19 18v2" /></symbol><symbol id="i-credit-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></symbol><symbol id="i-banknote" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2" /> <circle cx="12" cy="12" r="2" /> <path d="M6 12h.01M18 12h.01" /></symbol><symbol id="i-key-round" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol><symbol id="i-id-card" viewBox="0 0 24 24"><path d="M16 10h2" /> <path d="M16 14h2" /> <path d="M6.17 15a3 3 0 0 1 5.66 0" /> <circle cx="9" cy="11" r="2" /> <rect x="2" y="5" width="20" height="14" rx="2" /></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol><symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" /></symbol><symbol id="i-undo-2" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5" /> <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></symbol><symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol><symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <line x1="19" x2="19" y1="8" y2="14" /> <line x1="22" x2="16" y1="11" y2="11" /></symbol><symbol id="i-plane-landing" viewBox="0 0 24 24"><path d="M2 22h20" /> <path d="M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z" /></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /> <path d="M12 7v5l4 2" /></symbol><symbol id="i-calendar-range" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M16 2v4" /> <path d="M3 10h18" /> <path d="M8 2v4" /> <path d="M17 14h-6" /> <path d="M13 18H7" /> <path d="M7 14h.01" /> <path d="M17 18h.01" /></symbol><symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="m-o" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/></symbol><symbol id="m-x" viewBox="0 0 24 24"><path d="M4.6 4.6l14.8 14.8M19.4 4.6L4.6 19.4"/></symbol><symbol id="m-arr" viewBox="0 0 24 24"><circle cx="14.6" cy="12" r="7.4"/><path d="M0.8 12h10.4M8 8.8l3.2 3.2L8 15.2"/></symbol><symbol id="m-due" viewBox="0 0 24 24"><path d="M1.6 5.6l11.6 12.8M13.2 5.6L1.6 18.4M15.6 12h6.6M19.2 9l3 3-3 3"/></symbol><symbol id="m-ooo" viewBox="0 0 24 24"><path d="M4.2 4.2h15.6v15.6H4.2zM4.2 19.8L19.8 4.2"/></symbol></defs></svg>
-<header class="band"><div class="wrap grid">
-  <div class="bm brand"><a class="wordmark" href="01-today.html"><svg viewBox="0 0 30 30" aria-hidden="true" fill="none" stroke="currentColor"><path d="M10 0v30M20 0v30M0 10h30M0 20h30" stroke-width="1.2"/><circle cx="5" cy="5" r="2.9" stroke-width="1.8"/><path d="M12.6 12.6l4.8 4.8M17.4 12.6l-4.8 4.8" stroke-width="1.8"/><circle cx="25" cy="25" r="2.9" stroke-width="1.8"/></svg>Alder House</a>
-    <p class="brand-sub"><b>Front desk</b><br>64 rooms on 8 floors</p></div>
-  <nav class="bm nav" aria-label="Main"><div><p class="nav-l">Front desk</p><ul><li><a href="01-today.html" aria-current="page">Today</a></li><li><a href="02-availability.html">Availability</a></li><li><a href="04-booking-rebook.html">Bookings</a></li></ul></div><div><p class="nav-l">Admin, for admins only</p><ul><li><span class="locked" aria-disabled="true">Rooms<svg class="i " aria-hidden="true"><use href="#i-lock"/></svg></span></li><li><span class="locked" aria-disabled="true">Promo codes<svg class="i " aria-hidden="true"><use href="#i-lock"/></svg></span></li><li><span class="locked" aria-disabled="true">Users<svg class="i " aria-hidden="true"><use href="#i-lock"/></svg></span></li></ul></div></nav>
-  <div class="bm clock"><p><span class="clock-d">Sunday 27 September 2026</span><br><span class="clock-t">10:46</span></p><p class="who"><b>Nadia Rahimi</b><span class="role">Receptionist<br>Morning shift 07–15</span><br><a href="#"><svg class="i i-sm" aria-hidden="true"><use href="#i-log-out"/></svg>Sign out</a></p></div>
-</div></header>
-<main>
-
-<section class="head wrap grid">
-  <div class="m12"><h1 class="display">Check in</h1>
-    <p class="lede"><b>Chidi Okafor</b> <span class="sep">·</span> <span class="code">PLW-7731</span> <span class="sep">·</span> Deluxe <span class="sep">·</span> <span class="nowrap">Sun 27</span> <svg class="ar" aria-hidden="true"><use href="#i-arrow-right"/></svg><span class="sr">to</span> <span class="nowrap">Tue 29 Sep</span>, 2 nights, 2 adults</p></div>
-  <div class="m3 head-aside"><p class="note"><svg class="i " aria-hidden="true"><use href="#i-clock"/></svg><span><b>Early arrival.</b> ETA was 14:00; it is 10:46. Room 704 is ready now.</span></p></div>
-</section>
-<section class="wrap grid body">
-  <div class="m12 stack">
-    <section class="sec">
-      <div class="sec-h"><h2>Identity</h2><p class="meta">Document seen at the desk</p></div>
-      <div class="sub2">
-        <dl class="dg dg2">
-          <div><dt>Name on document</dt><dd>Chidi E. Okafor</dd></div>
-          <div><dt>Document</dt><dd>Passport · Nigeria</dd></div>
-          <div><dt>Number</dt><dd class="tn">•••• 4821</dd></div>
-          <div><dt>Expires</dt><dd>Mar 2031</dd></div>
-        </dl>
-        <ul class="checks">
-          <li><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span><b>The name matches the booking.</b><br><span class="meta">Booked as Chidi Okafor.</span></span></li>
-          <li><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span><b>Valid for the whole stay.</b><br><span class="meta">Expires Mar 2031, after Tue 29 Sep.</span></span></li>
-        </ul>
-      </div>
-    </section>
-    <section class="sec">
-      <div class="sec-h"><h2>Room</h2><p class="meta">Deluxe, floors 6 and 7. Only ready rooms can be picked.</p></div>
-      <p class="strip-l">Floor 7</p><div class="strip"><a class="cell r1 c1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">701</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Weber</span><br><span class="cell-when">Out Thu 1</span></span></a><a class="cell r1 is-ooo" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">702</span><span class="sc">OOO</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-ooo"/></svg><span><span class="cell-who">Repaint</span><br><span class="cell-when">Back 2 Oct</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">703</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Nguyen</span><br><span class="cell-when">Out Mon 28</span></span></a><a class="cell r1 is-sel pick" href="#"><span class="cell-top"><span class="rn">704</span><span class="sc">ARR</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-arr"/></svg><span><span class="cell-who">Assigned</span><br><span class="cell-when">Ready</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">705</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Holm</span><br><span class="cell-when">Out Tue 29</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">706</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Ahmadi</span><br><span class="cell-when">Out Mon 28</span></span></a><a class="cell r1 pick" href="#"><span class="cell-top"><span class="rn">707</span><span class="sc">VC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-o"/></svg><span><span class="cell-who">Vacant</span><br><span class="cell-when">Ready</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">708</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Adeyemi</span><br><span class="cell-when">Out Sat 3</span></span></a></div><p class="strip-l">Floor 6</p><div class="strip"><a class="cell r1 c1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">601</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Petrov</span><br><span class="cell-when">Out Wed 30</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">602</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Bakker</span><br><span class="cell-when">Out Tue 29</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">603</span><span class="sc">ARR</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-arr"/></svg><span><span class="cell-who">Fischer</span><br><span class="cell-when">ETA 16:30</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">604</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Kowalski</span><br><span class="cell-when">Out Wed 30</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">605</span><span class="sc">DUE</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-due"/></svg><span><span class="cell-who">Rossi</span><br><span class="cell-when">Out 11:00</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">606</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Russo</span><br><span class="cell-when">Out Tue 29</span></span></a><a class="cell r1 is-off" href="#" aria-disabled="true"><span class="cell-top"><span class="rn">607</span><span class="sc">OCC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-x"/></svg><span><span class="cell-who">Shah</span><br><span class="cell-when">Out Thu 1</span></span></a><a class="cell r1 pick" href="#"><span class="cell-top"><span class="rn">608</span><span class="sc">VC</span></span><svg class="mk mk-lg" aria-hidden="true"><use href="#m-o"/></svg><span><span class="cell-who">Vacant</span><br><span class="cell-when">Ready</span></span></a></div>
-      <p class="legend meta rm-legend"><span><svg class="mk " aria-hidden="true"><use href="#m-arr"/></svg>704, assigned at booking</span><span><svg class="mk " aria-hidden="true"><use href="#m-o"/></svg>Ready: 707, 608</span><span><svg class="mk " aria-hidden="true"><use href="#m-x"/></svg><svg class="mk " aria-hidden="true"><use href="#m-due"/></svg><svg class="mk " aria-hidden="true"><use href="#m-ooo"/></svg>Not ready, can&rsquo;t be picked</span></p>
-    </section>
-    <section class="sec">
-      <div class="sec-h"><h2>Payment guarantee</h2></div>
-      <div class="sub2">
-        <div class="choices">
-          <label class="choice is-sel rchoice"><input class="rd" type="radio" name="pg" checked><svg class="i " aria-hidden="true"><use href="#i-credit-card"/></svg><span><b>Visa •••• 4417</b><br><span class="meta">On file from the booking</span></span><span></span></label>
-          <label class="choice rchoice"><input class="rd" type="radio" name="pg"><span></span><span>Another card</span><span></span></label>
-        </div>
-        <dl class="ledger">
-          <dt>Stay<br><span class="meta">Room $476.00 + breakfast $72.00 + tax $65.76</span></dt><dd>$613.76</dd>
-          <dt>Incidentals hold</dt><dd>$100.00</dd>
-          <dt class="tot">Pre-authorise</dt><dd class="tot">$713.76</dd>
-        </dl>
-      </div>
-    </section>
-    <section class="sec">
-      <div class="sec-h"><h2>Keys and extras</h2></div>
-      <div class="sub2">
-        <div class="field"><span class="lbl">Key cards</span>
-          <div class="stepper"><button type="button" aria-label="One fewer"><svg class="i " aria-hidden="true"><use href="#i-minus"/></svg></button><span class="tn">2</span><button type="button" aria-label="One more"><svg class="i " aria-hidden="true"><use href="#i-plus"/></svg></button></div>
-          <p class="hint">One per adult.</p></div>
-        <div>
-          <div class="xrow x3"><svg class="i " aria-hidden="true"><use href="#i-coffee"/></svg><span><span class="h3">Breakfast included</span><br><span class="meta">2 guests, mornings of Mon 28 and Tue 29</span></span><span class="amt meta">Booked</span></div>
-          <label class="xrow x3o"><input class="ck" type="checkbox"><svg class="i " aria-hidden="true"><use href="#i-utensils"/></svg><span><span class="h3">Offer dinner tonight</span><br><span class="meta">2 guests × $42. Ask before you complete.</span></span><span class="amt tn">$84.00</span></label>
-        </div>
-      </div>
-    </section>
-  </div>
-  <aside class="m3 aside">
-    <section class="sec">
-      <div class="sec-h"><h2>When you complete</h2></div>
-      <div class="outcome" aria-label="Room 704 moves from arriving to in house"><svg class="mk mk-xl" aria-hidden="true"><use href="#m-arr"/></svg><svg class="ar" aria-hidden="true"><use href="#i-arrow-right"/></svg><svg class="mk mk-xl" aria-hidden="true"><use href="#m-x"/></svg></div>
-      <div class="outcome-l"><span><span class="sc">ARR</span><br>Arriving</span><span></span><span><span class="sc">OCC</span><br>In house</span></div>
-      <p class="big">704 moves to in house.</p>
-      <p class="meta" style="margin-top:6px">Chidi Okafor leaves Tue 29 Sep by 11:00.</p>
-      <div class="stamp" style="margin:22px 0">
-        <span class="meta">The booking will read</span>
-        <span class="big">Checked in 27 Sep 2026, 10:46</span>
-        <span>By NR, Nadia Rahimi</span>
-      </div>
-      <button class="btn btn-primary btn-block" type="submit">Complete check-in <svg class="i " aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
-      <p class="after-btn"><a class="link" href="01-today.html">Back to Today</a></p>
-    </section>
-  </aside>
-</section>
-</main>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Check in | Alder House front desk</title>
+<meta name="viewport" content="width=1440"><link rel="stylesheet" href="../assets/fobrack.css"></head><body>
+<header class="band"><div class="brand"><b>Alder House</b><span>Front desk</span></div>
+<div class="date"><strong>Wed 14 Oct 2026</strong></div>
+<div class="search"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Find guest, booking ref or room<kbd>/</kbd></div>
+<div class="me"><div class="av">MO</div><div class="who">Maya Okafor<small><span class="role">Receptionist</span></small></div></div></header>
+<nav class="rail"><div class="grp"><span class="grp-label">Desk</span><a class="fob" href="01-today.html"><span class="tag"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Today</span></a><a class="fob" href="02-availability.html"><span class="tag"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Availability</span></a><a class="fob" href="03-new-booking.html"><span class="tag"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New booking</span></a><a class="fob" href="04-booking-rebook.html"><span class="tag"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20V8M2 17h20v3M22 17v-5a3 3 0 0 0-3-3H10v8"/><circle cx="6" cy="12" r="2"/></svg>Bookings</span></a><a class="fob on" href="05-check-in.html"><span class="tag"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="m10 17 5-5-5-5M15 12H3"/></svg>Check in</span></a><a class="fob" href="06-check-out.html"><span class="tag"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5M21 12H9"/></svg>Check out</span></a></div><span class="sep"></span><div class="grp"><span class="grp-label"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Office <small>admin only</small></span><a class="fob admin locked" href="07-rooms.html" title="Admin only"><span class="tag"><svg class="i sm lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Rooms</span></a><a class="fob admin locked" href="08-promo-codes.html" title="Admin only"><span class="tag"><svg class="i sm lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Promo codes</span></a><a class="fob admin locked" href="09-users.html" title="Admin only"><span class="tag"><svg class="i sm lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Users</span></a></div><div class="shift"><span>Shift <b>07:00–15:00</b></span></div></nav>
+<main class="page">
+<div class="crumb"><a href="01-today.html">Today</a><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>Arrivals<svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>AH-26-0417</div>
+<div class="head"><div><h1>Check in Hannah Moreau</h1><div class="sub">Deluxe, Wed 14 → Sat 17 Oct, 3 nights, 2 adults. Picked up at the airport 13:45, at the desk 14:38.</div></div>
+<div class="actions"><a class="btn" href="04-booking-rebook.html">Open booking</a></div></div>
+<div class="layout"><div class="steps">
+<div class="step done"><div class="sn"><svg class="i lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><div class="body"><h2 class="sh">Check identity<span class="pill ok"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Verified</span><span class="tail small muted" style="font-family:var(--body);font-weight:400;font-size:12px">Maya Okafor, 14:39</span></h2>
+<div class="fgrid c4 small"><div><div class="muted">Document</div><b>Passport</b></div><div><div class="muted">Name on document</div><b>Hannah Moreau</b> <span style="color:var(--moss)"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> matches</span></div><div><div class="muted">Expires</div><b>Mar 2031</b></div><div><div class="muted">Second guest</div><b>Luc Moreau</b>, added</div></div></div></div>
+<div class="step done"><div class="sn"><svg class="i lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><div class="body"><h2 class="sh">Assign room<span class="pill ok"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Room 312</span></h2>
+<div class="row" style="gap:10px;align-items:stretch">
+<div style="flex:1.4;border:2px solid var(--teal);background:#F6FBFC;border-radius:5px;padding:10px 12px" class="row"><span class="num" style="font-size:34px">312</span><div class="small"><b>Deluxe, floor 3, courtyard side</b><div class="muted">Inspected 12:10, quiet high floor as requested</div></div><span class="pill ok" style="margin-left:auto"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/></svg>Key at desk</span></div>
+<div style="flex:1;border:1px solid var(--rule);background:#fff;border-radius:5px;padding:10px 12px" class="row"><span class="num" style="font-size:26px">212</span><div class="small"><b>Deluxe, floor 2</b><div class="muted">Free, street side</div></div><a class="btn xs" style="margin-left:auto">Swap</a></div>
+<div style="flex:1;border:1px solid var(--rule);background:#fff;border-radius:5px;padding:10px 12px" class="row"><span class="num" style="font-size:26px">113</span><div class="small"><b>Deluxe, floor 1</b><div class="muted">Free, near lift</div></div><a class="btn xs" style="margin-left:auto">Swap</a></div></div></div></div>
+<div class="step done"><div class="sn"><svg class="i lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div><div class="body"><h2 class="sh">Payment guarantee<span class="pill ok"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pre-authorised</span></h2>
+<div class="fgrid c4 small"><div><div class="muted">Card</div><b><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> Visa ending 0042</b></div><div><div class="muted">Stay total</div><b>$862.29</b></div><div><div class="muted">Incidentals hold</div><b>$150.00</b></div><div><div class="muted">Held in total</div><b>$1,012.29</b>, released at check out</div></div></div></div>
+<div class="step cur"><div class="sn">4</div><div class="body"><h2 class="sh">Encode keys<span class="pill info"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/></svg>In progress</span></h2>
+<div class="row" style="gap:18px;align-items:center">
+<div class="row small" style="gap:10px"><span>Key cards</span><span class="stepper"><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></span><b>2</b><span><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span></span></div>
+<div class="small"><div class="muted">Valid</div><b>Wed 14 Oct 15:00 → Sat 17 Oct 11:00</b></div>
+<div class="small"><div class="muted">Access</div><b>Room 312, lift, gym</b></div>
+<div class="row" style="margin-left:auto;gap:8px"><span class="pill ok"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Card 1 encoded</span><span class="pill mute"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Card 2: place on encoder</span></div></div></div></div>
+<div class="step"><div class="sn">5</div><div class="body"><h2 class="sh">Offer extras<span class="tail small muted" style="font-family:var(--body);font-weight:400;font-size:12px">Optional</span></h2>
+<div class="grid2" style="gap:12px">
+<div class="extra" style="border:1px solid var(--rule);border-radius:5px;padding:10px;grid-template-columns:36px 1fr auto"><span class="ic"><svg class="i " viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></span><div><div class="t">Dinner tonight</div><div class="d">2 guests, $84.00 a night. 6 tables left at 19:30</div></div><a class="btn sm"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Add 1 night</a></div>
+<div class="extra on" style="border:1px solid var(--rule);border-radius:5px;padding:10px;grid-template-columns:36px 1fr auto"><span class="ic"><svg class="i " viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></span><div><div class="t">Breakfast</div><div class="d">Already booked, 2 guests × 3 nights</div></div><span class="pill ok"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Included</span></div>
+</div></div></div>
+</div>
+<aside class="slip"><span class="slip-no">AH-26-0417</span><h2>Room key</h2>
+<div class="keycard" style="flex-direction:column;align-items:center;padding:18px 12px 14px"><div class="bigfob"><i>312</i></div><div style="font-weight:700;margin-top:10px">Deluxe, floor 3</div><div class="small muted">Leave the fob hook empty once handed over</div></div>
+<hr><dl class="kv"><dt>Guest</dt><dd>Hannah Moreau</dd><dt>With</dt><dd>Luc Moreau</dd><dt>Stay</dt><dd>14 → 17 Oct, 3 nights</dd><dt>Extras</dt><dd>Breakfast ×2, pickup ×1</dd><dt>Promo</dt><dd>summer2026, −$107.10</dd><dt>Total</dt><dd>$862.29</dd><dt>Guarantee</dt><dd>Visa ending 0042</dd></dl>
+<hr>
+<div class="small" style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px">
+<span class="row" style="gap:6px;color:var(--moss);font-weight:700"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Identity verified</span>
+<span class="row" style="gap:6px;color:var(--moss);font-weight:700"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Room 312 assigned</span>
+<span class="row" style="gap:6px;color:var(--moss);font-weight:700"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Card pre-authorised</span>
+<span class="row" style="gap:6px;color:var(--teal-dark);font-weight:700"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>1 of 2 keys encoded</span></div>
+<a class="btn primary big"><svg class="i " viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.3-9.3M17 6l3 3M14 9l2 2"/></svg>Complete check in</a>
+<div class="help" style="text-align:center;margin-top:8px">Sends the welcome message and marks 312 as in house.</div>
+</aside></div></main></body></html>

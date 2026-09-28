@@ -1,150 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Design 2 · Two-Ink Print</title>
-<link rel="stylesheet" href="assets/twoink.css">
-<style>
-.ix-mast { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px var(--gutter) 12px; border-bottom: 4px double var(--ink); }
-.ix { padding: 0 var(--gutter); }
-.ix-hd { padding: 36px 0 28px; }
-.lede { font-size: var(--t-17); max-width: 72ch; margin-top: 16px; color: var(--ink); line-height: 1.5; }
-.sm { font-size: var(--t-13); }
-.sws { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px 16px; }
-.sw { display: grid; gap: 2px; }
-.sw-c { height: 64px; border-radius: 32px; margin-bottom: 8px; }
-.spec-a { margin-bottom: 8px; }
-.spec-big { font-size: 96px; }
-.spec p + p { margin-top: 10px; }
-.spec-m { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.big0 { font-size: 30px; font-weight: 600; letter-spacing: .1em; }
-.st-list { display: grid; gap: 10px; }
-.st-list li { display: flex; align-items: center; gap: 14px; font-size: var(--t-15); }
-.st-list b { font-family: var(--f-mono); font-size: var(--t-13); margin-right: 6px; }
-.cmp-f { margin-top: 18px; }
-.ph { margin: 8px 0 8px; padding: 18px 22px; border-radius: 22px; border: 1.5px solid var(--violet); background: var(--scr-v13), var(--paper); }
-.ph h2 { font-size: var(--t-20); font-weight: 760; font-stretch: 86%; display: flex; gap: 8px; align-items: center; }
-.ph ul { margin-top: 10px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; padding-left: 20px; list-style: disc; }
-.ph li { font-size: var(--t-14); }
-.ix-sc { margin-top: 32px; }
-.shots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 40px; }
-.shot-i { position: relative; display: grid; gap: 8px; align-content: start; }
-.shot-i:not(:nth-child(3n+1))::before { content: ""; position: absolute; left: -20px; top: 0; bottom: 0; width: 1px; background: var(--rule); }
-.shot { display: block; aspect-ratio: 1440 / 1000; overflow: hidden; border-radius: 14px; box-shadow: inset 0 0 0 1px var(--ink); background: var(--paper); }
-.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; transition: transform .25s var(--ease); }
-.shot:hover img { transform: scale(1.02); }
-.shot-t { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 4px; }
-.shot-t h3 { font-size: var(--t-20); font-weight: 760; font-stretch: 86%; }
-.shot-l { display: flex; gap: 16px; font-size: var(--t-13); font-weight: 650; }
-@media (max-width: 1100px) { .shots { grid-template-columns: 1fr 1fr; gap: 28px 24px; } .shot-i::before { display: none; } .sws { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 760px) { .shots, .ph ul { grid-template-columns: 1fr; } .spec-big { font-size: 64px; } }
-</style>
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol></defs></svg>
-<header class="ix-mast">
-  <div class="brand"><svg class="brand-mark" viewBox="0 0 40 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="#11CCFF"/><circle class="v" cx="27" cy="13" r="12" fill="#AA11CC"/></svg><span class="brand-name">Alder House</span><span class="brand-sub">Front desk<br>design exploration</span></div>
-  <span class="muted sm">1440 px desktop · PNG @2x · 6 receptionist + 3 admin screens · all data synthetic</span>
-</header>
-<main class="ix">
-  <section class="ix-hd">
-    <h1 class="mis "><span class="mc" aria-hidden="true">Design 2<span class="sep"> · </span>Two-Ink Print</span><span class="mv">Design 2<span class="sep"> · </span>Two-Ink Print</span></h1>
-    <p class="lede">The front desk printed as a two-colour risograph job: violet and cyan inks on cool white stock, with every line of text in the deep overprint blue the two make together. Rooms are round key tags hung on a pegboard, one hook-rail per floor, and each status is an ink treatment paired with a front-office code. A horizontal masthead and nav replace the sidebar, and content is set like a broadsheet on a 12-column grid.</p>
-  </section>
-
-  <div class="bs ix-sys">
-    <section class="col" style="--s:7;--m:12" aria-labelledby="h-pal">
-      <div class="sh"><h2 id="h-pal">Two inks, one stock</h2><span class="meta">Everything is ink A, ink B, overprint or paper</span></div>
-      <ul class="sws"><li class="sw"><span class="sw-c" style="background:#F7F8FA;box-shadow:inset 0 0 0 1px var(--rule)"></span><b>Paper</b><span class="mono sm">#F7F8FA</span><span class="sm muted">Stock. Every surface starts here.</span></li><li class="sw"><span class="sw-c" style="background:#1A1AB8;color:#F7F8FA"></span><b>Overprint</b><span class="mono sm">#1A1AB8</span><span class="sm muted">All text, rules, selection state.</span></li><li class="sw"><span class="sw-c" style="background:#AA11CC;color:#F7F8FA"></span><b>Violet ink</b><span class="mono sm">#AA11CC</span><span class="sm muted">The one primary action. DUE tags.</span></li><li class="sw"><span class="sw-c" style="background:#11CCFF"></span><b>Cyan ink</b><span class="mono sm">#11CCFF</span><span class="sm muted">Fills only. ARR tags, active, chosen.</span></li><li class="sw"><span class="sw-c" style="background:var(--scr-v30),var(--paper)"></span><b>Violet screen</b><span class="mono sm">30% dots</span><span class="sm muted">OCC rim, used-up codes.</span></li><li class="sw"><span class="sw-c" style="background:var(--scr-c30),var(--paper)"></span><b>Cyan screen</b><span class="mono sm">13–30% dots</span><span class="sm muted">Sheets, selected rows, edits.</span></li><li class="sw"><span class="sw-c" style="background:var(--hatch),var(--paper)"></span><b>Crosshatch</b><span class="mono sm">cyan + violet</span><span class="sm muted">OOO rooms, full nights.</span></li><li class="sw"><span class="sw-c" style="background:var(--hatch-danger),var(--violet);color:#F7F8FA"></span><b>Danger</b><span class="mono sm">violet + hatch</span><span class="sm muted">Blocked or destructive.</span></li></ul>
-    </section>
-    <section class="col" style="--s:5;--m:12" aria-labelledby="h-type">
-      <div class="sh"><h2 id="h-type">Type</h2><span class="meta">Self-hosted, SIL OFL</span></div>
-      <div class="spec">
-        <div class="spec-a"><div class="mis spec-big"><span class="mc" aria-hidden="true">704 Aa</span><span class="mv">704 Aa</span></div></div>
-        <p><b>Bricolage Grotesque</b> <span class="muted">variable, opsz 12–96, wdth 75–100, wght 200–800. Display at 80% width with a 2 px cyan misregistration (headings only); UI text at 96% width; tabular figures in data.</span></p>
-        <p class="spec-m"><span class="code code--lg">HVK-2094</span><span class="code code--lg">autumn26</span><span class="mono big0">0 O</span></p>
-        <p><b>Red Hat Mono</b> <span class="muted">for codes and refs only. Its zero is slashed, so 0 and O never read the same.</span></p>
-      </div>
-    </section>
-  </div>
-
-  <div class="bs ix-sys">
-    <section class="col" style="--s:7;--m:12" aria-labelledby="h-st">
-      <div class="sh"><h2 id="h-st">Status in two inks</h2><span class="meta">Ink + pattern + code, never colour alone</span></div>
-      <ul class="st-list"><li><span class="tag t-arr  " role="img" aria-label="Room 806, arriving today"><span class="tn">806</span><span class="tc">ARR</span></span><span><b>ARR</b> Arriving · cyan solid</span></li><li><span class="tag t-due  " role="img" aria-label="Room 208, due out today"><span class="tn">208</span><span class="tc">DUE</span></span><span><b>DUE</b> Due out · violet solid</span></li><li><span class="tag t-occ  " role="img" aria-label="Room 705, in house"><span class="tn">705</span><span class="tc">OCC</span></span><span><b>OCC</b> In house · violet screen rim</span></li><li><span class="tag t-vc  " role="img" aria-label="Room 707, vacant and ready"><span class="tn">707</span><span class="tc">VC</span></span><span><b>VC</b> Vacant · paper, ink outline</span></li><li><span class="tag t-ooo  " role="img" aria-label="Room 702, out of order"><span class="tn">702</span><span class="tc">OOO</span></span><span><b>OOO</b> Out of order · crosshatch rim</span></li></ul>
-    </section>
-    <section class="col" style="--s:5;--m:12" aria-labelledby="h-cmp">
-      <div class="sh"><h2 id="h-cmp">Printed pills</h2><span class="meta">One violet action per screen</span></div>
-      <div class="btn-row"><span class="btn btn--primary">Confirm booking</span><span class="btn">Check in</span><span class="btn btn--on">Rebook</span><span class="btn is-disabled">Check in</span><span class="btn btn--danger"><span class="x-swatch" aria-hidden="true"></span>Cancel booking</span></div>
-      <div class="fgrid cmp-f">
-        <div class="f" style="--w:3"><label>Focus</label><input class="inp is-focus" value="60" aria-label="Focus example"></div>
-        <div class="f" style="--w:3"><label>Error</label><div class="inp is-error">Sat 26 Dec 2026</div><span class="err">Valid to must be after Valid from.</span></div>
-      </div>
-    </section>
-  </div>
-
-  <section class="ph" aria-labelledby="h-ph">
-    <h2 id="h-ph"><svg class="i " aria-hidden="true"><use href="#i-triangle-alert"/></svg> Placeholders, not spec</h2>
-    <ul>
-      <li><b>12% tax</b> is a flat placeholder rate used in every total.</li>
-      <li><b>Extras prices</b> are placeholders: breakfast $18 and dinner $42 per guest per night, arrival pickup $55 per trip.</li>
-      <li><b>The promo Offer field</b> (for example "15% off room nights") is not in the brief. It was added so a code carries a value. The discount model is an open decision.</li>
-      <li><b>Room prices and counts</b> (Queen $136, Twin Double $166, Deluxe $238, Family Suite $366; 24/16/16/8 rooms) are placeholders.</li>
-    </ul>
-  </section>
-
-  <section aria-labelledby="h-sc" class="ix-sc">
-    <div class="sh"><h2 id="h-sc">The nine screens</h2><span class="meta">Click a screen for the full-page PNG</span></div>
-    <ol class="shots"><li class="shot-i">
-  <a class="shot" href="png/01-today.png"><img src="png/01-today.png" alt="Today screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Today</h3><span class="muted sm">Receptionist · 10:42</span></div>
-  <p class="sm">Arriving and Leaving as screened sheets beside the 64-tag pegboard, the ink key and the tonight tally.</p>
-  <div class="shot-l"><a href="screens/01-today.html">Open HTML</a><a href="png/01-today.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/02-availability.png"><img src="png/02-availability.png" alt="Availability screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Availability</h3><span class="muted sm">Receptionist</span></div>
-  <p class="sm">Rooms free per type over 16 nights, tonight as a cyan column, the Family Suite selection and its room-by-room chart.</p>
-  <div class="shot-l"><a href="screens/02-availability.html">Open HTML</a><a href="png/02-availability.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/03-new-booking.png"><img src="png/03-new-booking.png" alt="New booking screen" loading="lazy"></a>
-  <div class="shot-t"><h3>New booking</h3><span class="muted sm">Receptionist · 10:44</span></div>
-  <p class="sm">Leila Haddad's draft: stay, all four room types, room 807, guest, extras, AUTUMN26 and a printed docket with the total.</p>
-  <div class="shot-l"><a href="screens/03-new-booking.html">Open HTML</a><a href="png/03-new-booking.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/04-booking-rebook.png"><img src="png/04-booking-rebook.png" alt="Booking and rebook screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Booking and rebook</h3><span class="muted sm">Receptionist · 10:50</span></div>
-  <p class="sm">HVK-2094 with Check in disabled until arrival, the Rebook panel open, and extras, charges, terms and history beside it.</p>
-  <div class="shot-l"><a href="screens/04-booking-rebook.html">Open HTML</a><a href="png/04-booking-rebook.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/05-check-in.png"><img src="png/05-check-in.png" alt="Check in screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Check in</h3><span class="muted sm">Receptionist · 10:46</span></div>
-  <p class="sm">ID match, a Deluxe floors 6–7 pegboard where only ready tags can be picked, the guarantee, keys and a stamp preview.</p>
-  <div class="shot-l"><a href="screens/05-check-in.html">Open HTML</a><a href="png/05-check-in.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/06-check-out.png"><img src="png/06-check-out.png" alt="Check out screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Check out</h3><span class="muted sm">Receptionist · 10:58</span></div>
-  <p class="sm">Maja Lindqvist's folio down to the $489.14 balance, card on file, the leaving checklist and 505 turning vacant.</p>
-  <div class="shot-l"><a href="screens/06-check-out.html">Open HTML</a><a href="png/06-check-out.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/07-rooms.png"><img src="png/07-rooms.png" alt="Rooms screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Rooms</h3><span class="muted sm">Admin · 11:05</span></div>
-  <p class="sm">Room types ledger with the Deluxe price edited inline, delete blocked for Family Suite, the floor map and recent changes.</p>
-  <div class="shot-l"><a href="screens/07-rooms.html">Open HTML</a><a href="png/07-rooms.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/08-promo-codes.png"><img src="png/08-promo-codes.png" alt="Promo codes screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Promo codes</h3><span class="muted sm">Admin · 11:05</span></div>
-  <p class="sm">The code register, a validity timeline that shows the winter26 overlap, and the new-code form with a receptionist preview.</p>
-  <div class="shot-l"><a href="screens/08-promo-codes.html">Open HTML</a><a href="png/08-promo-codes.png">PNG @2x</a></div>
-</li><li class="shot-i">
-  <a class="shot" href="png/09-users.png"><img src="png/09-users.png" alt="Users screen" loading="lazy"></a>
-  <div class="shot-t"><h3>Users</h3><span class="muted sm">Admin · 11:05</span></div>
-  <p class="sm">Staff with roles, shifts and status, and Create user with role cards that list what each role can and can't do.</p>
-  <div class="shot-l"><a href="screens/09-users.html">Open HTML</a><a href="png/09-users.png">PNG @2x</a></div>
-</li></ol>
-  </section>
-</main>
-<footer class="slug"><span>Design 2 · Two-Ink Print · Alder House is a placeholder name · Icons: Lucide (ISC) · Fonts: Bricolage Grotesque, Red Hat Mono (SIL OFL)</span>
-  <span class="slug-bar" aria-hidden="true"><i class="c"></i><i class="s1"></i><i class="o"></i><i class="s2"></i><i class="v"></i></span></footer>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Split-Flap — Design 2</title><link rel="stylesheet" href="assets/splitflap.css"></head>
+<body><div class="gal">
+<div class="gal-head">
+ <div><div class="muted">Design 2 of 15, Alder House front desk</div>
+ <div style="margin-top:18px"><span class="flap f40 y" aria-label="SPLIT FLAP"><b>S</b><b>P</b><b>L</b><b>I</b><b>T</b><b class="gap"></b><b>F</b><b>L</b><b>A</b><b>P</b></span></div>
+ <h1>The front desk as a station concourse</h1></div>
+ <p class="idea">Arrivals and departures are what a front desk runs on, so this direction borrows the language of the departure board. Every room number, date, reference and total sits on a hinged flap tile with an upper and lower half. The 64 rooms hang on one board, four floors of sixteen. Navigation is a route line: the six desk screens are stops on a solid yellow line, and the three admin screens sit past a dashed zone boundary, locked for receptionists. The palette is deep board navy with a signal-yellow primary action and a small set of status colours that always travel with a short code (ARR, DEP, OCC, FREE, CLN, OFF), so colour is never the only signal.</p>
+</div>
+<div class="swatches"><div class="swatch"><div class="c" style="background:#172A6B"></div><div class="m"><b>Board navy</b>#172A6B<div class="muted xs">Boards, occupied rooms, route line</div></div></div><div class="swatch"><div class="c" style="background:#FFC72C"></div><div class="m"><b>Signal yellow</b>#FFC72C<div class="muted xs">Primary action, current stop</div></div></div><div class="swatch"><div class="c" style="background:#E9ECF2"></div><div class="m"><b>Concourse</b>#E9ECF2<div class="muted xs">Page ground</div></div></div><div class="swatch"><div class="c" style="background:#141B3A"></div><div class="m"><b>Ink</b>#141B3A<div class="muted xs">Text</div></div></div><div class="swatch"><div class="c" style="background:#5B6478"></div><div class="m"><b>Steel</b>#5B6478<div class="muted xs">Muted text</div></div></div><div class="swatch"><div class="c" style="background:#2656BE"></div><div class="m"><b>Arrival cobalt</b>#2656BE<div class="muted xs">ARR, check in</div></div></div><div class="swatch"><div class="c" style="background:#7A5BA8"></div><div class="m"><b>Departure violet</b>#7A5BA8<div class="muted xs">DEP, check out, Fri/Sat</div></div></div><div class="swatch"><div class="c" style="background:#277533"></div><div class="m"><b>Go green</b>#277533<div class="muted xs">Free, done, discounts</div></div></div><div class="swatch"><div class="c" style="background:#B51B77"></div><div class="m"><b>Stop magenta</b>#B51B77<div class="muted xs">Destructive, out of order</div></div></div><div class="swatch"><div class="c" style="background:#FFF4D2"></div><div class="m"><b>Amber wash</b>#FFF4D2<div class="muted xs">Attention, low stock</div></div></div></div>
+<div class="specimen">
+ <div class="panel"><div class="pb"><div class="muted small">Antonio, 600. Flaps, headings, numerals</div><div style="font:600 64px/1 var(--f-flap);margin-top:10px">Room 312, 14 → 17 Oct</div><div style="margin-top:14px"><span class="flap f40" aria-label="$862.29"><b>$</b><b>8</b><b>6</b><b>2</b><b>.</b><b>2</b><b>9</b></span></div></div></div>
+ <div class="panel"><div class="pb"><div class="muted small">Instrument Sans 400 to 700. Interface and body</div><div style="font-size:24px;font-weight:600;margin-top:10px">Settle $862.29 and check out</div><p style="font-size:15px;max-width:56ch">Free cancellation until 48 h before arrival. That window closed Mon 12 Oct, 14:00. Cancelling now charges the first night at the booked rate plus tax.</p><div class="row" style="gap:6px;flex-wrap:wrap"><span class="tag arr"><i>ARR</i>Due</span><span class="tag dep"><i>DEP</i>Leaves</span><span class="tag go"><i>FREE</i>Vacant</span><span class="tag stop"><i>OFF</i>Out of order</span><span class="tag amb"><i>CLN</i>Cleaning</span></div></div></div>
+</div>
+<div class="thumbs"><a class="thumb" href="screens/01-today.html"><img src="png/01-today.png" alt="Today board screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="01"><b>0</b><b>1</b></span><b>Today board</b><span class="tag arr plain" style="margin-left:auto">Receptionist</span></div></a><a class="thumb" href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="02"><b>0</b><b>2</b></span><b>Availability</b><span class="tag arr plain" style="margin-left:auto">Receptionist</span></div></a><a class="thumb" href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="03"><b>0</b><b>3</b></span><b>New booking</b><span class="tag arr plain" style="margin-left:auto">Receptionist</span></div></a><a class="thumb" href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking, rebook, cancel screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="04"><b>0</b><b>4</b></span><b>Booking, rebook, cancel</b><span class="tag arr plain" style="margin-left:auto">Receptionist</span></div></a><a class="thumb" href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check in screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="05"><b>0</b><b>5</b></span><b>Check in</b><span class="tag arr plain" style="margin-left:auto">Receptionist</span></div></a><a class="thumb" href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check out screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="06"><b>0</b><b>6</b></span><b>Check out</b><span class="tag arr plain" style="margin-left:auto">Receptionist</span></div></a><a class="thumb" href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="07"><b>0</b><b>7</b></span><b>Rooms</b><span class="tag occ plain" style="margin-left:auto">Admin</span></div></a><a class="thumb" href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="08"><b>0</b><b>8</b></span><b>Promo codes</b><span class="tag occ plain" style="margin-left:auto">Admin</span></div></a><a class="thumb" href="screens/09-users.html"><img src="png/09-users.png" alt="Users screen" loading="lazy"><div class="cap"><span class="flap f18" aria-label="09"><b>0</b><b>9</b></span><b>Users</b><span class="tag occ plain" style="margin-left:auto">Admin</span></div></a></div>
+<p class="small muted" style="margin-top:28px">Static HTML at 1440 px. Screenshots at 2x in png/. Fonts are self-hosted under the SIL Open Font License (assets/fonts). Direction notes and open decisions are in README.md.</p>
+</div></body></html>

@@ -1,123 +1,83 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mirror · design-7 · Alder House front desk</title>
-<link rel="stylesheet" href="assets/mirror.css">
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Counting Frame · Design 7</title>
+<link rel="stylesheet" href="assets/counting-frame.css">
 <style>
-.g-top { display: grid; justify-items: center; padding: 22px 16px 16px; border-bottom: 3px double var(--rule-3); }
-.g-top .mark b { font-size: 26px; }
-.intro { max-width: 68ch; margin: 0 auto; text-align: center; font-size: 16px; line-height: 1.6; background: var(--ground); padding: 6px 12px; }
-.intro + .intro { margin-top: 10px; }
-.spec { margin-top: 40px; }
-.pal { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px 12px; padding: 18px 22px 22px; }
-.pal li { display: grid; gap: 3px; font-size: 13px; }
-.pal .chip { height: 64px; border-radius: var(--r); border: 1px solid var(--ink); display: flex; align-items: flex-end; padding: 8px; font: 500 12px/1 var(--mono); margin-bottom: 5px; }
-.pal b { font-weight: 650; }
-.pal span:last-child { color: var(--ink-2); }
-.type { padding: 18px 22px 22px; display: grid; gap: 18px; }
-.type .row { display: grid; gap: 4px; padding-top: 14px; border-top: 1px solid var(--rule); }
-.type .row:first-child { border-top: 0; padding-top: 4px; }
-.type .lbl { font-size: 12.5px; }
-.t-bod { font: 500 44px/1.05 var(--serif); }
-.t-bod i { font-weight: 400; }
-.t-num { font: 600 30px/1 var(--serif); font-variant-numeric: tabular-nums lining-nums; }
-.t-rht { font: 400 16px/1.5 var(--sans); }
-.t-rht b { font-weight: 650; }
-.t-mono { font: 500 15px/1.4 var(--mono); }
-.ph-note { margin: 40px auto 0; max-width: 900px; }
-.ph-note .box { background: var(--leaf); }
-.ph-note ul { margin-top: 6px; display: grid; gap: 4px; padding-left: 18px; list-style: disc; }
-.screens { margin-top: 48px; display: grid; gap: 40px; }
-.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--axis-gut); }
-.solo { display: grid; justify-items: center; }
-.solo .shot { width: min(820px, 100%); }
-.shot { margin: 0; background: var(--leaf); border: 1px solid var(--rule-2); border-radius: var(--r); overflow: hidden; }
-.solo .shot.arch-top { border: 3px double var(--ink); border-radius: 50% 50% var(--r) var(--r) / 80px 80px var(--r) var(--r); padding-top: 34px; }
-.thumb { display: block; height: 380px; overflow: hidden; border-bottom: 1px solid var(--rule-2); background: var(--ground); }
-.solo .thumb { height: 460px; }
-.thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-.shot figcaption { padding: 16px 20px 18px; text-align: center; }
-.shot h3 { font: 600 22px/1.3 var(--serif); }
-.shot p { margin-top: 6px; font-size: 14px; color: var(--ink-2); }
-.shot .links { display: flex; gap: 8px; justify-content: center; color: var(--ink); font-weight: 600; font-size: 13.5px; }
-.foot { margin-top: 48px; text-align: center; font-size: 13px; color: var(--ink-2); background: var(--ground); padding: 8px; }
-@media (max-width: 1100px) { .pal { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 860px) { .pair { grid-template-columns: 1fr; row-gap: 32px; } .thumb, .solo .thumb { height: 280px; } }
-</style>
-</head>
-<body>
-<header class="g-top"><span class="mark"><b>Alder House</b><small>Front desk · design-7</small></span></header>
-<main class="page">
-  <header class="ttl"><h1>Mirror</h1><p class="sub">Bilateral symmetry on a central axis, like the lobby of a grand old hotel</p></header>
-  <p class="intro">Every screen is built on a visible double-rule axis. The wordmark sits on it, front desk items to its left and admin items to its right, and each screen's one primary action is placed on the axis too.</p>
-  <p class="intro">Arrivals, the front desk and the receptionist live in the green face on the left. Departures and the admin live in the pink face on the right. Check-in and check-out are mirror layouts of each other. Placement mirrors, but text inside rows always reads left to right.</p>
-
-  <div class="dip spec">
-    <section class="leaf" aria-labelledby="h-pal">
-      <div class="ph"><h2 id="h-pal">Palette</h2><p class="pm">No gold, no metallics, no gradients</p></div>
-      <ul class="pal"><li><span class="chip" style="background:#FCEEF8">#FCEEF8</span><b>Ground</b><span>Page, lobby floor</span></li><li><span class="chip" style="background:#F6DFF0">#F6DFF0</span><b>Ground 2</b><span>Table heads, wells</span></li><li><span class="chip" style="background:#FFFFFF">#FFFFFF</span><b>Leaf</b><span>Forms, lists, the arch</span></li><li><span class="chip" style="background:#AAEEAA">#AAEEAA</span><b>Green</b><span>Arriving, front desk, selected</span></li><li><span class="chip" style="background:#D9F7D9">#D9F7D9</span><b>Green field</b><span>The left face</span></li><li><span class="chip" style="background:#FFAAFF">#FFAAFF</span><b>Pink</b><span>Due out, admin</span></li><li><span class="chip" style="background:#FFD6FB">#FFD6FB</span><b>Pink field</b><span>The right face</span></li><li><span class="chip" style="background:#2A1231;color:#fff">#2A1231</span><b>Aubergine</b><span>All text, primary action</span></li><li><span class="chip" style="background:#5A3A62;color:#fff">#5A3A62</span><b>Aubergine 2</b><span>Secondary text</span></li><li><span class="chip" style="background:#8A0F3E;color:#fff">#8A0F3E</span><b>Raspberry</b><span>Blocks and warnings</span></li></ul>
-    </section>
-    <section class="leaf" aria-labelledby="h-type">
-      <div class="ph"><h2 id="h-type">Type</h2><p class="pm">Self-hosted, SIL Open Font License</p></div>
-      <div class="type">
-        <div class="row"><span class="lbl">Bodoni Moda · headings and numerals, optical size on</span><p class="t-bod">Arrivals <i>&amp;</i> Departures</p><p class="t-num">53 of 64 · $919.74 · 806</p></div>
-        <div class="row"><span class="lbl">Red Hat Text · UI, left-aligned inside rows</span><p class="t-rht"><b>Ngozi Abara</b> · Family Suite · 3 nights · ETA 13:00</p></div>
-        <div class="row"><span class="lbl">Red Hat Mono · codes and references</span><p class="t-mono">ARR DUE OCC VC OOO · autumn26 · HVK-2094</p></div>
-      </div>
-    </section>
+  html,body{background:var(--frame)}
+  .wrap{max-width:1240px;margin:0 auto;padding:48px 32px 72px}
+  .wrap{background:var(--frame)}
+  .hero{background:var(--frame);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:end;color:var(--frame-ink);padding-bottom:40px;border-bottom:1px solid #ffffff1c}
+  .hero .no{font:600 14px var(--cond);color:#C9D1DC;letter-spacing:.04em}
+  .hero h1{font:700 104px/.9 var(--cond);letter-spacing:-.01em;color:#fff;margin:10px 0 18px}
+  .hero p{font-size:17px;line-height:1.6;max-width:60ch;color:#D5DCE6}
+  .abacus{display:grid;gap:8px;padding:14px;background:#141A24;border-radius:10px}
+  .arow{display:grid;grid-template-columns:repeat(16,1fr);gap:3px}
+  .abacus .rod{background:#232C3B;border-color:#2F3A4C;padding:0}
+  .abacus .rod .wire{height:40px}
+  .abacus .rod .wire::after{top:9px;background:#8C97A8}
+  .abacus .rod .wire .bead{top:24px}
+  .abacus .rod.occ .wire .bead,.abacus .rod.dep .wire .bead{top:12px}
+  .abacus .rod.arr .wire .bead,.abacus .rod.ooo .wire .bead{top:18px}
+  .sheet{background:var(--face);border-radius:14px;margin-top:40px;padding:32px}
+  .sheet h2{font:650 26px var(--cond);margin-bottom:14px}
+  .sw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .sw div{border-radius:6px;border:1px solid var(--line);overflow:hidden;background:var(--plate)}
+  .sw i{display:block;height:64px}
+  .sw b{display:block;font:650 15px var(--cond);padding:8px 10px 0}
+  .sw small{display:block;font-size:12px;color:var(--ink-3);padding:0 10px 10px}
+  .spec{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:30px}
+  .spec .plate{padding:20px}
+  .spec .big{font:700 64px/1 var(--cond)}
+  .spec .body{font-size:15px;line-height:1.6;color:var(--ink-2);max-width:56ch}
+  .thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:10px}
+  .thumbs a{display:block;background:var(--plate);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .thumbs img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-bottom:1px solid var(--line)}
+  .thumbs span{display:flex;gap:10px;align-items:center;padding:10px 12px;font-weight:600}
+  .thumbs span em{font-style:normal;margin-left:auto;font-size:12px;color:var(--ink-3);font-weight:500}
+  @media (max-width:800px){.hero,.spec{grid-template-columns:1fr}.hero h1{font-size:64px}.sw{grid-template-columns:repeat(2,1fr)}.thumbs{grid-template-columns:1fr}.wrap{padding:28px 16px}}
+</style></head>
+<body><div class="wrap">
+<header class="hero">
+  <div>
+    <div class="no">Design 7 of 15 · Alder House front desk</div>
+    <h1>Counting Frame</h1>
+    <p>The front desk read like a soroban. Every one of the 64 rooms is a rod with one bead: pushed up against the beam when a guest is in, half-way when someone arrives today, resting low when the room is free, and a broken red rod when it is out of order. Stays are short rods with a bead per night. The screens themselves sit as beads on one rod across the top, with admin pages past a locked post.</p>
   </div>
-
-  <aside class="ph-note" aria-labelledby="h-ph">
-    <div class="note warn box"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-      <div><b id="h-ph">Placeholders, not spec.</b> These values are demo placeholders and need the client's real figures:
-        <ul>
-          <li>The 12% tax rate on every folio and total.</li>
-          <li>Extras prices: breakfast $18 per guest per night, dinner $42 per guest per night, arrival pickup $55 per trip.</li>
-          <li>The promo code "Offer" field (percent off, nights free). The brief defines id, code, title, dates and count only.</li>
-          <li>Room prices: Queen $136, Twin Double $166, Deluxe $238, Family Suite $366.</li>
-        </ul>
-      </div>
-    </div>
-  </aside>
-
-  <div class="screens">
-    <div class="solo"><figure class="shot arch-top">
-  <a class="thumb" href="png/01-today.png"><img src="png/01-today.png" alt="Today screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Today</h3><p>Arrivals in green on the left, departures in pink on the right, the 8 × 8 house on the axis with New booking beneath it.</p><p class="links"><a href="screens/01-today.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/01-today.png">PNG, 1440 @2x</a></p></figcaption>
-</figure></div>
-    <div class="pair"><figure class="shot ">
-  <a class="thumb" href="png/05-check-in.png"><img src="png/05-check-in.png" alt="Check in screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Check in</h3><p>Guest and ID in the green face on the left, room 704 and the outcome on the axis, payment and keys on the right.</p><p class="links"><a href="screens/05-check-in.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/05-check-in.png">PNG, 1440 @2x</a></p></figcaption>
-</figure><figure class="shot ">
-  <a class="thumb" href="png/06-check-out.png"><img src="png/06-check-out.png" alt="Check out screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Check out</h3><p>The mirror of check-in: payment on the left, 505 on the axis, the guest and folio in the pink face on the right.</p><p class="links"><a href="screens/06-check-out.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/06-check-out.png">PNG, 1440 @2x</a></p></figcaption>
-</figure></div>
-    <div class="pair"><figure class="shot ">
-  <a class="thumb" href="png/02-availability.png"><img src="png/02-availability.png" alt="Availability screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Availability</h3><p>Centred on tonight: an arch lists the 9 free rooms, then 16 nights per type, the selection band and the Family Suite chart on one column grid.</p><p class="links"><a href="screens/02-availability.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/02-availability.png">PNG, 1440 @2x</a></p></figcaption>
-</figure><figure class="shot ">
-  <a class="thumb" href="png/03-new-booking.png"><img src="png/03-new-booking.png" alt="New booking screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>New booking</h3><p>Stay and room on the left, guest, extras and promo on the right, the folio for 807 under an arch on the axis.</p><p class="links"><a href="screens/03-new-booking.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/03-new-booking.png">PNG, 1440 @2x</a></p></figcaption>
-</figure></div>
-    <div class="solo"><figure class="shot ">
-  <a class="thumb" href="png/04-booking-rebook.png"><img src="png/04-booking-rebook.png" alt="Booking and rebook screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Booking and rebook</h3><p>The current stay and the new stay face each other across the axis. Fri 9 sits on the axis of the availability strip.</p><p class="links"><a href="screens/04-booking-rebook.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/04-booking-rebook.png">PNG, 1440 @2x</a></p></figcaption>
-</figure></div>
-    <div class="pair"><figure class="shot ">
-  <a class="thumb" href="png/07-rooms.png"><img src="png/07-rooms.png" alt="Rooms screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Rooms</h3><p>Room types ledger with Deluxe edited in place, blocked delete for Family Suite, floor map on the axis.</p><p class="links"><a href="screens/07-rooms.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/07-rooms.png">PNG, 1440 @2x</a></p></figcaption>
-</figure><figure class="shot ">
-  <a class="thumb" href="png/08-promo-codes.png"><img src="png/08-promo-codes.png" alt="Promo codes screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Promo codes</h3><p>The admin's new-code form faces its reflection: what receptionists will see, with the overlap drawn.</p><p class="links"><a href="screens/08-promo-codes.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/08-promo-codes.png">PNG, 1440 @2x</a></p></figcaption>
-</figure></div>
-    <div class="solo"><figure class="shot ">
-  <a class="thumb" href="png/09-users.png"><img src="png/09-users.png" alt="Users screen, design-7 Mirror" loading="lazy"></a>
-  <figcaption><h3>Users</h3><p>The two roles face each other as a diptych. What each can and can't do is spelled out.</p><p class="links"><a href="screens/09-users.html">Open HTML</a><span aria-hidden="true">·</span><a href="png/09-users.png">PNG, 1440 @2x</a></p></figcaption>
-</figure></div>
+  <div class="abacus" aria-label="Sample of the room board"><div class="arow"><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod ooo"><div class="wire"><span class="bead r sm">X</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div></div><div class="arow"><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div></div><div class="arow"><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div></div><div class="arow"><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod dep"><div class="wire"><span class="bead p sm">D</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod vac"><div class="wire"><span class="bead o sm">V</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div><div class="rod arr"><div class="wire"><span class="bead a sm">A</span></div></div><div class="rod occ"><div class="wire"><span class="bead g sm">O</span></div></div></div></div>
+</header>
+<section class="sheet">
+  <h2>Palette</h2>
+  <div class="sw">
+    <div><i style="background:#1E2633"></i><b>Frame ink #1E2633</b><small>Top frame, beam, primary buttons, text-dark</small></div>
+    <div><i style="background:#E9EDF2"></i><b>Ground #E9EDF2</b><small>Work surface behind panels</small></div>
+    <div><i style="background:#FAFBFC"></i><b>Card #FAFBFC</b><small>Panels, rods, forms</small></div>
+    <div><i style="background:#A9CDD6"></i><b>Selection #A9CDD6</b><small>Picked nights, selected rows, codes</small></div>
+    <div><i style="background:#2F8F57"></i><b>Counted green #2F8F57</b><small>Occupied, active, done, discounts</small></div>
+    <div><i style="background:#D99A1E"></i><b>Arrival amber #D99A1E</b><small>Arriving, in progress, low stock</small></div>
+    <div><i style="background:#6C7BD0"></i><b>Departure #6C7BD0</b><small>Due out today</small></div>
+    <div><i style="background:#C23B32"></i><b>Peg red #C23B32</b><small>Out of order, full, destructive</small></div>
+    <div><i style="background:#7B4B8E"></i><b>Admin plum #7B4B8E</b><small>Admin-only beads, tags and the locked post</small></div>
   </div>
-  <p class="foot">Static HTML and CSS, no scripts, no network requests. Synthetic demo data. Icons: Lucide (ISC).</p>
-</main>
-</body>
-</html>
+  <div class="spec">
+    <div class="plate"><div class="small muted">Sofia Sans Condensed · 650–800</div><div class="big">312 · $862.29</div><div style="font:650 26px var(--cond);margin-top:8px">Room numbers, totals, panel titles</div></div>
+    <div class="plate"><div class="small muted">Sofia Sans · 400–650</div><p class="body" style="margin-top:10px">Body and controls. Hannah Moreau arrives at 14:30 with breakfast for two and an airport pickup. Tabular figures are on everywhere so columns of money and room numbers line up.</p>
+      <div class="row" style="margin-top:14px"><span class="bead g">O</span><span class="bead a">A</span><span class="bead p">D</span><span class="bead o">V</span><span class="bead r">X</span><span class="tag">Admin only</span><span class="code">autumn26</span></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <h2>Screens</h2>
+  <div class="thumbs">
+    <a href="screens/01-today.html"><img src="png/01-today.png" alt="Today board"><span>Today board<em>Receptionist</em></span></a>
+    <a href="screens/02-availability.html"><img src="png/02-availability.png" alt="Availability"><span>Availability<em>Receptionist</em></span></a>
+    <a href="screens/03-new-booking.html"><img src="png/03-new-booking.png" alt="New booking"><span>New booking<em>Receptionist</em></span></a>
+    <a href="screens/04-booking-rebook.html"><img src="png/04-booking-rebook.png" alt="Booking and rebook"><span>Booking · rebook · cancel<em>Receptionist</em></span></a>
+    <a href="screens/05-check-in.html"><img src="png/05-check-in.png" alt="Check-in"><span>Check-in<em>Receptionist</em></span></a>
+    <a href="screens/06-check-out.html"><img src="png/06-check-out.png" alt="Check-out"><span>Check-out<em>Receptionist</em></span></a>
+    <a href="screens/07-rooms.html"><img src="png/07-rooms.png" alt="Rooms"><span>Rooms<em><span class="tag">Admin</span></em></span></a>
+    <a href="screens/08-promo-codes.html"><img src="png/08-promo-codes.png" alt="Promo codes"><span>Promo codes<em><span class="tag">Admin</span></em></span></a>
+    <a href="screens/09-users.html"><img src="png/09-users.png" alt="Users and roles"><span>Users &amp; roles<em><span class="tag">Admin</span></em></span></a>
+  </div>
+</section>
+</div></body></html>
